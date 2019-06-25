@@ -10,6 +10,7 @@
 \usepackage{parskip}
 \usepackage{helvet}
 \usepackage{hyperref}
+\usepackage[T1]{fontenc}
 
 \begin{document}\fontfamily{ptm}
 \fontdimen2\font=0.4em
@@ -120,14 +121,46 @@ Nowsadays, the technology is getting better and better, so the human life are be
  		 
  		 	\begin{figure}[h]
  		 		\centering
- 		 		\includegraphics[width=0.55\columnwidth]{Overview_diagram.png}
+ 		 		\includegraphics[width=0.65\columnwidth]{Overview_diagram.png}
+ 		 		\captionof{figure}{Overview Diagram}
+ 		 		\label{fig:Overview1}
  		 	\end{figure}
  		 \newpage
  		 
  		 \newpage
  		  \subsubsection{Details}
  		  \paragraph{Preparation}
- 		  Unity can be download from the \href{https://store.unity.com/}{offical website}. I prefer Unity personal version because it's free, for everyone. 
- 		  
+ 		  Unity can be download from the \href{https://store.unity.com/}{offical website}. I prefer Unity personal version because it's free, for everyone. As i mentioned before, to be able to run Unity, and create a new project, you'll need at least direct x11 for simulate lighting, shadows on the scene. To create a terrain, which is the base of the virtual world, all i have to do is go to game object -> 3D Object -> Terrain. The terrain width and length is only set to 500x500, which i think is big enough for this project.  \begin{figure}[h]
+ 		  	\centering
+ 		  	\begin{minipage}{.4\textwidth}
+ 		  		\centering
+ 		  		\includegraphics[width=1\linewidth]{intructions/1.png}
+ 		  		\captionof{figure}{Create terrain}
+ 		  		\label{fig:test2}
+ 		  	\end{minipage}
+ 		  	\begin{minipage}{.4\textwidth}
+ 		  		\centering
+ 		  		\includegraphics[width=1.4\linewidth]{intructions/2.png}
+ 		  		\captionof{figure}{Properties}
+ 		  		\label{fig:test3}
+ 		  	\end{minipage}
+ 		  \end{figure}
+ 	  \\[0.15cm]
+ 	  From the Inspector section, there're 4 sections: Paint texture, paint trees, paint details. Each of these sections has painting tool with 20 brush presets, resizable brush size, opacity. For the textures, you can use any texture you want for the terrain, for example i use this texture from this website: \href{https://www.textures.com/download/grass0153/48704}{https://www.textures.com/download/grass0153/48704}. The same applied for painting details, but for painting trees, the material for this one is 3D model, however it can be found in the Standard Assets which comes with Unity when installed. 
+ 	   \begin{figure}[h]
+ 	   	 \centering
+ 	   	 \begin{minipage}{1\textwidth}
+ 	   	 	\centering
+ 	   	 	\includegraphics[width=0.75\linewidth]{intructions/3.png}
+ 	   	 	\captionof{figure}{Sections}
+ 	   	 	\label{fig:test4}
+ 	   	 \end{minipage}
+ 		 \end{figure}  
  		 \newpage
+ 		 
+ 	\newpage
+ 	Besides, to make the terrain looks better, the user can also raise or lower the terrain to create mountains, river. After i finish creating the terrain, all i have to do is drag and drop other objects/prefabs into the scene, put the textures corresponding to each object, while these prefabs/objects can be found on unity assets store or from free3d website as i mentioned from the introduction. 
+ 	 \paragraph{Player}
+ 	 To be able to interact with the objects, NPCs, a player should be added into the scene. For example, i use this little robot for my player: \href{https://free3d.com/3d-model/bb8-35865.html}{https://free3d.com/3d-model/bb8-35865.html}. 
+ 	\newpage
 \end{document}
