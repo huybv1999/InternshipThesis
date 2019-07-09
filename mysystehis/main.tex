@@ -19,13 +19,15 @@
 \usepackage{pgf,tikz,pgfplots}
 \usepackage{mathrsfs}
 \usepackage{xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
 \usetikzlibrary{arrows}
 
 
 
 \renewcommand{\baselinestretch}{1.5} 
 \begin{document}
-
 
 
 \begin{titlepage}
@@ -89,7 +91,7 @@ Finally, I'd like to give special thanks to the guys, girls who made free 3d mod
   \renewcommand{\thesubsection}{\Alph{section}}
  \renewcommand{\thesubsection}{\arabic{subsection}}
 \section{\Large Introduction} 
-Nowsadays, the technology is getting better and better, so the human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-base environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphic, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there's still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... \\[0.35cm] To create a virtual world, there're some types of engine that allow you to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] From one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
+Nowsadays, the technology is getting better and better, so the human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-based environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphic, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there's still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... \\[0.35cm] To create a virtual world, there're some types of engine that allow you to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] From one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
  In my opinion, first of all, it has tons of online tutorials to be found, the document with clean format, so a good step for beginners. With it's very intuitive design, C\# language make it easier to use or learn, like you can call other script within a script. Also, with great community, when you have a problem, they'll have you everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, the unity has asset store with lots of free assets for everyone to use, while the other ones only have few free assets. \\[0.35cm]In this work, i'll focus on creating the virtual world using unity engine, in particular, it's an RPG game, where you as a player can walk around, interact with other NPC model in the world, or attack some enemy that get in your way. 
   
 
@@ -201,7 +203,7 @@ Nowsadays, the technology is getting better and better, so the human life are be
  	 	stringstyle=\color{orange},
  	 }
   
-  \lstset{style=customc}
+  \lstset{style=customc, basicstyle=\fontsize{7.5}{4}\ttfamily, language=C}
  	 \begin{lstlisting}
  	  Vector2 input = new Vector2(Input.GetAxis("Horizontal"), 
  	  Input.GetAxis("Vertical"));
@@ -259,15 +261,15 @@ Nowsadays, the technology is getting better and better, so the human life are be
  	 	 \begin{lstlisting}
  	 	 if (controller.isGrounded)
  	 	 {
- 	 	 float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumping);
- 	 	 VelocityY = jumpVelocity;
+ 	 	 	float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumping);
+ 	 	 	VelocityY = jumpVelocity;
  	 	 }
  	 	 Vector3 velocity = transform.forward * currentSpeed + Vector3.up * VelocityY;
  	 	 controller.Move(velocity * Time.deltaTime);
  	 	 
  	 	 if (controller.isGrounded)
  	 	 {
- 	 	 VelocityY = 0;  
+ 	 	 	VelocityY = 0;  
  	 	 }
  	 	 \end{lstlisting}
  	 	 Where VelocityY is defined as the falling speed equation above. As soon the character hit the ground, the character won't be able to fall anymore, so i have to assign VelocityY = 0 when controller.isGrounded. 
@@ -293,17 +295,248 @@ Nowsadays, the technology is getting better and better, so the human life are be
   		\end{minipage}
  	 \end{figure}  
   	\\[0.05cm]
- 	 The camera is specified in term of three parameters: {\bfseries EYE, AT}, and {\bfseries UP}, as show in the left one. EYE is the camera position , AT is the reference point the camera is pointing at, and UP usually is set to the y-axis of the world space. For example, in the right one, AT is set at the position a little bit above the character for not covering the crosshair at the middle of the screen.
+ 	 The camera is specified in term of three parameters: {\bfseries EYE, AT}, and {\bfseries UP}, as show in the left one. EYE is the camera position , AT is the reference point the camera is pointing at, and UP usually is set to the y-axis of the world space. For example, in the right one, AT is set at the position a little bit above the character for not covering the center of the screen which i'm going to explain why later.
  	 After that, the camera needed to be rotated around with a mouse because i'd like to see what is happening around the character. And the same applied to the character controller script, but this time, i use Input.GetAxisRaw function instead of GetAxis is because i don't want the rotating to be smooth immiately as it can cause a short delay as GetAxisRaw will only return 0,-1 or 1 while GetAxis change gradually from 0 to 1 or 0 to -1.  
  	 Moreover, the function Lerp is used here instead of SmoothDamp due to the fact that the smoothdamp function adds the curve which can cause delay, for example, when i stop moving my mouse, the camera still moving, while Lerp only behaves linear. As now, there's still one more problem, on the mouseY rotation, the camera can be rotated 360 degree which is not i wanted, so i used the function Mathf.Clamp to limit the rotation of the mouseY axis, the minimum, maximum here is -40, 85 degree for the third person camera controller. In the end, to finish my TPS camera controller, i've modified the charactercontroller script a bit by adding cameraT.eulerAngles.y in the targetRotation where cameraT is the MainCamera(the TPS camera), to make sure that the camera will following the player correctly.
  	 
  	  \begin{itemize}
- 	 	\item \bfseries Camera Collision Detection 
+	 	\item \bfseries Camera Collision and Occlusion Detection  	 	
  	 \end{itemize}
- 	 
- 	 	
- 	 	
- 	 	
+ 	 In some situations, like in the figure below, when the camera collide with the wall or the wall comes in between the character and the camera, they're called occlusion and collision. When the camera goes through the wall or the ground, it can cause shearing.
+ 	 \begin{figure}[h]
+ 	 	\centering
+ 	 	\begin{minipage}{.4\textwidth}
+ 	 		\centering
+ 	 		\includegraphics[width=1\linewidth]{intructions/camera_cover.png}
+ 	 		\centering
+ 	 		\captionof{figure}{Occlusion example}
+ 	 		\label{fig:test8}
+ 	 	\end{minipage}
+  	\begin{minipage}{.4\textwidth}
+  		\centering
+  		\includegraphics[width=1\linewidth]{intructions/camera_collide.png}
+  		\centering
+  		\captionof{figure}{Collision example}
+  		\label{fig:test9}
+  	\end{minipage}
+ 	 \end{figure}
+  \\[0.15cm]
+  So, the goal here is to handle {\bfseries Collision} and {\bfseries Occlusion} with as little shearing as possible. Let's defined each one of these underlined terms really means. 
+  \begin{figure}[h]
+  	\centering
+  	\begin{minipage}{.4\textwidth}
+  		\centering
+  		\includegraphics[width=1.3\linewidth]{intructions/Occlusion_camera.png}
+  		\centering
+  		\captionof{figure}{Occlusion}
+  		\label{fig:test10}
+  	\end{minipage}
+  \end{figure}
+  \\[0.15cm]
+  Occlusion is when the game is running where the pillar or the wall comes in between the character and the camera view, the character is no where to be seen, and i need to move forward if that happen. Like the figure above, if camera isn't hitting anything but it's view is being obstructed so i have to move forward, the camera can see the player. 
+  \begin{figure}[h]
+  	\centering
+  	\begin{minipage}{.4\textwidth}
+  		\centering
+  		\includegraphics[width=1.3\linewidth]{intructions/Collision_camera.png}
+  		\centering
+  		\captionof{figure}{Collision}
+  		\label{fig:test11}
+  	\end{minipage}
+  \end{figure}
+ \\[0.05cm]
+  Collision is where the camera actually does hit something and the view is still obstructed so i still need to move the camera forward. 
+  \\[0.05cm] From these, it's actually a problem that can be solved with one solution. I'm going to determine if the camera can see the player , if a point of the camera cannot see the player then the camera should be moved forward, whenever it's collision or occlusion, it's still the same issue. And shearing is when the camera go through the wall, i'm able to see through the wall too, to where i see the open space, even the skybox. It's really detract from the realism of the scene,so i have to limit the shearing as much as possible.  	
+  \\[0.15cm]
+  Before solving the problem, let's implement some definition of the Camera.
+  \begin{figure}[h]
+  	\centering
+  	\begin{minipage}{.4\textwidth}
+  		\centering
+  		\includegraphics[width=1.7\linewidth]{intructions/Camera_overview.png}
+  		\centering
+  		\captionof{figure}{Occlusion}
+  		\label{fig:test12}
+  	\end{minipage}
+  \end{figure} 
+\\[0.05cm]
+From the image above, 2 white lines are defines as a view angle. Inside the view angle, there's also a clip plane defined by the green rectangle, which is also the camera view. And at the center of the near clip plane is where the camera is pointing at, and at that point, i've drawn the crosshair, to make sure that this is the camera position. This is the position we the character can interact with the objects, NPCs so as i mention above in the character section, that's why the character cannot be at the middle of the near clip point. The second green rectangle is defined as the far clip plane, which determines how far out into the world the camera view can see. And between the two plane is view frustum, within this shape is what i can see in the game preview.
+\\[0.05cm] To detect if the camera cannot see the player or the camera is collided with the objects, all i have to do is just a simple raycasting from the character to the camera, and what is raycasting, i'll explain in the next section. 
+\begin{figure}[h]
+	\centering
+	\begin{minipage}{.4\textwidth}
+		\centering
+		\includegraphics[width=1.3\linewidth]{intructions/raycasting.png}
+		\centering
+		\captionof{figure}{Occlusion}
+		\label{fig:test13}
+	\end{minipage}
+\end{figure} 
+\\[0.05cm]
+The best raycasting function to use here is Physics.LineCast, as it can return true if the camera hit something, vice versa. This function works in both Collision and Occlusion situation. Like the image above, i've drawn the LineCast between the character and the camera using the function Physics.LineCast, whenever the camera is behind the wall and the player or being collided with the wall, the line can still hit the objects, return true. 
+\begin{lstlisting}
+void CollisionCheck(Vector3 ReturnPoint)
+{
+	RaycastHit hit;
+	if (Physics.Linecast(Target.position, ReturnPoint, out hit, collisionMask))
+	{
+		normal = hit.normal*wallPush;
+		p = hit.point + normal;
+		if (Vector3.Distance(Vector3.Lerp(transform.position, p, moveSpeed * Time.deltaTime), Target.position) <= EvenCloserDistance)
+		{
+
+		}
+		else
+		{
+			transform.position = Vector3.Lerp(transform.position, p, moveSpeed * Time.deltaTime);
+		}
+		return;
+
+	}
+	transform.position = Vector3.Lerp(transform.position, ReturnPoint, returnSpeed * Time.deltaTime);
+}
+\end{lstlisting}
+From the code above, the hit function is to return the information where the line hit, collisionMask determine which object layer should the line hit. After the line hit something, i've defined the function hit.normal to find the normal if the line hit the wall, and if it hit, the value will be 1, and the vector p is the position the camera should move. The reason why i do the normalize, add it with the hit.point is just to prevent the camera from clipping with the object when the camera start to move. Finally, to make sure that when occlusion happen, the camera still move to the correct position, be able to see the player, i measure the distance between the camera point and the player, if it's already smaller than a specific value than stop moving the camera, otherwise, it'll lerp to the correct position to see the player.  
+\begin{itemize}
+	\item \bfseries FPSCamera 	 	
+\end{itemize}
+	This camera represent like how everybody see the world in real life, in everyday life. The controller script for this one is basically the same as the TPScamera script i've written before, but the only difference is the FoV, it's a bit narrower than the FoV of TPScamera and the clamp angle. The camera position is right at the position of the eye's character, for making the gameplay looks more realistic. Moreover, i've written the script to allow the user to change between the FPS mode and TPS mode by pressing V. One more thing, to be able to synchronized 2 camera, all i do is copy almost all the code lines from TPSCamera script and then paste to the FPS one, so that 2 camera will rotate , move extracty at the same angle, same speed. 
+
+\paragraph{RayCasting}
+  A Raycast is conceptually like a beam that's fired from a point in space along a particular direction. Any object making contact with the beam can be detected and reported. With the ability to get information from the object that the beam hit, this is the main method for this project, as the character is able to interact with other objects in the virtual world. In Unity, raycast support both 2 dimension and 3 dimension, and for my project, i'll use 3d version for working with 3D space. There're two type of raycast that's usually used , Physics.Raycast and Physics.Linecast.
+  \begin{itemize}
+  	\item \bfseries Physics.Raycast(Vector3 origin,  Vector3 direction ,float maxDistance = Mathf.Infinity, out hit, , layerMask)	 	
+  \end{itemize}
+ 	This type of function casts a ray from the original point, which is Vector3 origin into direction point (Vector3 direction) with the length of maxDistance. Normally, the maxDistance usually set to Mathf.Infinity for casting to the infinite length. This function will return true if the ray intersects with something, otherwise false. The forth variable, the out usually passed by hit, it provides the info about what it hit, like the distance from the origin to the point or the position where it hit, which is extractly what i need for my character to be able to interact, communicate with objects in the scene.
+	\newpage
+ 	\begin{figure}[h]
+ 		\raisebox{-50mm}[0pt][0pt]{
+ 		\begin{minipage}{1\textwidth}
+ 			\centering
+ 			\includegraphics[width=1\linewidth]{intructions/RayCast_example1.png}
+ 			\centering
+ 			\captionof{figure}{RayCast example}
+ 			\label{fig:test14}
+ 		\end{minipage}
+ 	}
+ 	\end{figure} 
+ 	\vspace{10.0cm}
+ 	For example, from the figure 13, the greens line is actually the ray drawn from raycast. In the scene above, this ray will provide the distance between my character and the object it hit by hit.distance. In this situation, as the player is far from this NPC, the text which i have defined before will not pop to the screen, but when i move close to the NPC, the text actually pop up: "[E] talk to NPC"
+ 	\begin{figure}[h]
+ 		
+ 			\begin{minipage}{1\textwidth}
+ 				\centering
+ 				\includegraphics[width=0.5\linewidth]{intructions/text_popup.png}
+ 				\centering
+ 				\captionof{figure}{Text popup}
+ 				\label{fig:test15}
+ 			\end{minipage}
+ 		\end{figure}
+ 	\\[0.05cm]
+ 	This is because i've declared a float variable , when hit.distance bigger than that variable, the text will not appear until hit.distance is smaller. This is the concept of communicating with objects in the scene. Besides, the out variable can be used to get the object name where the ray hit by using hit.collider.gameObject.name: 	
+ 	\noindent\begin{minipage}{0.3\textwidth}% adapt widths of minipages to your needs
+ 		\includegraphics[width=\linewidth]{intructions/objectname.png}
+ 	\end{minipage}%
+ 	\newpage
+ 	\begin{itemize}
+ 		\item \bfseries Physics.Linecast(Vector3 start,  Vector3 end , out hit, , layerMask)	 	
+ 	\end{itemize}
+ 		This function is pretty similar to the raycast function, although they both return true if the ray intersect with a collider, only recognize objects that have collider. The only difference between these two raycasting method is that the raycast only trigger the collider that starts outside of the origin object, and then intersects,  while the linecast is not, it will still trigger the collider of the beginning point. That's why i didn't use physics.raycast method for my camera collision detector, as physics.linecast trigger both the collider of two points.
+ 
+	\paragraph{Bump mapping}
+	In order to make the object surface looks more realistic, bump mapping is a technique in computer graphic to do that by simulating small displacements of the surface. However, the number of polygons does not increase. The modified surface heavily relied on light reflection, define how the light should shine on the surface.
+	The method to perform bump mapping i'm going to use here will be divided into 3 stages: height map, normal map and occlusion map, the most important one in this method are height map and normal map. In this project, since i'll only generate bump map from a simple 2D texture, i'll not go too deep into this method, make it as simple as possible. This's the way how unity can perform bump mapping on the object surface.
+	\begin{itemize}
+		\item \bfseries Height map	 	
+	\end{itemize}
+		To be able to generate normal map, i'll need to create height map from the 2d texture first, to simulate the high of vertex, from that, i can simulate the dept, how the light can shine into the surface. For creating the height map, i'll use Photoshop to make it. The texture for generating  the height map is this brick texture, for example: 
+		 \begin{figure}[h]
+		 	\centering
+		 	\begin{minipage}{.3\textwidth}
+		 		\centering
+		 		\includegraphics[width=0.8\linewidth]{intructions/Brick001.jpg}
+		 		\centering
+		 		\captionof{figure}{Original texture}
+		 		\label{fig:test16}
+		 	\end{minipage}
+	 		\begin{minipage}{.3\textwidth}
+	 			\centering
+	 			\includegraphics[width=0.8\linewidth]{intructions/Brick001_height.png}
+	 			\centering
+	 			\captionof{figure}{Height map after creation}
+	 			\label{fig:test17}
+	 		\end{minipage}
+ 		\begin{minipage}{.3\textwidth}
+ 			\centering
+ 			\includegraphics[width=1.4\linewidth]{intructions/height_example.png}
+ 		\end{minipage}
+ 	\end{figure} 
+ \\[0.02cm]
+ Basically, the height image is the grey scale image with black and white range, so i'll convert the image to greyscale in Photoshop by selecting Image -> Adjustment -> Black and white. After creating the greyscale image, i'll try to modify the contrast by selecting a small circle at the bottom left, and choose level to adjust the black, white range, adjust the white area to become whiter, dark area to become even darker.
+ \\[0.01cm]
+ \noindent \begin{minipage}{0.21\textwidth}
+ \includegraphics[width=\linewidth]{intructions/contrastAdjusting.png}
+ \end{minipage}
+  \\[0.01cm]
+  If the height is in the range of [0,255], the lowest height 0 is colored in black, and the highest 255 is colored in white. As of now, there're still noises in the height map, i'll filter the noise by going to Filter -> Blur -> Gaussian Blur: \begin{minipage}{0.21\textwidth}
+  	\includegraphics[width=\linewidth]{intructions/guassian_blur.png}
+  \end{minipage}  Depends on each textures, but for this one, 3.5 pixels is enough to filter the noises, for not losing the detail like in the figure 16, so that i'll get better result when creating the normal map.  
+\begin{itemize}
+	\item \bfseries Normal map	 	
+\end{itemize}
+  A normal map is a special kind of texture that allow you to add surface detail such as bumps, grooves, and scratches to a model which catch the light as if they are represented by real geometry, it contains surface normals. 
+  \begin{figure}[h]
+  	\begin{minipage}{.45\textwidth}
+  		\centering
+  		\includegraphics[width=1\linewidth]{intructions/surface_normal.png}
+  		\centering
+  		\captionof{figure}{Surface normal, across 3 polygons}
+  		\label{fig:test18}
+  	\end{minipage}
+  	\begin{minipage}{.4\textwidth}
+  		\centering
+  		\includegraphics[width=1.6\linewidth]{intructions/surface_normal_across.png}
+  		\centering
+  		\captionof{figure}{Normal mapping across three polygons}
+  		\label{fig:test179}
+  	\end{minipage}
+  \end{figure}
+ \\[0.01cm]
+ The simplest way is to compute the surface normal from the height map as i created above at the point  (x,y,h(x,y)). Here, h represents the discrete height function, and x,y represent as the pixel coordinate. 
+ \begin{figure}[h]
+ 	\begin{minipage}{1\textwidth}
+ 		\centering
+ 		\includegraphics[width=0.8\linewidth]{intructions/normal_map_calculation.png}
+ 		\centering
+ 	\end{minipage}
+ \end{figure} 
+\\[0.01cm]
+In here, the partial derivatives are need for computing the normal: $\frac{\partial h}{\partial x}$ and $\frac{\partial h}{\partial y}$. They are defined by the height store at four neighbors of the pixel coordinate: \{(x + 1,y),(x $- 1$,y),(x,y + 1),(x,y $- 1$)\}. \\[0.01cm]The equation of these partial derivatives are: \begin{minipage}{1\textwidth}
+	\scalebox{1.3} {$\frac{\partial h}{\partial x} = \dfrac{h(x + 1,y) - h(x - 1,y)}{2}$ }
+	\\[0.04cm]
+	\scalebox{1.3} {$\frac{\partial h}{\partial y} = \dfrac{h(x,y + 1) - h(x,y - 1)}{2}$ }
+\end{minipage}
+\\[0.2cm] After calculating these derivatives, the cross product is ({$-\frac{\partial h}{\partial x}$, $-\frac{\partial h}{\partial y}$, $1$), which is normalized and store at (x,y). In the C\# function, this can be implemented as: \begin{lstlisting}
+	private Texture2D GenerateNormal(Texture2D source)
+	{
+		normalTexture = new Texture2D(source.width, source.height, TextureFormat.ARGB32, true);
+		for (int y = 0; y < normalTexture.height; y++)
+		{
+			for (int x = 0; x < normalTexture.width; x++)
+			{
+				xHeight = (GetColor((source.GetPixel(x+1, y) - source.GetPixel(x - 1, y)))*strength-1)*0.5f;
+				yHeight = (GetColor((source.GetPixel(x, y + 1) - source.GetPixel(x, y - 1)))*strength-1)*0.5f;
+				normalTexture.SetPixel(x, y, new Color(-xHeight, -yHeight, 1.0f, 1.0f));
+	
+			}
+		}
+		normalTexture.Apply();
+		System.IO.File.WriteAllBytes("Assets/Sample001_n.png", normalTexture.EncodeToPNG());
+		return normalTexture;
+	}
+	\end{lstlisting}
+ \\[0.01cm]
+ 
   	\end{document}
 	
  	 

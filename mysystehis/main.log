@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.24)  3 JUL 2019 16:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.24)  10 JUL 2019 04:50
 entering extended mode
 **./main.tex
 (main.tex
@@ -1103,6 +1103,46 @@ Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
 (xtemplate)             line 79.
 
 )
+(D:\application\MikTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks39
+\inpenc@posthook=\toks40
+)
+(D:\application\MikTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/ztmcm/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/ztmcm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/ztmcm/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/ztmcm/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/ztmcm/m/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/ztmcm/m/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/ztmcm/m/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/ztmcm/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/ptm/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/ptm/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/ptm/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/ptm/m/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
 (D:\application\MikTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrary
 arrows.code.tex
 File: tikzlibraryarrows.code.tex 2019/05/09 v3.1.3 (3.1.3)
@@ -1118,30 +1158,30 @@ LaTeX Warning: Unused global option(s):
 (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 30.
  (D:\application\MikTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 27.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 30.
 
-(D:\application\MikTeX\tex/latex/psnfss\t1ptm.fd
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+(D:\application\MikTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (D:\application\MikTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1150,12 +1190,12 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 \scratchbox=\box65
 \nofMPsegments=\count314
 \nofMParguments=\count315
-\everyMPshowfont=\toks39
+\everyMPshowfont=\toks41
 \MPscratchCnt=\count316
 \MPscratchDim=\dimen301
 \MPnumerator=\count317
 \makeMPintoPDFobject=\count318
-\everyMPtoPDFconversion=\toks40
+\everyMPtoPDFconversion=\toks42
 ) (D:\application\MikTeX\tex/latex/oberdiek\epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1208,7 +1248,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 30.
 (D:\application\MikTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1217,9 +1257,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count319
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
  (main.out)
 (main.out)
 \@outlinefile=\write4
@@ -1231,84 +1271,83 @@ LaTeX Info: Redefining \nameref on input line 27.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 27.
+ on input line 30.
 
-LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <10> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 41.
+
+LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
+(Font)              using `T1/lmr/bx/n' instead on input line 43.
+
 <usth.png, id=62, 1606.0pt x 865.2325pt>
 File: usth.png Graphic file (type png)
 <use usth.png>
-Package pdftex.def Info: usth.png  used on input line 42.
+Package pdftex.def Info: usth.png  used on input line 44.
 (pdftex.def)             Requested size: 160.6094pt x 86.5283pt.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 44.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <18> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 66.
 [1
 
-{C:/Users/huy/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./usth.png>]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 73.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 73.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+{C:/Users/huy/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./usth.png>]p
+dfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
+een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.75 \newpage
+l.77 \newpage
               [1] [2] [3] [4]
-<Overview_diagram.png, id=88, 578.16pt x 564.1075pt>
+<Overview_diagram.png, id=90, 578.16pt x 564.1075pt>
 File: Overview_diagram.png Graphic file (type png)
 <use Overview_diagram.png>
-Package pdftex.def Info: Overview_diagram.png  used on input line 138.
+Package pdftex.def Info: Overview_diagram.png  used on input line 140.
 (pdftex.def)             Requested size: 268.59235pt x 262.05765pt.
- [5 <./Overview_diagram.png>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5]
 <intructions/1.png, id=96, 478.78876pt x 398.99063pt>
 File: intructions/1.png Graphic file (type png)
 <use intructions/1.png>
-Package pdftex.def Info: intructions/1.png  used on input line 151.
+Package pdftex.def Info: intructions/1.png  used on input line 153.
 (pdftex.def)             Requested size: 182.09486pt x 151.74586pt.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 15
-4.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 156.
 
-(D:\application\MikTeX\tex/latex/psnfss\ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+ (D:\application\MikTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 15
-4.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 156.
 
-(D:\application\MikTeX\tex/latex/psnfss\omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 15
-4.
 
-(D:\application\MikTeX\tex/latex/psnfss\omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+(D:\application\MikTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 15
-4.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 156
+.
 
-(D:\application\MikTeX\tex/latex/psnfss\omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+(D:\application\MikTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 154.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 156
+.
+
+(D:\application\MikTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.4> on input line 156.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 156.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 156.
 
 
 (D:\application\MikTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 154.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 156.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 154.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 156.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 154.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 154.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 156.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 156.
 
 (D:\application\MikTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1316,114 +1355,279 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 <intructions/2.png, id=97, 505.13719pt x 300.3722pt>
 File: intructions/2.png Graphic file (type png)
 <use intructions/2.png>
-Package pdftex.def Info: intructions/2.png  used on input line 157.
+Package pdftex.def Info: intructions/2.png  used on input line 159.
 (pdftex.def)             Requested size: 254.93169pt x 151.59279pt.
 
-Overfull \hbox (72.83682pt too wide) in paragraph at lines 157--158
+Overfull \hbox (72.83682pt too wide) in paragraph at lines 159--160
  [][] 
  []
 
 <intructions/3.png, id=99, 515.67656pt x 179.16937pt>
 File: intructions/3.png Graphic file (type png)
 <use intructions/3.png>
-Package pdftex.def Info: intructions/3.png  used on input line 168.
+Package pdftex.def Info: intructions/3.png  used on input line 170.
 (pdftex.def)             Requested size: 341.43307pt x 118.63216pt.
-
-Overfull \hbox (9.95108pt too wide) in paragraph at lines 147--173
-\T1/ptm/m/n/10 for the ter-rain, for ex-am-ple i use this tex-ture from this we
-b-site: []https://www.textures.com/download/grass0153/48704[].
- []
-
-<intructions/4.png, id=101, 1338.50063pt x 766.36313pt>
+[6 <./Overview_diagram.png> <./intructions/1.png> <./intructions/2.png>]
+<intructions/4.png, id=111, 1338.50063pt x 766.36313pt>
 File: intructions/4.png Graphic file (type png)
 <use intructions/4.png>
-Package pdftex.def Info: intructions/4.png  used on input line 182.
+Package pdftex.def Info: intructions/4.png  used on input line 184.
 (pdftex.def)             Requested size: 341.43307pt x 195.48433pt.
-[6 <./intructions/1.png> <./intructions/2.png> <./intructions/3.png>]
+
+[7 <./intructions/3.png> <./intructions/4.png>]
 (D:\application\MikTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 (D:\application\MikTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 205.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 207.
 
 
-(D:\application\MikTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+(D:\application\MikTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 239.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 239.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 237.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 239.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 237.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 239.
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--246
-
- []
-
-[7 <./intructions/4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 246--248
+Underfull \hbox (badness 10000) in paragraph at lines 244--248
 
  []
 
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 251.
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--257
+Underfull \hbox (badness 10000) in paragraph at lines 248--250
+
+ []
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <7.5> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 253.
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
 
  []
 
 [8]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 276.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 278.
 
- (D:\application\MikTeX\tex/latex/psnfss\ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+ (D:\application\MikTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<intructions/camera_space.png, id=134, 313.9228pt x 366.61969pt>
+<intructions/camera_space.png, id=137, 313.9228pt x 366.61969pt>
 File: intructions/camera_space.png Graphic file (type png)
 <use intructions/camera_space.png>
-Package pdftex.def Info: intructions/camera_space.png  used on input line 284.
+Package pdftex.def Info: intructions/camera_space.png  used on input line 286.
 (pdftex.def)             Requested size: 127.46584pt x 148.86055pt.
-<intructions/my_camera_space.png, id=135, 920.43875pt x 464.73625pt>
+<intructions/my_camera_space.png, id=138, 920.43875pt x 464.73625pt>
 File: intructions/my_camera_space.png Graphic file (type png)
 <use intructions/my_camera_space.png>
 Package pdftex.def Info: intructions/my_camera_space.png  used on input line 29
-1.
+3.
 (pdftex.def)             Requested size: 218.51328pt x 110.32635pt.
 
-Overfull \hbox (36.41841pt too wide) in paragraph at lines 291--293
+Overfull \hbox (36.41841pt too wide) in paragraph at lines 293--295
  [][] 
  []
 
 [9 <./intructions/camera_space.png> <./intructions/my_camera_space.png>]
-[10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
+<intructions/camera_cover.png, id=161, 503.63156pt x 313.9228pt>
+File: intructions/camera_cover.png Graphic file (type png)
+<use intructions/camera_cover.png>
+Package pdftex.def Info: intructions/camera_cover.png  used on input line 310.
+(pdftex.def)             Requested size: 182.09486pt x 113.5007pt.
+<intructions/camera_collide.png, id=162, 598.48593pt x 445.665pt>
+File: intructions/camera_collide.png Graphic file (type png)
+<use intructions/camera_collide.png>
+Package pdftex.def Info: intructions/camera_collide.png  used on input line 317
+.
+(pdftex.def)             Requested size: 182.09486pt x 135.591pt.
+<intructions/Occlusion_camera.png, id=163, 1906.12125pt x 1084.05pt>
+File: intructions/Occlusion_camera.png Graphic file (type png)
+<use intructions/Occlusion_camera.png>
+Package pdftex.def Info: intructions/Occlusion_camera.png  used on input line 3
+29.
+(pdftex.def)             Requested size: 236.72388pt x 134.62923pt.
+
+Overfull \hbox (54.62901pt too wide) in paragraph at lines 329--331
+ [][] 
+ []
+
+<intructions/Collision_camera.png, id=164, 1906.12125pt x 1084.05pt>
+File: intructions/Collision_camera.png Graphic file (type png)
+<use intructions/Collision_camera.png>
+Package pdftex.def Info: intructions/Collision_camera.png  used on input line 3
+41.
+(pdftex.def)             Requested size: 236.72388pt x 134.62923pt.
+
+Overfull \hbox (54.62901pt too wide) in paragraph at lines 341--343
+ [][] 
+ []
+
+<intructions/Camera_overview.png, id=165, 1927.2pt x 1084.05pt>
+File: intructions/Camera_overview.png Graphic file (type png)
+<use intructions/Camera_overview.png>
+Package pdftex.def Info: intructions/Camera_overview.png  used on input line 35
+6.
+(pdftex.def)             Requested size: 309.5607pt x 174.11319pt.
+
+Overfull \hbox (127.46584pt too wide) in paragraph at lines 356--358
+ [][] 
+ []
+
+<intructions/raycasting.png, id=166, 475.02469pt x 411.78844pt>
+File: intructions/raycasting.png Graphic file (type png)
+<use intructions/raycasting.png>
+Package pdftex.def Info: intructions/raycasting.png  used on input line 369.
+(pdftex.def)             Requested size: 236.72388pt x 205.20882pt.
+
+Overfull \hbox (54.62901pt too wide) in paragraph at lines 369--371
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./intructions/camera_cover.png> <./intructions/camera_collide.png>]
+[11 <./intructions/Occlusion_camera.png> <./intructions/Collision_camera.png> <
+./intructions/Camera_overview.png>] [12 <./intructions/raycasting.png>]
+[13]
+<intructions/RayCast_example1.png, id=217, 1163.84813pt x 546.54187pt>
+File: intructions/RayCast_example1.png Graphic file (type png)
+<use intructions/RayCast_example1.png>
+Package pdftex.def Info: intructions/RayCast_example1.png  used on input line 4
+21.
+(pdftex.def)             Requested size: 455.24411pt x 213.77592pt.
+
+Overfull \hbox (6.66666pt too wide) in paragraph at lines 413--422
+[][] 
+ []
+
+<intructions/text_popup.png, id=218, 575.14874pt x 365.86688pt>
+File: intructions/text_popup.png Graphic file (type png)
+<use intructions/text_popup.png>
+Package pdftex.def Info: intructions/text_popup.png  used on input line 429.
+(pdftex.def)             Requested size: 227.62206pt x 144.79774pt.
+<intructions/objectname.png, id=219, 209.28188pt x 33.12375pt>
+File: intructions/objectname.png Graphic file (type png)
+<use intructions/objectname.png>
+Package pdftex.def Info: intructions/objectname.png  used on input line 438.
+(pdftex.def)             Requested size: 136.57462pt x 21.61609pt.
+[14 <./intructions/RayCast_example1.png> <./intructions/text_popup.png> <./intr
+uctions/objectname.png>]
+<intructions/Brick001.jpg, id=226, 1027.84pt x 1027.84pt>
+File: intructions/Brick001.jpg Graphic file (type jpg)
+<use intructions/Brick001.jpg>
+Package pdftex.def Info: intructions/Brick001.jpg  used on input line 457.
+(pdftex.def)             Requested size: 109.2601pt x 109.25163pt.
+<intructions/Brick001_height.png, id=227, 1027.84pt x 1027.84pt>
+File: intructions/Brick001_height.png Graphic file (type png)
+<use intructions/Brick001_height.png>
+Package pdftex.def Info: intructions/Brick001_height.png  used on input line 46
+4.
+(pdftex.def)             Requested size: 109.2601pt x 109.25163pt.
+<intructions/height_example.png, id=228, 364.36125pt x 204.01219pt>
+File: intructions/height_example.png Graphic file (type png)
+<use intructions/height_example.png>
+Package pdftex.def Info: intructions/height_example.png  used on input line 471
+.
+(pdftex.def)             Requested size: 191.20361pt x 107.05818pt.
+
+Overfull \hbox (54.629pt too wide) in paragraph at lines 471--472
+ [][] 
+ []
+
+<intructions/contrastAdjusting.png, id=229, 216.81pt x 278.54062pt>
+File: intructions/contrastAdjusting.png Graphic file (type png)
+<use intructions/contrastAdjusting.png>
+Package pdftex.def Info: intructions/contrastAdjusting.png  used on input line 
+478.
+(pdftex.def)             Requested size: 95.60431pt x 122.826pt.
+<intructions/guassian_blur.png, id=230, 213.79875pt x 37.64063pt>
+File: intructions/guassian_blur.png Graphic file (type png)
+<use intructions/guassian_blur.png>
+Package pdftex.def Info: intructions/guassian_blur.png  used on input line 482.
+
+(pdftex.def)             Requested size: 95.60431pt x 16.83128pt.
+[15 <./intructions/Brick001.jpg> <./intructions/Brick001_height.png> <./intruct
+ions/height_example.png>]
+<intructions/surface_normal.png, id=238, 558.58687pt x 187.45032pt>
+File: intructions/surface_normal.png Graphic file (type png)
+<use intructions/surface_normal.png>
+Package pdftex.def Info: intructions/surface_normal.png  used on input line 491
+.
+(pdftex.def)             Requested size: 204.85846pt x 68.74629pt.
+<intructions/surface_normal_across.png, id=239, 569.12625pt x 198.7425pt>
+File: intructions/surface_normal_across.png Graphic file (type png)
+<use intructions/surface_normal_across.png>
+Package pdftex.def Info: intructions/surface_normal_across.png  used on input l
+ine 498.
+(pdftex.def)             Requested size: 291.35289pt x 101.74548pt.
+
+Overfull \hbox (109.25803pt too wide) in paragraph at lines 498--500
+ [][] 
+ []
+
+<intructions/normal_map_calculation.png, id=240, 689.57625pt x 266.49562pt>
+File: intructions/normal_map_calculation.png Graphic file (type png)
+<use intructions/normal_map_calculation.png>
+Package pdftex.def Info: intructions/normal_map_calculation.png  used on input 
+line 509.
+(pdftex.def)             Requested size: 364.19667pt x 140.74997pt.
+
+Overfull \hbox (193.80634pt too wide) in paragraph at lines 487--519
+\T1/lmr/m/n/10 The equa-tion of these par-tial deriva-tives are: $[]$ 
+ []
+
+[16 <./intructions/contrastAdjusting.png> <./intructions/guassian_blur.png> <./
+intructions/surface_normal.png> <./intructions/surface_normal_across.png> <./in
+tructions/normal_map_calculation.png>] [17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 540.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 540.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 540.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 540.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D60985E1534F7BCDFB97A3BAAF1B9B37;901.
- ) 
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 519 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 41299 strings out of 492895
- 924248 string characters out of 3136301
- 1346511 words of memory out of 3000000
- 44578 multiletter control sequences out of 15000+200000
- 592069 words of font info for 93 fonts, out of 3000000 for 9000
+ 41627 strings out of 492895
+ 931232 string characters out of 3136301
+ 1387822 words of memory out of 3000000
+ 44827 multiletter control sequences out of 15000+200000
+ 597090 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,96p,1733b,1162s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/application/MikTeX/fonts/enc/dvips/base/8r.enc} <C:\Users\huy\AppData\Loc
-al\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0800.pk><D:/application/Mi
-kTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/application/MikTeX/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><D:/application/MikTeX/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><D:/application/MikTeX/fonts/type1/urw/symbol/usyr.pfb><D:/ap
-plication/MikTeX/fonts/type1/urw/times/utmb8a.pfb><D:/application/MikTeX/fonts/
-type1/urw/times/utmr8a.pfb><D:/application/MikTeX/fonts/type1/urw/times/utmri8a
-.pfb>
-Output written on main.pdf (11 pages, 3992720 bytes).
+ 62i,9n,96p,1734b,1147s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/application/MikTeX/fonts/enc/dvips/lm/lm-ts1.enc}{D:/applic
+ation/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}{D:/application/MikTeX/fonts/enc/
+dvips/lm/lm-ec.enc}{D:/application/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{D:/
+application/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{D:/application/MikTeX/fonts/en
+c/dvips/lm/lm-mathit.enc}<D:/application/MikTeX/fonts/type1/public/lm/lmbx10.pf
+b><D:/application/MikTeX/fonts/type1/public/lm/lmbx12.pfb><D:/application/MikTe
+X/fonts/type1/public/lm/lmex10.pfb><D:/application/MikTeX/fonts/type1/public/lm
+/lmmi10.pfb><D:/application/MikTeX/fonts/type1/public/lm/lmmi7.pfb><D:/applicat
+ion/MikTeX/fonts/type1/public/lm/lmr10.pfb><D:/application/MikTeX/fonts/type1/p
+ublic/lm/lmr12.pfb><D:/application/MikTeX/fonts/type1/public/lm/lmsy10.pfb><D:/
+application/MikTeX/fonts/type1/public/lm/lmtk10.pfb><D:/application/MikTeX/font
+s/type1/public/lm/lmtt8.pfb>
+Output written on main.pdf (18 pages, 10140395 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 340 PDF objects out of 1000 (max. 8388607)
+ 111 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 
