@@ -72,7 +72,9 @@
   
 \end{titlepage}
 \newpage
-\part*{\Large Table of Contents}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\tableofcontents
 
 \newpage
 
@@ -104,7 +106,7 @@ Nowsadays, the technology is getting better and better, so the human life are be
 
  
  
- \setcounter{secnumdepth}{4}
+
  \titleformat{\paragraph}
  {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
  \titlespacing*{\paragraph}
@@ -408,9 +410,8 @@ From the code above, the hit function is to return the information where the lin
   	\item \bfseries Physics.Raycast(Vector3 origin,  Vector3 direction ,float maxDistance = Mathf.Infinity, out hit, , layerMask)	 	
   \end{itemize}
  	This type of function casts a ray from the original point, which is Vector3 origin into direction point (Vector3 direction) with the length of maxDistance. Normally, the maxDistance usually set to Mathf.Infinity for casting to the infinite length. This function will return true if the ray intersects with something, otherwise false. The forth variable, the out usually passed by hit, it provides the info about what it hit, like the distance from the origin to the point or the position where it hit, which is extractly what i need for my character to be able to interact, communicate with objects in the scene.
-	\newpage
  	\begin{figure}[h]
- 		\raisebox{-50mm}[0pt][0pt]{
+ 		
  		\begin{minipage}{1\textwidth}
  			\centering
  			\includegraphics[width=1\linewidth]{intructions/RayCast_example1.png}
@@ -418,9 +419,9 @@ From the code above, the hit function is to return the information where the lin
  			\captionof{figure}{RayCast example}
  			\label{fig:test14}
  		\end{minipage}
- 	}
+ 	
  	\end{figure} 
- 	\vspace{10.0cm}
+ 	
  	For example, from the figure 13, the greens line is actually the ray drawn from raycast. In the scene above, this ray will provide the distance between my character and the object it hit by hit.distance. In this situation, as the player is far from this NPC, the text which i have defined before will not pop to the screen, but when i move close to the NPC, the text actually pop up: "[E] talk to NPC"
  	\begin{figure}[h]
  		
@@ -449,7 +450,7 @@ From the code above, the hit function is to return the information where the lin
 	\begin{itemize}
 		\item \bfseries Height map	 	
 	\end{itemize}
-		To be able to generate normal map, i'll need to create height map from the 2d texture first, to simulate the high of vertex, from that, i can simulate the dept, how the light can shine into the surface. For creating the height map, i'll use Photoshop to make it. The texture for generating  the height map is this brick texture, for example: 
+		To be able to generate normal map, i'll need to create height map from the 2d texture first, to simulate the high of vertex, from that, i can simulate the dept, how the light can shine into the surface. A height map is used to faked depth or essentially height on areas of texture map, the larger the difference between the height and the black, the more the distance it will appear on the surface. For creating the height map, i'll use Photoshop to make it. The texture for generating  the height map is this brick texture, for example: 
 		 \begin{figure}[h]
 		 	\centering
 		 	\begin{minipage}{.3\textwidth}
@@ -477,7 +478,7 @@ From the code above, the hit function is to return the information where the lin
  \noindent \begin{minipage}{0.21\textwidth}
  \includegraphics[width=\linewidth]{intructions/contrastAdjusting.png}
  \end{minipage}
-  \\[0.01cm]
+  \\[0.2cm]
   If the height is in the range of [0,255], the lowest height 0 is colored in black, and the highest 255 is colored in white. As of now, there're still noises in the height map, i'll filter the noise by going to Filter -> Blur -> Gaussian Blur: \begin{minipage}{0.21\textwidth}
   	\includegraphics[width=\linewidth]{intructions/guassian_blur.png}
   \end{minipage}  Depends on each textures, but for this one, 3.5 pixels is enough to filter the noises, for not losing the detail like in the figure 16, so that i'll get better result when creating the normal map.  
@@ -524,8 +525,8 @@ In here, the partial derivatives are need for computing the normal: $\frac{\part
 		{
 			for (int x = 0; x < normalTexture.width; x++)
 			{
-				xHeight = (GetColor((source.GetPixel(x+1, y) - source.GetPixel(x - 1, y)))*strength-1)*0.5f;
-				yHeight = (GetColor((source.GetPixel(x, y + 1) - source.GetPixel(x, y - 1)))*strength-1)*0.5f;
+				xHeight = (GetColor((source.GetPixel(x+1, y) - source.GetPixel(x - 1, y)))-1)*0.5f;
+				yHeight = (GetColor((source.GetPixel(x, y + 1) - source.GetPixel(x, y - 1)))-1)*0.5f;
 				normalTexture.SetPixel(x, y, new Color(-xHeight, -yHeight, 1.0f, 1.0f));
 	
 			}
@@ -535,8 +536,150 @@ In here, the partial derivatives are need for computing the normal: $\frac{\part
 		return normalTexture;
 	}
 	\end{lstlisting}
- \\[0.01cm]
+ Where x is the width and y is the height of image. The reason i minus the derivative functions with 1 is because i'm trying to get the color value in the height map , and the normal value is calculate by this equation: $ Normal = (2.Color) - 1 $ so $ Color = \frac{Normal + 1}{2}$. And the SetPixel function is set by the negative derivative, so i should minus the normal with 1 instead of plus. With the normal map, the surface will look like in the picture below, as how the light shines on the surface.
  
+ \begin{figure}[h]
+ 	\centering
+ 	\begin{minipage}{.3\textwidth}
+ 		\centering
+ 		\includegraphics[width=0.5\linewidth]{intructions/Brick001_n.png}
+ 		\centering
+ 		\captionof{figure}{The normal map that i created}
+ 		\label{fig:test19}
+ 	\end{minipage}
+ 	\begin{minipage}{.33\textwidth}
+ 		\centering
+ 		\includegraphics[width=1\linewidth]{intructions/without_normalmap.png}
+ 		\centering
+ 		\captionof{figure}{Without normal map}
+ 		\label{fig:test20}
+ 	\end{minipage}
+ 	\begin{minipage}{.33\textwidth}
+ 		\centering
+ 		\includegraphics[width=1\linewidth]{intructions/with_normalmap.png}
+ 		\captionof{figure}{With normal map applied}
+ 		\label{fig:test21}
+ 	\end{minipage}
+ \end{figure} 
+
+\begin{itemize}
+	\item \bfseries Occlusion map	 	
+\end{itemize}
+The occlusion map will determine which area are inherently darkened to simulate shadow, anywhere is white will not receive darkening, anywhere that's black or gray will receive darkening. For this map, as i can't find a proper way, algorithm to actually generate a true occlusion map from just a 2d texture, so i decided to write a C\# script outside unity to make an occlusion map, because in unity, there's no System.Draw library for editing the texture.
+\newpage
+\begin{figure}[h]
+	\centering
+	\raisebox{-25mm}[0pt][0pt]{
+		\begin{minipage}{.4\textwidth}
+			\centering
+			\includegraphics[width=0.8\linewidth]{intructions/Brick001_n.png}
+			\centering
+			\captionof{figure}{The normal map}
+			\label{fig:test22}
+		\end{minipage}
+		\begin{minipage}{.4\textwidth}
+			\centering
+			\includegraphics[width=0.8\linewidth]{intructions/Brick001_occ.png}
+			\centering
+			\captionof{figure}{Occlusion map after i created using C\# script}
+			\label{fig:test23}
+		\end{minipage}
+	}
+\end{figure}
+\vspace{5.5cm}
+From 2 images above, the purple color, with RGB value of (0.5, 0.5, 1) as base color, with z direction being up as the blue channel. The reason the values in the textures are treated as having been halved, with 0.5 is because from the equation above i mentioned in above section, is divided by 2 when normalizing the height value. In the normal map texture, i found out that the bluey color and the deep purple one is actually the direction of the light shining on the surface of the texture, as the deep purple is behaved as opposite direction with the bluey one. When convert the texture into grey-scale image by getting red, green, blue color and divided by 3, the light blue area will turn into white color, the purple one will turn into dark-grey color, which behave almost like an occlusion map. To make sure that the surface(or the light grey area) will not too dark when applying occlusion map, i've lighten up the texture a bit by using ControlPaint.Light function just like in figure 23. 
+\begin{figure}[h]
+	\begin{minipage}{.4\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{intructions/without_occlusion.png}
+		\centering
+		\captionof{figure}{without occlusion}
+		\label{fig:test24}
+	\end{minipage}
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\includegraphics[width=0.9\linewidth]{intructions/with_occlusion.png}
+		\centering
+		\captionof{figure}{with occlusion being applied}
+		\label{fig:test25}
+	\end{minipage}
+ 
+\end{figure}
+It's quite hard to see the difference, but in the right side, at the bottom of the brick, it's darker than the left side as like there's a shadow there
+
+\paragraph{Lighting}
+Lights are essential part of every scene. In unity, while the mesh, textures define the shape, the look of an object, the lights will define the color, the mood of a 3D environment. Lights can be added into the scene just by go to {\bfseries GameObject -> Light} menu . In the menu, i can choose any form of light i want, once the light has been added into the scene, i can adjust the properties of the light to the way i want in the inspector, there are many different options within the Light Component. 
+\newpage
+\begin{figure}[h]
+	\centering
+	\raisebox{-25mm}[0pt][0pt]{
+		\begin{minipage}{.4\textwidth}
+			\centering
+			\includegraphics[width=0.8\linewidth]{intructions/choose_light.png}
+			\centering
+			\captionof{figure}{Light section}
+			\label{fig:test26}
+		\end{minipage}
+		\begin{minipage}{.45\textwidth}
+			\centering
+			\includegraphics[width=1.2\linewidth]{intructions/light_properties.png}
+			\centering
+			\captionof{figure}{Light properties}
+			\label{fig:test27}
+		\end{minipage}
+	}
+\end{figure}
+  \vspace{5.5cm}
+  Just by simply changing the color of a light, this can give a whole different mood to the scene
+  \begin{figure}[h]
+  	\begin{minipage}{1\textwidth}
+  		\centering
+  		\includegraphics[width=0.8\linewidth]{intructions/change_light_color.png}
+  		\centering
+  		\captionof{figure}{Changing light color}
+  		\label{fig:test28}
+  	\end{minipage}
+  \end{figure}
+ However, lighting in unity also includes realtime GI or global illumination, illumination means lighten up. GI is a general name for a group of methods and algorithms to add more realistic lighting into the scene, like how the like is bounce off surface onto other surfaces, instead of just limited to the light that hit the surface directly. 
+ \begin{figure}[h]
+ 	\begin{minipage}{1\textwidth}
+ 		\centering
+ 		\includegraphics[width=0.8\linewidth]{intructions/light_categlories.png}
+ 		\centering
+ 		\end{minipage}
+ 	\end{figure}
+ \\[0.05cm]
+ In computer graphic, this act of light bouncing around into two categories: direct illumination and indirect illumination. Direct lighting is when light gets send out from a light source, bounces and then reaches the eye (or the camera). Indirect lightning is when light bounces off multiple surfaces before hitting the eye, light will keep bouncing until it get fully absorbed. From the figure 26, all the type of light from Light section, like directional light, point light, etc.. they are all direct lights because they're all light source. When defining about indirect lighting, which mean every kind of light that's not directly point anywhere from the scenes, but by going to Window -> Rendering -> Lighting and look at environment lighting section, that's a great example of indirect lighting and so GI. And this's actually when GI basically comes to play, and GI will take care of direct lighting and indirect lighting that reflect from surfaces meaning it helps illuminating the scene more realistically. 
+ \begin{figure}[h]
+ 	
+ \end{figure}
+ Without GI enabled, i cannot see any light bounce at all, even the light source is directly pointing at the sphere. With GI enabled, the room is now become a bit brighter , with a bit of light bouncing to the ceiling. The way the GI works, is that when the light travel through the gap that seen from the image above, and then the photon that travel from the light source will carry the values of surface that hit to the next surface. And with that way, that's can explain the reason why i can see the green light on the ceiling, that's the light that inherit from the green cube and blue sphere. 
+  \begin{figure}[h]
+ 	\begin{minipage}{1\textwidth}
+ 		\centering
+ 		\includegraphics[width=0.8\linewidth]{intructions/How_light_works.png}
+ 		\centering
+ 	\end{minipage}
+ \end{figure}
+\\[0.05cm]
+ In unity, it provides two techniques for pre computing GI: Baked GI and pre-computed real-time GI. The Baked one is pre-computed and will save a ton of processing power, and this only work if all the objects, light-source in the scene are static, and real-time is extractly lighting calculated in real-time, per frame, means that the light, shadow position can be changed overtime when an object or the light source is moving. whenever to change the mode to baked or real-time, this depend on each object, light source. For the sunlight (the light that shines the whole scene), i set the mode to real-time because there're still some moving objects like the player, the NPC, etc... and for the light like the room light, i set it to baked mode. A combination of baked and realtime lights can help maintain performance
+ To enable GI mode, all i have to do is go to window -> rendering -> lighting setting, here's the properties that i set for making the light looks more realistic. The reason i have to enable both realtime and baked GI is because i have both baked and realtime light in the scene.
+ \newpage
+ \begin{figure}[h]
+ 	\raisebox{-50mm}[0pt][0pt]{
+ 	\begin{minipage}{1\textwidth}
+ 		\centering
+ 		\includegraphics[width=0.4\linewidth]{intructions/lighting_setting.png}
+ 		\captionof{figure}{Light setting}
+ 		\centering
+ 	\end{minipage}
+}
+ \end{figure}
+\vspace{125mm}
+ However, there're currently limitations of GI so both baked and pre-computed real-time GI in unity have the limitation that only objects in the scene that set to static can be included that means moving objects cannot bounced light onto other objects and vice versa, but still they can pick up bounced light from static object using light probes. Light Probes can be created by going to GameObject -> Light -> Light probe groups.
+ 
+ \paragraph{Shader}
+   	
   	\end{document}
 	
  	 
