@@ -22,6 +22,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{textcomp}
+\usepackage{movie15}
 \usetikzlibrary{arrows}
 
 
@@ -669,18 +670,379 @@ Lights are essential part of every scene. In unity, while the mesh, textures def
  	\raisebox{-50mm}[0pt][0pt]{
  	\begin{minipage}{1\textwidth}
  		\centering
- 		\includegraphics[width=0.4\linewidth]{intructions/lighting_setting.png}
+ 		\includegraphics[width=0.3\linewidth]{intructions/lighting_setting.png}
  		\captionof{figure}{Light setting}
  		\centering
  	\end{minipage}
 }
  \end{figure}
-\vspace{125mm}
+\vspace{100mm}
  However, there're currently limitations of GI so both baked and pre-computed real-time GI in unity have the limitation that only objects in the scene that set to static can be included that means moving objects cannot bounced light onto other objects and vice versa, but still they can pick up bounced light from static object using light probes. Light Probes can be created by going to GameObject -> Light -> Light probe groups.
  
- \paragraph{Shader}
-   	
-  	\end{document}
+ \paragraph{Shader} \vspace{-0.2cm}
+ \subparagraph{Shader overview} ~\\[0.1cm]
+ A shader is basically a type of program that's executed on the GPU, it can simulate how a particular surface responds to light. A shader will decide how the scene in a game will look. The diagram below respresents three different entities, show rendering workflow of unity, how it can use the shader. 
+ \begin{figure}[h]
+ 		\begin{minipage}{1\textwidth}
+ 			\centering
+ 			\includegraphics[width=0.45\linewidth]{intructions/Shader_workflow.png}
+ 			\centering
+ 		\end{minipage}
+ \end{figure}
+\\[0.01cm]
+   Model cannot be rendered without a material, and material are wrappers which contain a shader and values for its properties, different material can share the same shader. In unity, shaders are written in a custom environment called ShaderLab, which can be customize a lot about how the material will use a shader. Normally, Unity does come with a build-in shader called standard shader, which i was used in the whole section above for showing my demo. In a shader file, there're 2 main components: Properties and subshader. In the properties and subshader function, the parts where to define variables are the shaderlab, which is almost like the front-end development, they're all written in CG/HLSL high-level language. \\
+   When writing a shader, in the properties tab, i can define any value  so that i can change them in the unity's inspector later. In a subshader, it can have multiple pass command, each pass command is the combination of vertex, fragment function. In some situation like the object needs to have multiple textures or color, multiple pass command will be used here. A shader can also have multiples subshader, especially the game/app for multiple-platform, as the gpu will only find compatible shader, render to the object, because not all the devices function all the same , they also have different hardware configuration, a shader with multiple-shader will take account here. In general, the structure of a shader in unity will look like this: 
+   \begin{lstlisting}
+   Shader "ABC/XYZ" {
+   	Properties{
+   		//Difine variable here	
+   	}
+   	SubShader {
+   		{[Name and Tags] [RenderSetup]}
+   		Pass {
+   		{[Name and Tags] [RenderSetup]}
+		   CGPROGRAM
+		   ENDCG
+   		}
+  	 }
+   }
+   \end{lstlisting}
+  The properties of the shader are somehow equivalent to the public fields in a C\# script, they'll appear in the inspector of a material, can be editable. The subshader is the section that use to write the code, a shader script can have multiple sections, one after other, they contain the actual intructions for the GPU. When defining the properties , the material inspector will look like this: 
+   \begin{figure}[h]
+  	\begin{minipage}{1\textwidth}
+  		\centering
+  		\includegraphics[width=0.2\linewidth]{intructions/Inspector_material.png}
+  		\centering
+  	\end{minipage}
+  \end{figure}
+But, this is not enough to use the properties. This section is only use to give access to hidden variables within subshader section. They still need to define in the subshader section, which is the actual body. 
+\begin{lstlisting}
+SubShader
+{
+// Code of the shader
+// ...
+sampler2D _MyTexture;
+sampler2D _MyNormalMap;
+
+int _something;
+float _something;
+
+// Code of the shader
+// surface shader code or vertex and fragment shader
+}
+\end{lstlisting}
+What i mentioned above in the code example above, unity supports two different types of shaders: surface shader, fragment and surface shader.
+\begin{itemize}
+	\item[--] The surface shader is used whenever the material needs to be simulated to be affected by lights in a realistic way. Surface shaders hide the calculations of how light is reflected and allows to specify “intuitive” properties such as the albedo, the normals, the reflectivity and so on in a function called surf. These values are then plugged into a lighting model which will output the final RGB values for each pixel. The surf function contains both the vertex and fragment, the pass command cannot be used with surf function.
+\end{itemize}
+ 	The Cg code of a surface shader will looks like this: 
+ 	\begin{lstlisting}
+ 	#pragma surface surf Lambert //This is Lambertian lighting model
+ 	sampler2D _MainTex; // The input texture
+ 	
+ 	struct Input {
+ 	float2 uv_MainTex;
+ 	};
+ 	
+ 	void surf (Input IN, inout SurfaceOutput o) {
+ 	o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+ 	}
+ 	\end{lstlisting}
+ 	
+ \begin{itemize}
+ 	\item[--] Vertex and fragment shader work close to the way the GPU renders triangles, and have no built-in concept of how light should behave, it's a low-level shader than the surface shader. A vertex and fragment shader's structure in Unity will look like this:
+ 		\begin{lstlisting}
+ 	SubShader
+ 	{
+ 		Tags { "RenderType"="Opaque" }
+ 		LOD 100
+ 		
+ 		Pass
+ 		{
+ 		CGPROGRAM
+ 		#pragma vertex vert
+ 		#pragma fragment frag
+ 		
+ 		#include "UnityCG.cginc"
+ 		
+ 		struct appdata
+ 			{
+ 			};
+ 		
+ 		struct v2f
+ 			{
+ 			};
+ 			
+ 		sampler2D _MainTex;
+ 		float4 _MainTex_ST;
+ 		
+ 		v2f vert (appdata v)
+ 			{
+ 			}
+ 		
+ 		fixed4 frag (v2f i) : SV_Target
+ 			{
+ 			}
+ 		ENDCG
+ 		}
+ 	}
+ \end{lstlisting}
+ \end{itemize}
+The geometry of the model will past through a function call vert which can alter its vertices. And then, individual triangles of the geometry are passed through another function called frag which will decided the final RGB color for every pixel. This shader is usually use for 2D effects, post processing and special 3D effect which are too hard to be expressed as surface shader. And from the image below, here's a shader flow for vertex and fragment shader in unity works. Object data is actually the textures of a model that should be prepared before.
+   \begin{figure}[h]
+	\begin{minipage}{1\textwidth}
+		\centering
+		\includegraphics[width=0.55\linewidth]{intructions/vertex_fragment_flow.png}
+		\captionof{figure}{Vertex and fragment Shader flow}
+		\label{fig:test29}
+		\centering
+	\end{minipage}
+\end{figure}
+From Unity 2018 version or later, it does comes with shadergraph to be able to make a shader without actually coding but the shadergraph is still in beta stage , have lots of bug so i decided to make a custom shader manually. As i don't have a lot of time in this project, so i'll only write a very basic one. 
+ \subparagraph{Apply shader on 3D mesh} ~\\[-0.8cm]
+ \begin{itemize}
+ 	\item \bfseries Fresnel effect
+ \end{itemize}
+   This is the effect that many people use in a game. With fresnel, i can darken, lighten the outline of an object. For this shader, i'll use on my character, with surface shader because i need my character's surface to react with. \\[0.01cm] According to Unity's document, the fresnel's equation is calculated as: \\ {\bfseries Out = pow((1.0 - saturate(dot(normalize(Normal), normalize(ViewDir)))), Power) }, where the saturate function is to clamp the variable to be between 0 and 1 \\
+   The normal surface is defined by normal vectors like this picture: \includegraphics[width=0.3\linewidth]{Surface_normal.png}
+   And for the view direction, in order to get this view, all i have to do is defining float3 viewDir from the struct Input in the surface shader, where the float3 is a variable with 3 dimension, the same as float2 and float. 
+   
+   After writing a fresnel shader base on the following equation, the material will looks like this:
+    \begin{figure}[h]
+    	\raisebox{-21mm}[0pt][0pt]{
+    	\begin{minipage}{.4\textwidth}
+    		\centering
+    		\includegraphics[width=1\linewidth]{intructions/fresnel_effect.png}
+    		\centering
+    	\end{minipage}
+    }
+    \end{figure}
+\newpage
+   \begin{lstlisting}
+   struct Input
+   {
+   float4 color : COLOR;
+   float2 uv_MainTex;
+   float2 uv_BumpMap;
+   float3 worldNormal;
+   float3 viewDir;
+   INTERNAL_DATA
+   };   
+   void surf(Input IN, inout SurfaceOutput o)
+   {
+   // Albedo comes from a texture tinted by color
+   fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+   o.Albedo = c.rgb * _LightColor0.rgb;
+   o.Alpha = c.a * _Color.a;
+   o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+   float fresnel = dot(normalize(o.Normal), normalize(IN.viewDir)); //The reason i use o.Normal here instead of IN.worldNormal is because i have applied the normal texture in the object.
+   fresnel = pow(saturate(1 - fresnel), _FresnelPower);
+   o.Emission = fresnel * _Emission;
+   }
+   ENDCG							  
+   } 
+   FallBack "Diffuse"
+   }
+   \end{lstlisting}
+  With this , i can make the fresnel effect stronger or weaker just by adjusting the exponent of it, rendering nice effect for my character. For me, the values from 0 to 10 is enough, fits in this shader.
+   \begin{itemize}
+  	\item \bfseries Glass shader
+  \end{itemize}  
+  	The fresnel effect above can also be used to create a glass shader. First of all, i'm going to define alpha:fade which is going to make the object transparent. Next, same as before, in order to get the diffuse reflective, i need to take the dot product between the surface normal and the view direction by using dot(normalize(IN.world), normalize(IN.viewDir)). But this will give the reflection in the whole surface, which will not look realistic, form the right shape, so i put 1 - saturate((dot(normalize(IN.worldNormal), normalize(IN.viewDir)))) in order to make the reflection only happen from the edges: 
+  	\begin{figure}[h]
+  		\begin{minipage}{.4\textwidth}
+  			\centering
+  			\includegraphics[width=0.7\linewidth]{intructions/whole_surface.png}
+  			\centering
+  			\captionof{figure}{whole surfaces}
+  			\label{fig:test30}
+  		\end{minipage}
+  		\begin{minipage}{.45\textwidth}
+  			\centering
+  			\includegraphics[width=0.6\linewidth]{intructions/from_edge.png}
+  			\centering
+  			\captionof{figure}{From edge}
+  			\label{fig:test31}
+  		\end{minipage}
+  		
+  	\end{figure}
+     \begin{lstlisting}
+     void surf (Input IN, inout SurfaceOutputStandard o)
+     {
+	     // Albedo comes from a texture tinted by color
+	     fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+	     o.Albedo = c.rgb * _ColorMult;
+	     // Metallic and smoothness come from slider variables
+	     o.Metallic = _Metallic;
+	     o.Smoothness = _Glossiness;
+	     //Getting the reflection
+	     float border = 1- saturate((dot(normalize(IN.worldNormal), normalize(IN.viewDir))));
+	     float alpha = pow(border, _Reflective);
+	     o.Alpha = ((c.a)  * alpha);
+     }
+      \end{lstlisting}
+      But, this will only get the reflection from the empty space, not in the scene itself, so finally, to get the reflection from all objects around its, i need to add reflection probes in order to make the glass looks more realistic.
+      \begin{figure}[h]
+      	\begin{minipage}{1\textwidth}
+      		\centering
+      		\includegraphics[width=0.4\linewidth]{intructions/reflection_probe.png}
+      		\centering
+      		\captionof{figure}{with reflection probe}
+      		\label{fig:test32}
+      	\end{minipage}      	
+      \end{figure}
+  \begin{itemize}
+ 	\item \bfseries Object always visible 
+  \end{itemize}
+This shader will make an object always be see-through, be rendered whenever it's behind any object or not, so in this section, i'm going to write a fragment/vertex shader instead of surface shader. This shader's going to have 2 passes, the first pass is for rendering the shape of an object if it's behind something, the second one is for rendering object texture. Because the pass order in the shader does matter so i will make the color to render first. 
+
+\begin{lstlisting}
+Pass
+{
+CGPROGRAM
+#pragma vertex vert
+#pragma fragment frag
+
+#include "UnityCG.cginc"
+struct appdata
+{
+	float4 vertex : POSITION;
+	};
+	struct v2f
+	{
+		float4 vertex : SV_POSITION;
+	};
+	
+	sampler2D _MainTex;
+	float4 _Color;
+	
+	v2f vert(appdata v)
+	{
+		v2f o;
+		o.vertex = UnityObjectToClipPos(v.vertex);
+		return o;
+	}
+	
+	fixed4 frag(v2f i) : SV_Target
+	{
+		return _Color;
+	}
+	ENDCG
+}	
+\end{lstlisting}
+The first pass will return the color depend on which color i choose \includegraphics[width=0.04\linewidth]{intructions/color_alwaysvisible.png}, but the object will not be visible if there's an object in front of it. To do that, i just simply add Ztest always within the pass command, this function will always render the pixel of this object no matter how matter which pixel is closer or further than the camera. And as the result, the yellow color that i choose still be rendered even it's behind the wall:  \includegraphics[width=0.3\linewidth]{intructions/Behind_overlay.png}
+For second pass, i will put the texture into my object:
+\begin{lstlisting}
+	struct appdata
+	{
+		float4 vertex : POSITION;
+		float2 uv : TEXCOORD0;
+	};
+	
+	struct v2f
+	{
+		float2 uv : TEXCOORD0;
+		float4 vertex : SV_POSITION;
+	
+	};
+       v2f vert (appdata v)
+      {
+	      v2f o;
+	      o.vertex = UnityObjectToClipPos(v.vertex);
+	      o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+	      return o;
+      }
+      
+      fixed4 frag (v2f i) : SV_Target
+      {
+	      // sample the texture
+	      fixed4 col = tex2D(_MainTex, i.uv);
+	      return col;
+      }
+      ENDCG
+\end{lstlisting}
+\begin{figure}[h]
+	\begin{minipage}{.4\textwidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{intructions/key_with.png}
+		\centering
+	\end{minipage}
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\includegraphics[width=0.6\linewidth]{intructions/key_with2.png}
+		\centering
+	\end{minipage}
+\end{figure}
+At this moment, the object doesn't react to the light yet, so , i will combine both the surface and the vertex/fragment shader in order to make the lighting work
+
+\begin{lstlisting}
+CGPROGRAM
+// Physically based Standard lighting model, and enable shadows on all light types
+#pragma surface surf BlinnPhong fullforwardshadows
+#include "UnityCG.cginc"
+// Use shader model 3.0 target, to get nicer looking lighting
+#pragma target 3.0
+sampler2D _MainTex;
+struct Input
+{
+	float4 color : COLOR;
+	float2 uv_MainTex;
+};
+void surf(Input IN, inout SurfaceOutput o) {
+	o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb;
+}
+ENDCG
+\end{lstlisting}
+\newpage
+~
+	 \begin{figure}[h]
+	
+			\begin{minipage}{1\textwidth}
+				\centering
+				\includegraphics[width=0.3\linewidth]{intructions/light_react.png}
+				\captionof{figure}{Light react}
+				\centering
+			\end{minipage}
+	\end{figure}
+\subparagraph{Post processing} ~\\
+Post processing is a shader that instead of applying to an object, it will applied directly into the camera, the effect will be being rendered to the whole screen, within the window box. Just like other shaders that applied on an object, the structure is the same, but post processing doesn't use surface shader as the camera only render 2d images, show them to the computer monitor.
+\begin{itemize}
+	\item \bfseries Dizzy effect 
+\end{itemize} 
+ This effect will make the entire scene looks like it's swinging. But first off all, i will need to implement graphics.blit in C\# code to render the shader into the screen. In the shader file, the fragment function is where it draw all the color into the screen. The window which i'm able to see the scene is the clip point, the clip point is defined by the uv coordinate, range from (0,1), so in order to achieve the effect on screen, i'll need to alter the u, v coordinate. To do that,i just add a simple mathematic equation with i.uv : 
+ \begin{lstlisting}
+  struct appdata
+ {
+ float4 vertex : POSITION;
+ float2 uv : TEXCOORD0;
+ };
+ struct v2f
+ {
+ float2 uv : TEXCOORD0;
+ float4 vertex : SV_POSITION;
+ };
+ fixed4 frag (v2f i) : SV_Target
+ {
+ fixed4 col = tex2D(_MainTex, i.uv + float2(0, sin (i.vertex.x/80 * _Time[1]/20)/10 ));
+ return col;
+ }
+ \end{lstlisting} 
+ This equation will make the scene looks like it's be curved with the sin wave, on the x position , where i.vertex is the output position to the world space. As the result, the scene will looks like this: 
+ \newpage
+ ~
+ \begin{figure}[h] 
+ 	\begin{minipage}{1\textwidth}
+ 		\centering
+ 		\includegraphics[width=0.7\linewidth]{intructions/dizzy.png}
+ 		\centering
+ 		\captionof{figure}{Dizzy effect}
+ 		\label{fig:test33}
+ 	\end{minipage}      	
+ \end{figure}
+\paragraph{Result and discussion}
+\subparagraph{RayCasting} ~\\
+	The distance output of the raycasting may not be true if i didn't specify a layermask. 
+ \end{document}
 	
  	 
  	 	
