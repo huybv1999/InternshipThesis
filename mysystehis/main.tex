@@ -23,6 +23,8 @@
 \usepackage{lmodern}
 \usepackage{textcomp}
 \usepackage{movie15}
+\usepackage{array}
+\usepackage[en-US]{datetime2}
 \usetikzlibrary{arrows}
 
 
@@ -66,7 +68,8 @@
   %	DATE SECTION
   
   \vspace{2.5 cm}
-  \textbf{\large Hanoi, \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+  \textbf{\large Hanoi, \DTMlangsetup{showdayofmonth=false}
+  	\today}\\[3cm] % Date, change the \today to a set date if you want to be precise
   
   
   \vfill % Fill the rest of the page with whitespace
@@ -82,17 +85,27 @@
 \newpage
 \section*{\color{cyan}\Large Acknowledgements}
 
-First of all, i would like to thanks Dr.Nguyen Hoang Ha for giving me 3 months for using the Unity Engine to develop the Virtual World. Also, thank you for supporting me during this internship. 
+First of all, i would like to thanks Dr.Nguyen Hoang Ha for giving me 3 months for using the Unity Engine to develop the Virtual World. Also, thank you for supporting me during this internship, my thesis could not be completed without your instructions. 
 
-I also thanks for the USTH ICT Lab for giving me a opportunities to work in a places like in a professional company. 
+I also thanks for the USTH ICT Lab for giving me a opportunities to work in a places like in a professional company. My technical skills and experience also gain throughout this internship thanks to the ICT Lab
 
-Finally, I'd like to give special thanks to the guys, girls who made free 3d models, characters in the Unity assets store, so that i can download, use them for my project.
+Finally, many thanks to the guys, girls who made free 3d models, characters in the Unity assets store, so that i can download, use them for my project. 
 \newpage
  
  \newpage
  \appendix
   \renewcommand{\thesubsection}{\Alph{section}}
  \renewcommand{\thesubsection}{\arabic{subsection}}
+\section{\Large List of Abbreviations} 
+\begin{itemize}
+	\item GPU: Graphic processing unit (in graphic card)
+	\item NPC: Non-Playable character
+	\item FPS: First person
+	\item TPS: Third person
+	\item GI: Global illumination	
+	\item RGB: Red, Green and Blue
+\end{itemize}
+\newpage
 \section{\Large Introduction} 
 Nowsadays, the technology is getting better and better, so the human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-based environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphic, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there's still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... \\[0.35cm] To create a virtual world, there're some types of engine that allow you to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] From one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
  In my opinion, first of all, it has tons of online tutorials to be found, the document with clean format, so a good step for beginners. With it's very intuitive design, C\# language make it easier to use or learn, like you can call other script within a script. Also, with great community, when you have a problem, they'll have you everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, the unity has asset store with lots of free assets for everyone to use, while the other ones only have few free assets. \\[0.35cm]In this work, i'll focus on creating the virtual world using unity engine, in particular, it's an RPG game, where you as a player can walk around, interact with other NPC model in the world, or attack some enemy that get in your way. 
@@ -165,7 +178,7 @@ Nowsadays, the technology is getting better and better, so the human life are be
  		  	\end{minipage}
  		  \end{figure}
  	  \\[0.15cm]
- 	  From the Inspector section, there're 4 sections: Paint texture, paint trees, paint details. Each of these sections has painting tool with 20 brush presets, resizable brush size, opacity. For the textures, you can use any texture you want for the terrain, for example i use this texture from this website: \href{https://www.textures.com/download/grass0153/48704}{https://www.textures.com/download/grass0153/48704}. The same applied for painting details, but for painting trees, the material for this one is 3D model, however it can be found in the Standard Assets which comes with Unity when installed. 
+ 	  From the Inspector section, there're 4 sections: Paint texture, paint trees, paint details. Each of these sections has painting tool with 20 brush presets, resizable brush size, opacity. For the textures, you can use any texture you want for the terrain, as a case in point, i use this texture from this website: \href{https://www.textures.com/download/grass0153/48704}{https://www.textures.com/download/grass0153/48704}. The same applied for painting details, but for painting trees, the material for this one is 3D model, however it can be found in the Standard Assets which comes with Unity when installed. 
  	   \begin{figure}[h]
  	   	 \centering
  	   	 \begin{minipage}{1\textwidth}
@@ -300,7 +313,7 @@ Nowsadays, the technology is getting better and better, so the human life are be
   	\\[0.05cm]
  	 The camera is specified in term of three parameters: {\bfseries EYE, AT}, and {\bfseries UP}, as show in the left one. EYE is the camera position , AT is the reference point the camera is pointing at, and UP usually is set to the y-axis of the world space. For example, in the right one, AT is set at the position a little bit above the character for not covering the center of the screen which i'm going to explain why later.
  	 After that, the camera needed to be rotated around with a mouse because i'd like to see what is happening around the character. And the same applied to the character controller script, but this time, i use Input.GetAxisRaw function instead of GetAxis is because i don't want the rotating to be smooth immiately as it can cause a short delay as GetAxisRaw will only return 0,-1 or 1 while GetAxis change gradually from 0 to 1 or 0 to -1.  
- 	 Moreover, the function Lerp is used here instead of SmoothDamp due to the fact that the smoothdamp function adds the curve which can cause delay, for example, when i stop moving my mouse, the camera still moving, while Lerp only behaves linear. As now, there's still one more problem, on the mouseY rotation, the camera can be rotated 360 degree which is not i wanted, so i used the function Mathf.Clamp to limit the rotation of the mouseY axis, the minimum, maximum here is -40, 85 degree for the third person camera controller. In the end, to finish my TPS camera controller, i've modified the charactercontroller script a bit by adding cameraT.eulerAngles.y in the targetRotation where cameraT is the MainCamera(the TPS camera), to make sure that the camera will following the player correctly.
+ 	 Moreover, the function Lerp is used here instead of SmoothDamp due to the fact that the smoothdamp function adds the curve which can cause delay, for instance, when i stop moving my mouse, the camera still moving, while Lerp only behaves linear. As now, there's still one more problem, on the mouseY rotation, the camera can be rotated 360 degree which is not i wanted, so i used the function Mathf.Clamp to limit the rotation of the mouseY axis, the minimum, maximum here is -40, 85 degree for the third person camera controller. In the end, to finish my TPS camera controller, i've modified the charactercontroller script a bit by adding cameraT.eulerAngles.y in the targetRotation where cameraT is the MainCamera(the TPS camera), to make sure that the camera will following the player correctly.
  	 
  	  \begin{itemize}
 	 	\item \bfseries Camera Collision and Occlusion Detection  	 	
@@ -1039,9 +1052,100 @@ Post processing is a shader that instead of applying to an object, it will appli
  		\label{fig:test33}
  	\end{minipage}      	
  \end{figure}
-\paragraph{Result and discussion}
-\subparagraph{RayCasting} ~\\
-	The distance output of the raycasting may not be true if i didn't specify a layermask. 
+\begin{itemize}
+	\item \bfseries Post-processing stack 
+\end{itemize} 
+\section{Result and discussion}
+\subsection{RayCasting} 
+	The distance output of the raycasting may be confused with another object if i didn't specify a layermask for a some specific object. This may make my character sometimes mistake an object with another one. For example, if i want to take the sword which lied on the box (figure 36), then i should make my character go over there to take the word, the distance between the sword and my character should be less than 3. But there's one thing happen, even if i come close to a random terrain or object with the distance also less than 3, when i press E, the sword automically pop up.
+	\begin{figure}[h]
+		\begin{minipage}{.5\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{intructions/Take_weapon1.png}
+			\captionof{figure}{Weapon lied on the box}
+			\label{fig:test34}
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{intructions/Take_weapon2.png}
+			\captionof{figure}{Bug, the sword appear right away when get close to ramdom object}
+			\label{fig:test35}
+			\centering
+		\end{minipage}
+	\end{figure}
+	And this bug can be fix by defining int layermask = 1 << "A specific layer to hit" , this will only make a raycast hit a specific layer. As the result, there's no longer a bug here when i press E button when comes close to a random object with distance less than 3. From 2 pictures below, i have defined the sword as "Weapon", assign it to layer 8, then define the layermask in C\# code as 1 << 8. In unity, the way how it read the layermask it that it read the binary number instead of a normal one, with the maximum digit numbers of 32, corresponding to the maximum number of the layers we can create. 
+	 \begin{figure}[h]
+	 	\begin{minipage}{.5\textwidth}
+	 		\centering
+	 		\includegraphics[width=1\linewidth]{intructions/it_works1.png}
+	 		\captionof{figure}{Weapon lied on the box}
+	 		\label{fig:test36}
+	 	\end{minipage}
+ 		\begin{minipage}{.5\textwidth}
+ 		\centering
+ 		\includegraphics[width=1\linewidth]{intructions/it_works2.png}
+ 		\captionof{figure}{Weapon lied on the box}
+ 		\label{fig:test37}
+ 		\end{minipage}
+	 \end{figure}
+	 However, this raycast function does have a limit. It only works with objects that have collider with it. In some situations like when my character's position is higher than the target object, the ray cannot reach the target, therefore it also doesn't work.
+	
+\subsection{Bump map} 	
+	 One of the main texture i used here for bump mapping technique is the normal map. As it's heavily depended on the height map quality that i created from photoshop, also on the quality of the original texture, the output of the normal map might not be absolutely correct, have good looking result. From that, the lights that shine on the surface may not be bounce to the way it should be, because i only generate a normal map from a 2d texture, don't interfere with any 3D mesh. In some situations, the height map's value need to be inverted in order to get the correct light bounce position, like in the pictures below:
+	 
+	 \begin{figure}[h]
+	 	\begin{minipage}{.3\textwidth}
+	 		\centering
+	 		\includegraphics[width=0.6\linewidth]{intructions/Brick002.png}
+	 		\captionof{figure}{Source texture}
+	 		\label{fig:test38}
+	 	\end{minipage}
+	 	\begin{minipage}{.3\textwidth}
+	 		\centering
+	 		\includegraphics[width=0.6\linewidth]{intructions/Brick002_height_invert.png}
+	 		\captionof{figure}{Wrong heightmap}
+	 		\label{fig:test39}
+	 	\end{minipage}
+ 		\begin{minipage}{.3\textwidth}
+ 			\centering
+ 			\includegraphics[width=0.6\linewidth]{intructions/Brick002_height.png}
+ 			\captionof{figure}{Correct heightmap}
+ 			\label{fig:test40}
+ 		\end{minipage}
+	 \end{figure}
+	
+ 	However, we can temporary overcome this problem by increasing or decreasing the strength of normal map by multiplying the input color value.
+ 	\newpage ~\\
+ 	\begin{table}
+ 		\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+ 		\centering
+ 		\begin{tabular}{|M{2.5cm}|M{4cm}|M{4cm}|}
+ 			\hline
+ 			Strength & Normal map figure & Surface looking\\ \hline
+ 			0.5 & \includegraphics[width=40mm, height=20mm]{intructions/Sample003_n_0point5.png} & \includegraphics[width=40mm, height=20mm]{intructions/05_looks.png} \\ \hline
+ 			1 & \includegraphics[width=40mm, height=20mm]{intructions/Sample003_n_1.png} & \includegraphics[width=40mm, height=20mm]{intructions/1_looks.png} \\ \hline
+ 			1.5 & \includegraphics[width=40mm, height=20mm]{intructions/Sample003_n_1point5.png} & \includegraphics[width=40mm, height=20mm]{intructions/15_looks.png} \\ \hline
+ 			2 & \includegraphics[width=40mm, height=20mm]{intructions/Sample003_n_2.png} & \includegraphics[width=40mm, height=20mm]{intructions/2_looks.png}\\ \hline
+ 		\end{tabular}
+ 		\newline\newline
+ 		\caption{Normal map strength scale}\label{tab1}
+ 	\end{table}
+ 	It depends on each texture, for me, strength range from 1 to 1.5 for this texture provide the most realistic looking surface, with light bouncing directions. Although this bump mapping technique is relatively an old school technique, but it's still one of the best methods for create realistic graphic. As the height map contain height information, which can fake the depth of the surface, and the normal map can fake the lighting on surface, provide the angle information which direction the light should be bent. 
+ 	 
+ 	\section{Conclusion}  
+ 	The main aim of this internship is to help people satisfy the entertaining needs after working hard all days at school or company, developing a virtual world for people who are celibate, have no one nearby to chat, help contributing the entertainment industry. \\ The core methods for developing a 3D virtual world in unity are RayCasting, bump mapping and Shading. For some stuffs like collider, etc... i don't mention here as unity already has simple built-in tools, properties which can be easily done just by drag and drop or by adding a component. With raycasting method, the player can easily communicating with other NPCs, object in the scene just by pressing a button. As i mentioned above, bump mapping technique will provide a realistic looking graphic, for better experience while playing the game. Although the Unity already has the built-in standard shader, if we want a fancy effect for the object or directly on the screen, this standard shader doesn't have any properties to make one like that, nor behave as post-processing shader, we have to write our own shader like vertex/fragment shader or surface shader. The surface shader is the easiest shader to write as we only have to write surf function, which already contain vertex, fragment information. \\ And finally, thanks to this internship, i have had a good opportunity to learn more about how the unity engines works, understand more about the process of developing a 3D virtual world, and also know more about computer graphics.   
+	\section{Future Development}  
+	\newpage
+	\section{Reference}
+	\begin{itemize}
+		\item \href{https://docs.unity3d.com/Manual/}{\color{cyan} https://docs.unity3d.com/Manual/}
+		\item "3D graphics for game programming" by Junhyung Jan Korea University, Seoul, South Korea
+		\item \href{https://en.wikibooks.org/wiki/Cg\_Programming/Unity/}{\color{cyan} https://en.wikibooks.org/wiki/Cg\_Programming/Unity}
+		\item I'd like to thanks to these youtubers, credit them for making mini tutorials, proving me some textures to help me during this internship: 
+		\item[--] Brackeys: \href{https://www.youtube.com/user/Brackeys}{\color{cyan} https://www.youtube.com/user/Brackeys}
+		\item[--] Official Unity channel: \href{https://www.youtube.com/user/Unity3D}{\color{cyan} https://www.youtube.com/user/Unity3D}
+		\item[--] Jimmy Vegas: \href{https://www.youtube.com/channel/UCRMXHQ2rJ9\_0CHS7mhL7erg}{\color{cyan}https://www.youtube.com/channel/UCRMXHQ2rJ9\_0CHS7mhL7erg}
+	\end{itemize}
  \end{document}
 	
  	 
