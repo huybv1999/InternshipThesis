@@ -26,7 +26,13 @@
 \usepackage{array}
 \usepackage[en-US]{datetime2}
 \usetikzlibrary{arrows}
+\usepackage{etoolbox}
 
+\patchcmd{\titlepage}
+{\thispagestyle{empty}}
+{\thispagestyle{plain}}
+{}
+{}
 
 
 \renewcommand{\baselinestretch}{1.5} 
@@ -34,7 +40,7 @@
 
 
 \begin{titlepage}
-
+  \addtocounter{page}{2}
   \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 
   \center % Center everything on the page
@@ -71,32 +77,31 @@
   \textbf{\large Hanoi, \DTMlangsetup{showdayofmonth=false}
   	\today}\\[3cm] % Date, change the \today to a set date if you want to be precise
   
-  
+  \setcounter{page}{1}
   \vfill % Fill the rest of the page with whitespace
-  
 \end{titlepage}
 \newpage
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
 \tableofcontents
-
+\setcounter{page}{2}
 \newpage
 
 \newpage
 \section*{\color{cyan}\Large Acknowledgements}
 
-First of all, i would like to thanks Dr.Nguyen Hoang Ha for giving me 3 months for using the Unity Engine to develop the Virtual World. Also, thank you for supporting me during this internship, my thesis could not be completed without your instructions. 
+First of all, i would like to thanks Dr.Nguyen Hoang Ha for giving me 3 months for using the Unity Engine to develop the Virtual World. Also, thanks for supporting me during this internship, my thesis could not be completed without his instructions. 
 
-I also thanks for the USTH ICT Lab for giving me a opportunities to work in a places like in a professional company. My technical skills and experience also gain throughout this internship thanks to the ICT Lab
+I also thanks for the USTH ICT Lab for giving me a opportunities to work in a places like in a professional company. My technical skills and experience also gain throughout this internship thanks to the ICT Lab.
 
-Finally, many thanks to the guys, girls who made free 3d models, characters in the Unity assets store, so that i can download, use them for my project. 
+Finally, I would also extend my thanks to my older brother and my father, two of my family members for their enthusiastic support. Also, many thanks to the guys, girls who made free 3d models, characters in the Unity assets store, so that i can download, use them for my project. 
 \newpage
  
  \newpage
  \appendix
   \renewcommand{\thesubsection}{\Alph{section}}
  \renewcommand{\thesubsection}{\arabic{subsection}}
-\section{\Large List of Abbreviations} 
+\section*{\Large List of Abbreviations} 
 \begin{itemize}
 	\item GPU: Graphic processing unit (in graphic card)
 	\item NPC: Non-Playable character
@@ -106,8 +111,13 @@ Finally, many thanks to the guys, girls who made free 3d models, characters in t
 	\item RGB: Red, Green and Blue
 \end{itemize}
 \newpage
+\section{\Large Abstraction}
+ In computer graphics (CG), it has four major disciplines: computer animation, image processing, visualization, and virtual reality. Virtual World has all 4 convergence factors above, show how the latest developments in virtual environments, computer animation. With the advancement in two-dimensional and three-dimensional graphics rendering technologies, in this work, graphical models called avatars, objects are used here for real-time communication, actions, also with real-world rules, as they have become the hallmark of virtual worlds. Today's avatars	are all in three-dimension, with interactive icon that only exist in virtual worlds. \\
+ Keyword: CG, mesh, texture, color, pixel, Bump Mapping, vertex, fragment, shader, vector, transform,GI, light.
+ 
+\newpage
 \section{\Large Introduction} 
-Nowadays, the technology is getting better and better, so human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-based environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphics, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there's still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... \\[0.35cm] To create a virtual world, there're some types of engine that allow you to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] From one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
+Nowadays, technology is getting better and better, so human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-based environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphics, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there's still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... . There're 2 types of virtual worlds: Entertainment-based and social Interaction-Based. For entertainment-based, users usually interact with the world through their avatars, virtual worlds represents the majority of virtual worlds in existence today. For social interaction-based, it focuses on user interaction, education and training through simulated worlds. In this internship, I'll mainly focus on entertainment-based virtual world as it's closer to real world we're living,bring a pleasant, especially with 3D environment. \\[0.35cm] To create a virtual world, there're some types of engine that allow you to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] From one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
  In my opinion, first of all, it has tons of online tutorials to be found, the document with clean format, so a good step for beginners. With it's very intuitive design, C\# language make it easier to use or learn, like you can call other script within a script. Also, with great community, when you have a problem, they'll have you everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, the unity has asset store with lots of free assets for everyone to use, while the other ones only have few free assets. \\[0.35cm]In this work, i'll focus on creating the virtual world using unity engine, in particular, it's an RPG game, where you as a player can walk around, interact with other NPC model in the world, or attack some enemy that get in your way. 
   
 
@@ -178,7 +188,7 @@ Nowadays, the technology is getting better and better, so human life are becomin
  		  	\end{minipage}
  		  \end{figure}
  	  \\[0.15cm]
- 	  From the Inspector section, there're 4 sections: Paint texture, paint trees, paint details. Each of these sections has painting tool with 20 brush presets, resizable brush size, opacity. For the textures, you can use any texture you want for the terrain, as a case in point, i use this texture from this website: \href{https://www.textures.com/download/grass0153/48704}{https://www.textures.com/download/grass0153/48704}. The same applied for painting details, but for painting trees, the material for this one is 3D model, however it can be found in the Standard Assets which comes with Unity when installed. 
+ 	  From the Inspector section, there're 4 sections: Paint texture, paint trees, paint details. Each of these sections has painting tool with 20 brush presets, resizable brush size, opacity. For the textures, we can use any texture we want for the terrain, as a case in point, i use this texture from this website: \href{https://www.textures.com/download/grass0153/48704}{https://www.textures.com/download/grass0153/48704}. The same applied for painting details, but for painting trees, the material for this one is 3D model, however it can be found in the Standard Assets which comes with Unity when installed. 
  	   \begin{figure}[h]
  	   	 \centering
  	   	 \begin{minipage}{1\textwidth}
@@ -204,7 +214,7 @@ Nowadays, the technology is getting better and better, so human life are becomin
  	 \end{figure}
  	  
  	 Initially, the player will not move without any scripts attached to it, so i write a simple C\# script to control the player using visual studio and then attach the script to the player. Although there's a character controller prefab in the Unity's standard asset, which can be used, controlled instantly without doing anything. In this project, i'll not use character controller prefab, so that i can easily customize my character controller script later. \\[0.25cm] By default, when initializing a unity project, there's already a camera called "Main camera", which is what the user can see from the game view in the hierarchy. This camera will not follow my character as i move, but i'll explain how to make the camera follow my character later.  
- 	 \\[0.25cm] From now, i'm going to explain how can i implement character controller to move my character. Firstly, i have to find the input by go to Edit -> Project Settings -> Input. In the input section, as you can see, the Unity already implement 2 inputs named : "Horizontal" , "Vertical", along with Negative Button and Positive Button, and i can also add my own custom input in project setting. This is where i can move my character left and right, forward and backward. After finding the input, i can get the input by using: 
+ 	 \\[0.25cm] From now, i'm going to explain how can i implement character controller to move my character. Firstly, i have to find the input by go to Edit -> Project Settings -> Input. In the input section, the unity already implement 2 inputs named : "Horizontal" , "Vertical", along with Negative Button and Positive Button, and i can also add my own custom input in project setting. This is where i can move my character left and right, forward and backward. After finding the input, i can get the input by using: 
  	 \lstdefinestyle{customc}{
  	 	belowcaptionskip=1\baselineskip,
  	 	breaklines=true,
@@ -449,9 +459,9 @@ From the code above, the hit function is to return the information where the lin
  		\end{figure}
  	\\[0.05cm]
  	This is because i've declared a float variable , when hit.distance bigger than that variable, the text will not appear until hit.distance is smaller. This is the concept of communicating with objects in the scene. Besides, the out variable can be used to get the object name where the ray hit by using hit.collider.gameObject.name: 	
- 	\noindent\begin{minipage}{0.3\textwidth}% adapt widths of minipages to your needs
+ 	\noindent\begin{minipage}{0.3\textwidth}
  		\includegraphics[width=\linewidth]{intructions/objectname.png}
- 	\end{minipage}%
+ 	\end{minipage}
  	\newpage
  	\begin{itemize}
  		\item \bfseries Physics.Linecast(Vector3 start,  Vector3 end , out hit, , layerMask)	 	
@@ -861,20 +871,20 @@ From Unity 2018 version or later, it does comes with shadergraph to be able to m
    \begin{itemize}
   	\item \bfseries Glass shader
   \end{itemize}  
-  	The fresnel effect above can also be used to create a glass shader. First of all, i'm going to define alpha:fade which is going to make the object transparent. Next, same as before, in order to get the diffuse reflective, i need to take the dot product between the surface normal and the view direction by using dot(normalize(IN.world), normalize(IN.viewDir)). But this will give the reflection in the whole surface, which will not look realistic, form the right shape, so i put 1 - saturate((dot(normalize(IN.worldNormal), normalize(IN.viewDir)))) in order to make the reflection only happen from the edges: 
+  	The fresnel effect above can also be used to create a glass shader. First of all, I'm going to define alpha:fade which is going to make the object be able to see inside. When creating a shader, unity already implement for us the smoothness, metallic value so i just need to increase both of the value to 1 in order to make the object reflective. After that, the object still doesn't look like a glass, in order to get the glass look, this's when the fresnel effect comes to play. Same as before, but this time, instead of multiplying the equation with o.Emission, I'll multiply it with o.Alpha, to get the glass look, as o.Alpha alter the transparent of the object.
   	\begin{figure}[h]
-  		\begin{minipage}{.4\textwidth}
+  		\begin{minipage}{.5\textwidth}
   			\centering
   			\includegraphics[width=0.7\linewidth]{intructions/whole_surface.png}
   			\centering
-  			\captionof{figure}{whole surfaces}
+  			\captionof{figure}{Without fresnel}
   			\label{fig:test30}
   		\end{minipage}
-  		\begin{minipage}{.45\textwidth}
+  		\begin{minipage}{.5\textwidth}
   			\centering
   			\includegraphics[width=0.6\linewidth]{intructions/from_edge.png}
   			\centering
-  			\captionof{figure}{From edge}
+  			\captionof{figure}{With fresnel}
   			\label{fig:test31}
   		\end{minipage}
   		
@@ -1022,7 +1032,7 @@ Post processing is a shader that instead of applying to an object, it will appli
 \begin{itemize}
 	\item \bfseries Dizzy effect 
 \end{itemize} 
- This effect will make the entire scene looks like it's swinging. But first off all, i will need to implement graphics.blit in C\# code to render the shader into the screen. In the shader file, the fragment function is where it draw all the color into the screen. The window which i'm able to see the scene is the clip point, the clip point is defined by the uv coordinate, range from (0,1), so in order to achieve the effect on screen, i'll need to alter the u, v coordinate. To do that,i just add a simple mathematic equation with i.uv : 
+ This effect will make the entire scene looks like it's swinging. But first off all, we will need to implement graphics.blit in C\# code to render the shader into the screen. In the shader file, the fragment function is where it draw all the color into the screen. The window which we're able to see the scene is the clip point, the clip point is defined by the uv coordinate, range from (0,1), so in order to achieve the effect on screen, we'll need to alter the u, v coordinate. To do that,we just add a simple mathematic equation with i.uv : 
  \begin{lstlisting}
   struct appdata
  {
@@ -1055,39 +1065,93 @@ Post processing is a shader that instead of applying to an object, it will appli
 \begin{itemize}
 	\item \bfseries Post-processing stack 
 \end{itemize} 
+From unity 2018 or later, it has built-in tool which is called post-processing stack, mainly for post-processing effect.  It’s applies effects after the main processing pipeline and enhances the overall look of a scene. So, with this tool, we'll gonna make the scene looks more fancy, brilliant. 
+First of all, we'll need to configure some settings by going to {\bfseries Edit -> Project Settings -> Quality}. 
+  \begin{figure}[h] 
+ 	\begin{minipage}{1\textwidth}
+ 		\centering
+ 		\includegraphics[width=0.5\linewidth]{intructions/quality_setting.png}
+ 		\centering
+ 		\captionof{figure}{Quality setting}
+ 		\label{fig:test34}
+ 	\end{minipage}      	
+ \end{figure}
+For the anti-aliasing, I'll only set to 2x , if set too high, it may decrease performance, my computer might not be able to handle this. Anti-aliasing is for getting rid of jagged edges on the screen, the higher the anti aliasing is, more square pixels it can be eliminated, more power the GPU use. \\
+
+After that, from the camera, I just need to add Post-Processing Behaviour which already comes with post-processing stack, and then create a profile, change it to the way I want. This is what my scene looks like after the configuration:
+\begin{figure}[h] 
+	\begin{minipage}{1\textwidth}
+		\centering
+		\includegraphics[width=0.45\linewidth]{intructions/3d_film.png}
+		\centering
+		\captionof{figure}{Quality setting}
+		\label{fig:test35}
+	\end{minipage}      	
+\end{figure} \\
+From images below, tone mapping is where we decide how our HDR color data would be displayed on screen. In unity, we can either configure this by ourselves, which is called neutral, or used a provided preset. In this case, I'll use Filmic tone mapping , which is also popular a default one used in some engines like unreal engine. This tonemapper provided us the scene which looks like we're watching a 3D film. Next, is the eye adaptation, enable this will mimic the effect of our eyes, adjusting to a certain brightness level, base on the brightness of the scene, but we can change values later in the eye adaptation panel. And the final one i'd like to apply to camera, the bloom effect, to reproduce an imaging artifact of real-world camera. This effect will extend the light from the borders of light areas, like as we seen in figure 40, bring us a fantasy look.  
+\begin{figure}[h] 
+\raisebox{-32mm}[0pt][0pt]{
+ 	\begin{minipage}{0.45\textwidth}
+ 		\centering
+ 		\includegraphics[width=0.8\linewidth]{intructions/Tone_mapper.png}
+ 		\centering
+ 		\captionof{figure}{Profile configure}
+ 		\label{fig:test36}
+ 	\end{minipage}  
+ \begin{minipage}{0.45\textwidth}
+ 	\centering
+ 	\includegraphics[width=0.8\linewidth]{intructions/Tone_mapper2.png}
+ 	\centering
+ 	\captionof{figure}{Profile configure}
+ 	\label{fig:test37}
+ \end{minipage} 
+\raisebox{-65mm}[0pt][0pt]{
+\centering
+ \hspace*{-11cm}
+\begin{minipage}{0.45\textwidth}
+	\centering
+	\includegraphics[width=0.8\linewidth]{intructions/bloom.png}
+	\centering
+	\captionof{figure}{Bloom effect}
+	\label{fig:test38}
+\end{minipage}    
+}
+}	
+ \end{figure} 
+\newpage
 \section{Result and discussion}
 \subsection{RayCasting} 
-	The distance output of the raycasting may be confused with another object if i didn't specify a layermask for a some specific object. This may make my character sometimes mistake an object with another one. For example, if i want to take the sword which lied on the box (figure 36), then i should make my character go over there to take the word, the distance between the sword and my character should be less than 3. But there's one thing happen, even if i come close to a random terrain or object with the distance also less than 3, when i press E, the sword automically pop up.
+	The distance output of the raycasting may be confused with another object if i didn't specify a layermask for a some specific object. This may make my character sometimes mistake an object with another one. For example, if we want to take the sword which lied on the box (figure 36), then i should make my character go over there to take the word, the distance between the sword and my character should be less than 3. But there's one thing happen, even if i come close to a random terrain or object with the distance also less than 3, when we press E, the sword automically pop up.
 	\begin{figure}[h]
 		\begin{minipage}{.5\textwidth}
 			\centering
 			\includegraphics[width=1\linewidth]{intructions/Take_weapon1.png}
 			\captionof{figure}{Weapon lied on the box}
-			\label{fig:test34}
+			\label{fig:test39}
 		\end{minipage}
 		\begin{minipage}{.5\textwidth}
 			\centering
 			\includegraphics[width=1\linewidth]{intructions/Take_weapon2.png}
 			\captionof{figure}{Bug, the sword appear right away when get close to ramdom object}
-			\label{fig:test35}
+			\label{fig:test40}
 			\centering
 		\end{minipage}
-	\end{figure}
-	And this bug can be fix by defining int layermask = 1 << "A specific layer to hit" , this will only make a raycast hit a specific layer. As the result, there's no longer a bug here when i press E button when comes close to a random object with distance less than 3. From 2 pictures below, i have defined the sword as "Weapon", assign it to layer 8, then define the layermask in C\# code as 1 << 8. In unity, the way how it read the layermask it that it read the binary number instead of a normal one, with the maximum digit numbers of 32, corresponding to the maximum number of the layers we can create. 
-	 \begin{figure}[h]
+	\end{figure} \\
+	And this bug can be fixed by defining int layermask = 1 << "A specific layer to hit" , this will only make a raycast hit a specific layer. As the result, there's no longer a bug here when i press E button when comes close to a random object with distance less than 3. From 2 pictures below, i have defined the sword as "Weapon", assign it to layer 8, then define the layermask in C\# code as 1 << 8. In unity, the way how it read the layermask it that it read the binary number instead of a normal one, with the maximum digit numbers of 32, corresponding to the maximum number of the layers we can create. 
+	 \begin{figure}[h!]
 	 	\begin{minipage}{.5\textwidth}
 	 		\centering
 	 		\includegraphics[width=1\linewidth]{intructions/it_works1.png}
 	 		\captionof{figure}{Weapon lied on the box}
-	 		\label{fig:test36}
+	 		\label{fig:test41}
 	 	\end{minipage}
  		\begin{minipage}{.5\textwidth}
  		\centering
  		\includegraphics[width=1\linewidth]{intructions/it_works2.png}
  		\captionof{figure}{Weapon lied on the box}
- 		\label{fig:test37}
+ 		\label{fig:test42}
  		\end{minipage}
-	 \end{figure}
+	 \end{figure} \\
 	 However, this raycast function does have a limit. It only works with objects that have collider with it. In some situations like when my character's position is higher than the target object, the ray cannot reach the target, therefore it also doesn't work.
 	
 \subsection{Bump map} 	
@@ -1098,25 +1162,24 @@ Post processing is a shader that instead of applying to an object, it will appli
 	 		\centering
 	 		\includegraphics[width=0.6\linewidth]{intructions/Brick002.png}
 	 		\captionof{figure}{Source texture}
-	 		\label{fig:test38}
+	 		\label{fig:test43}
 	 	\end{minipage}
 	 	\begin{minipage}{.3\textwidth}
 	 		\centering
 	 		\includegraphics[width=0.6\linewidth]{intructions/Brick002_height_invert.png}
 	 		\captionof{figure}{Wrong heightmap}
-	 		\label{fig:test39}
+	 		\label{fig:test44}
 	 	\end{minipage}
  		\begin{minipage}{.3\textwidth}
  			\centering
  			\includegraphics[width=0.6\linewidth]{intructions/Brick002_height.png}
  			\captionof{figure}{Correct heightmap}
- 			\label{fig:test40}
+ 			\label{fig:test45}
  		\end{minipage}
 	 \end{figure}
 	
  	However, we can temporary overcome this problem by increasing or decreasing the strength of normal map by multiplying the input color value.
- 	\newpage ~\\
- 	\begin{table}
+ 	\begin{table}[h]
  		\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
  		\centering
  		\begin{tabular}{|M{2.5cm}|M{4cm}|M{4cm}|}
@@ -1129,12 +1192,18 @@ Post processing is a shader that instead of applying to an object, it will appli
  		\end{tabular}
  		\newline\newline
  		\caption{Normal map strength scale}\label{tab1}
- 	\end{table}
+ 	\end{table} \\
  	It depends on each texture, for me, strength range from 1 to 1.5 for this texture provide the most realistic looking surface, with light bouncing directions. Although this bump mapping technique is relatively an old school technique, but it's still one of the best methods for create realistic graphic. As the height map contain height information, which can fake the depth of the surface, and the normal map can fake the lighting on surface, provide the angle information which direction the light should be bent. 
  	 
  	\section{Conclusion}  
  	The main aim of this internship is to help people satisfy the entertaining needs after working hard all days at school or company, developing a virtual world for people who are celibate, have no one nearby to chat, help contributing the entertainment industry. \\ The core methods for developing a 3D virtual world in unity are RayCasting, bump mapping and Shading. For some stuffs like collider, etc... i don't mention here as unity already has simple built-in tools, properties which can be easily done just by drag and drop or by adding a component. With raycasting method, the player can easily communicating with other NPCs, object in the scene just by pressing a button. As i mentioned above, bump mapping technique will provide a realistic looking graphic, for better experience while playing the game. Although the Unity already has the built-in standard shader, if we want a fancy effect for the object or directly on the screen, this standard shader doesn't have any properties to make one like that, nor behave as post-processing shader, we have to write our own shader like vertex/fragment shader or surface shader. The surface shader is the easiest shader to write as we only have to write surf function, which already contain vertex, fragment information. \\ And finally, thanks to this internship, i have had a good opportunity to learn more about how the unity engines works, understand more about the process of developing a 3D virtual world, and also know more about computer graphics.   
 	\section{Future Development}  
+	\begin{itemize}
+		\item Create a network connection , users can create a server so everyone who is in the same server can chat together as I promised before in the introduction section
+		\item  There're still a lot of bugs in game, so i will continuously find the bugs, fix them
+		\item Continuously working on optimizing the performance of the game.
+		\item Improve the UI.
+	\end{itemize}
 	\newpage
 	\section{Reference}
 	\begin{itemize}
