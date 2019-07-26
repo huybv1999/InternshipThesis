@@ -20,9 +20,9 @@
 \contentsline {paragraph}{\numberline {3.2.5}Bump mapping}{18}{paragraph.E.3.2.5}% 
 \contentsline {paragraph}{\numberline {3.2.6}Lighting}{21}{paragraph.E.3.2.6}% 
 \contentsline {paragraph}{\numberline {3.2.7}Shader}{24}{paragraph.E.3.2.7}% 
-\contentsline {subparagraph}{\numberline {3.2.7.1}Shader overview}{24}{subparagraph.E.3.2.7.1}% 
-\contentsline {subparagraph}{\numberline {3.2.7.2}Apply shader on 3D mesh}{27}{subparagraph.E.3.2.7.2}% 
-\contentsline {subparagraph}{\numberline {3.2.7.3}Post processing}{31}{subparagraph.E.3.2.7.3}% 
+\contentsline {subparagraph}{Shader overview}{24}{subparagraph*.25}% 
+\contentsline {subparagraph}{Apply shader on 3D mesh}{27}{subparagraph*.29}% 
+\contentsline {subparagraph}{Post processing}{31}{subparagraph*.35}% 
 \contentsline {section}{\numberline {F}Result and discussion}{34}{appendix.F}% 
 \contentsline {subsection}{\numberline {1}RayCasting}{34}{subsection.F.1}% 
 \contentsline {subsection}{\numberline {2}Bump map}{35}{subsection.F.2}% 
