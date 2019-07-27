@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.24)  27 JUL 2019 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.24)  28 JUL 2019 03:30
 entering extended mode
 **./main.tex
 (main.tex
@@ -1540,18 +1540,24 @@ Overfull \hbox (54.62901pt too wide) in paragraph at lines 367--369
  [][] 
  []
 
-<intructions/Camera_overview.png, id=252, 1927.2pt x 1084.05pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./intructions/camera_space.png> <./intructions/my_camera_space.png> <./int
+ructions/camera_cover.png> <./intructions/camera_collide.png>] [14 <./intructio
+ns/Occlusion_camera.png> <./intructions/Collision_camera.png>]
+<intructions/Camera_overview.png, id=270, 1927.2pt x 1084.05pt>
 File: intructions/Camera_overview.png Graphic file (type png)
 <use intructions/Camera_overview.png>
 Package pdftex.def Info: intructions/Camera_overview.png  used on input line 38
-2.
+3.
 (pdftex.def)             Requested size: 309.5607pt x 174.11319pt.
 
-Overfull \hbox (127.46584pt too wide) in paragraph at lines 382--384
+Overfull \hbox (127.46584pt too wide) in paragraph at lines 383--385
  [][] 
  []
 
-<intructions/raycasting.png, id=253, 475.02469pt x 411.78844pt>
+<intructions/raycasting.png, id=271, 475.02469pt x 411.78844pt>
 File: intructions/raycasting.png Graphic file (type png)
 <use intructions/raycasting.png>
 Package pdftex.def Info: intructions/raycasting.png  used on input line 395.
@@ -1561,24 +1567,14 @@ Overfull \hbox (54.62901pt too wide) in paragraph at lines 395--397
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13 <./intructions/camera_space.png> <./intructions/my_camera_space.png> <./int
-ructions/camera_cover.png> <./intructions/camera_collide.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14 <./intructions/Occlusion_camera.png> <./intructions/Collision_camera.png>]
 [15 <./intructions/Camera_overview.png> <./intructions/raycasting.png>]
-<intructions/RayCast_example1.png, id=292, 1163.84813pt x 546.54187pt>
+[16]
+<intructions/RayCast_example1.png, id=305, 1163.84813pt x 546.54187pt>
 File: intructions/RayCast_example1.png Graphic file (type png)
 <use intructions/RayCast_example1.png>
 Package pdftex.def Info: intructions/RayCast_example1.png  used on input line 4
 41.
 (pdftex.def)             Requested size: 455.24411pt x 213.77592pt.
-
-[16]
 <intructions/text_popup.png, id=306, 575.14874pt x 365.86688pt>
 File: intructions/text_popup.png Graphic file (type png)
 <use intructions/text_popup.png>
@@ -1589,27 +1585,26 @@ File: intructions/objectname.png Graphic file (type png)
 <use intructions/objectname.png>
 Package pdftex.def Info: intructions/objectname.png  used on input line 463.
 (pdftex.def)             Requested size: 136.57462pt x 21.61609pt.
- [17 <./intructions/RayCast_example1.png> <./intructions/text_popup.png> <./int
-ructions/objectname.png>]
+ [17 <./intructions/RayCast_example1.png> <./intructions/text_popup.png>]
 <intructions/Brick001.jpg, id=314, 1027.84pt x 1027.84pt>
 File: intructions/Brick001.jpg Graphic file (type jpg)
 <use intructions/Brick001.jpg>
-Package pdftex.def Info: intructions/Brick001.jpg  used on input line 482.
+Package pdftex.def Info: intructions/Brick001.jpg  used on input line 481.
 (pdftex.def)             Requested size: 109.2601pt x 109.25163pt.
 <intructions/Brick001_height.png, id=315, 1027.84pt x 1027.84pt>
 File: intructions/Brick001_height.png Graphic file (type png)
 <use intructions/Brick001_height.png>
 Package pdftex.def Info: intructions/Brick001_height.png  used on input line 48
-9.
+8.
 (pdftex.def)             Requested size: 109.2601pt x 109.25163pt.
 <intructions/height_example.png, id=316, 364.36125pt x 204.01219pt>
 File: intructions/height_example.png Graphic file (type png)
 <use intructions/height_example.png>
-Package pdftex.def Info: intructions/height_example.png  used on input line 496
+Package pdftex.def Info: intructions/height_example.png  used on input line 495
 .
 (pdftex.def)             Requested size: 191.20361pt x 107.05818pt.
 
-Overfull \hbox (54.629pt too wide) in paragraph at lines 496--497
+Overfull \hbox (54.629pt too wide) in paragraph at lines 495--496
  [][] 
  []
 
@@ -1617,30 +1612,30 @@ Overfull \hbox (54.629pt too wide) in paragraph at lines 496--497
 File: intructions/contrastAdjusting.png Graphic file (type png)
 <use intructions/contrastAdjusting.png>
 Package pdftex.def Info: intructions/contrastAdjusting.png  used on input line 
-503.
+502.
 (pdftex.def)             Requested size: 95.60431pt x 122.826pt.
 <intructions/guassian_blur.png, id=318, 213.79875pt x 37.64063pt>
 File: intructions/guassian_blur.png Graphic file (type png)
 <use intructions/guassian_blur.png>
-Package pdftex.def Info: intructions/guassian_blur.png  used on input line 507.
+Package pdftex.def Info: intructions/guassian_blur.png  used on input line 506.
 
 (pdftex.def)             Requested size: 95.60431pt x 16.83128pt.
-[18 <./intructions/Brick001.jpg> <./intructions/Brick001_height.png> <./intruct
-ions/height_example.png>]
+[18 <./intructions/objectname.png> <./intructions/Brick001.jpg> <./intructions/
+Brick001_height.png> <./intructions/height_example.png>]
 <intructions/surface_normal.png, id=325, 558.58687pt x 187.45032pt>
 File: intructions/surface_normal.png Graphic file (type png)
 <use intructions/surface_normal.png>
-Package pdftex.def Info: intructions/surface_normal.png  used on input line 516
+Package pdftex.def Info: intructions/surface_normal.png  used on input line 515
 .
 (pdftex.def)             Requested size: 204.85846pt x 68.74629pt.
 <intructions/surface_normal_across.png, id=326, 569.12625pt x 198.7425pt>
 File: intructions/surface_normal_across.png Graphic file (type png)
 <use intructions/surface_normal_across.png>
 Package pdftex.def Info: intructions/surface_normal_across.png  used on input l
-ine 523.
+ine 522.
 (pdftex.def)             Requested size: 291.35289pt x 101.74548pt.
 
-Overfull \hbox (109.25803pt too wide) in paragraph at lines 523--525
+Overfull \hbox (109.25803pt too wide) in paragraph at lines 522--524
  [][] 
  []
 
@@ -1648,71 +1643,75 @@ Overfull \hbox (109.25803pt too wide) in paragraph at lines 523--525
 File: intructions/normal_map_calculation.png Graphic file (type png)
 <use intructions/normal_map_calculation.png>
 Package pdftex.def Info: intructions/normal_map_calculation.png  used on input 
-line 534.
+line 533.
 (pdftex.def)             Requested size: 364.19667pt x 140.74997pt.
 
-Overfull \hbox (193.80634pt too wide) in paragraph at lines 512--544
+Overfull \hbox (193.80634pt too wide) in paragraph at lines 511--543
 \T1/lmr/m/n/10 The equa-tion of these par-tial deriva-tives are: $[]$ 
  []
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [19 <./intructions/contrastAdjusting.png> <./intructions/guassian_blur.png> <./
-intructions/surface_normal.png> <./intructions/surface_normal_across.png> <./in
-tructions/normal_map_calculation.png>]
+intructions/surface_normal.png> <./intructions/surface_normal_across.png>]
 <intructions/Brick001_n.png, id=340, 1027.84pt x 1027.84pt>
 File: intructions/Brick001_n.png Graphic file (type png)
 <use intructions/Brick001_n.png>
-Package pdftex.def Info: intructions/Brick001_n.png  used on input line 569.
+Package pdftex.def Info: intructions/Brick001_n.png  used on input line 568.
 (pdftex.def)             Requested size: 68.28731pt x 68.2862pt.
 <intructions/without_normalmap.png, id=341, 761.84625pt x 435.12563pt>
 File: intructions/without_normalmap.png Graphic file (type png)
 <use intructions/without_normalmap.png>
 Package pdftex.def Info: intructions/without_normalmap.png  used on input line 
-576.
+575.
 (pdftex.def)             Requested size: 150.23138pt x 85.80191pt.
 <intructions/with_normalmap.png, id=342, 693.34032pt x 446.41782pt>
 File: intructions/with_normalmap.png Graphic file (type png)
 <use intructions/with_normalmap.png>
-Package pdftex.def Info: intructions/with_normalmap.png  used on input line 583
+Package pdftex.def Info: intructions/with_normalmap.png  used on input line 582
 .
 (pdftex.def)             Requested size: 150.23138pt x 96.72725pt.
- [20 <./intructions/Brick001_n.png> <./intructions/without_normalmap.png> <./in
-tructions/with_normalmap.png>]
+
+[20 <./intructions/normal_map_calculation.png> <./intructions/Brick001_n.png> <
+./intructions/without_normalmap.png> <./intructions/with_normalmap.png>]
 File: intructions/Brick001_n.png Graphic file (type png)
 <use intructions/Brick001_n.png>
-Package pdftex.def Info: intructions/Brick001_n.png  used on input line 611.
+Package pdftex.def Info: intructions/Brick001_n.png  used on input line 610.
 (pdftex.def)             Requested size: 145.67644pt x 145.66885pt.
 <intructions/Brick001_occ.png, id=370, 770.88pt x 770.88pt>
 File: intructions/Brick001_occ.png Graphic file (type png)
 <use intructions/Brick001_occ.png>
-Package pdftex.def Info: intructions/Brick001_occ.png  used on input line 611.
+Package pdftex.def Info: intructions/Brick001_occ.png  used on input line 610.
 (pdftex.def)             Requested size: 145.67644pt x 145.66885pt.
 <intructions/without_occlusion.png, id=371, 657.95813pt x 475.02469pt>
 File: intructions/without_occlusion.png Graphic file (type png)
 <use intructions/without_occlusion.png>
 Package pdftex.def Info: intructions/without_occlusion.png  used on input line 
-618.
+617.
 (pdftex.def)             Requested size: 182.09486pt x 131.46211pt.
 <intructions/with_occlusion.png, id=372, 642.14906pt x 461.47406pt>
 File: intructions/with_occlusion.png Graphic file (type png)
 <use intructions/with_occlusion.png>
-Package pdftex.def Info: intructions/with_occlusion.png  used on input line 625
+Package pdftex.def Info: intructions/with_occlusion.png  used on input line 624
 .
 (pdftex.def)             Requested size: 184.37135pt x 132.4932pt.
- [21 <./intructions/Brick001_occ.png> <./intructions/without_occlusion.png> <./
-intructions/with_occlusion.png>]
+
+[21 <./intructions/Brick001_occ.png> <./intructions/without_occlusion.png> <./i
+ntructions/with_occlusion.png>]
 <intructions/choose_light.png, id=382, 343.2825pt x 374.90062pt>
 File: intructions/choose_light.png Graphic file (type png)
 <use intructions/choose_light.png>
-Package pdftex.def Info: intructions/choose_light.png  used on input line 654.
+Package pdftex.def Info: intructions/choose_light.png  used on input line 653.
 (pdftex.def)             Requested size: 145.67644pt x 159.09325pt.
 <intructions/light_properties.png, id=383, 411.5375pt x 287.0725pt>
 File: intructions/light_properties.png Graphic file (type png)
 <use intructions/light_properties.png>
 Package pdftex.def Info: intructions/light_properties.png  used on input line 6
-54.
+53.
 (pdftex.def)             Requested size: 245.82951pt x 171.48264pt.
 
-Overfull \hbox (40.97105pt too wide) in paragraph at lines 654--654
+Overfull \hbox (40.97105pt too wide) in paragraph at lines 653--653
  [][] 
  []
 
@@ -1720,19 +1719,19 @@ Overfull \hbox (40.97105pt too wide) in paragraph at lines 654--654
 File: intructions/change_light_color.png Graphic file (type png)
 <use intructions/change_light_color.png>
 Package pdftex.def Info: intructions/change_light_color.png  used on input line
- 661.
+ 660.
 (pdftex.def)             Requested size: 364.19667pt x 183.16087pt.
 <intructions/light_categlories.png, id=385, 492.33937pt x 233.37187pt>
 File: intructions/light_categlories.png Graphic file (type png)
 <use intructions/light_categlories.png>
 Package pdftex.def Info: intructions/light_categlories.png  used on input line 
-671.
+670.
 (pdftex.def)             Requested size: 364.19667pt x 172.63905pt.
 <intructions/How_light_works.png, id=386, 1884.03876pt x 914.41624pt>
 File: intructions/How_light_works.png Graphic file (type png)
 <use intructions/How_light_works.png>
 Package pdftex.def Info: intructions/How_light_works.png  used on input line 68
-4.
+3.
 (pdftex.def)             Requested size: 364.19667pt x 176.7547pt.
 [22 <./intructions/choose_light.png> <./intructions/light_properties.png> <./in
 tructions/change_light_color.png> <./intructions/light_categlories.png>]
@@ -1740,26 +1739,26 @@ tructions/change_light_color.png> <./intructions/light_categlories.png>]
 <intructions/lighting_setting.png, id=402, 288.3272pt x 559.33969pt>
 File: intructions/lighting_setting.png Graphic file (type png)
 <use intructions/lighting_setting.png>
-Package pdftex.def Info: intructions/lighting_setting.png  used on input line 7
-00.
+Package pdftex.def Info: intructions/lighting_setting.png  used on input line 6
+98.
 (pdftex.def)             Requested size: 136.57462pt x 264.95511pt.
 
-Overfull \hbox (6.66666pt too wide) in paragraph at lines 693--701
+Overfull \hbox (6.66666pt too wide) in paragraph at lines 691--699
 [][] 
  []
 
 <intructions/Shader_workflow.png, id=403, 402.75468pt x 364.36125pt>
 File: intructions/Shader_workflow.png Graphic file (type png)
 <use intructions/Shader_workflow.png>
-Package pdftex.def Info: intructions/Shader_workflow.png  used on input line 71
-1.
+Package pdftex.def Info: intructions/Shader_workflow.png  used on input line 70
+9.
 (pdftex.def)             Requested size: 204.85846pt x 185.32695pt.
 [24 <./intructions/lighting_setting.png> <./intructions/Shader_workflow.png>]
 <intructions/Inspector_material.png, id=413, 165.61874pt x 196.3335pt>
 File: intructions/Inspector_material.png Graphic file (type png)
 <use intructions/Inspector_material.png>
 Package pdftex.def Info: intructions/Inspector_material.png  used on input line
- 737.
+ 735.
 (pdftex.def)             Requested size: 91.04742pt x 107.93282pt.
 
 [25 <./intructions/Inspector_material.png>]
@@ -1767,22 +1766,22 @@ Package pdftex.def Info: intructions/Inspector_material.png  used on input line
 File: intructions/vertex_fragment_flow.png Graphic file (type png)
 <use intructions/vertex_fragment_flow.png>
 Package pdftex.def Info: intructions/vertex_fragment_flow.png  used on input li
-ne 818.
+ne 816.
 (pdftex.def)             Requested size: 250.38564pt x 142.0125pt.
  [26]
-Underfull \hbox (badness 10000) in paragraph at lines 825--826
+Underfull \hbox (badness 10000) in paragraph at lines 823--824
 
  []
 
 <Surface_normal.png, id=500, 271.0125pt x 130.98938pt>
 File: Surface_normal.png Graphic file (type png)
 <use Surface_normal.png>
-Package pdftex.def Info: Surface_normal.png  used on input line 830.
+Package pdftex.def Info: Surface_normal.png  used on input line 828.
 (pdftex.def)             Requested size: 136.57462pt x 66.01219pt.
 <intructions/fresnel_effect.png, id=501, 442.65375pt x 304.13625pt>
 File: intructions/fresnel_effect.png Graphic file (type png)
 <use intructions/fresnel_effect.png>
-Package pdftex.def Info: intructions/fresnel_effect.png  used on input line 841
+Package pdftex.def Info: intructions/fresnel_effect.png  used on input line 839
 .
 (pdftex.def)             Requested size: 182.09486pt x 125.11433pt.
 [27 <./intructions/vertex_fragment_flow.png> <./Surface_normal.png> <./intructi
@@ -1790,16 +1789,16 @@ ons/fresnel_effect.png>]
 <intructions/whole_surface.png, id=511, 465.23813pt x 353.06906pt>
 File: intructions/whole_surface.png Graphic file (type png)
 <use intructions/whole_surface.png>
-Package pdftex.def Info: intructions/whole_surface.png  used on input line 878.
+Package pdftex.def Info: intructions/whole_surface.png  used on input line 876.
 
 (pdftex.def)             Requested size: 159.33473pt x 120.91464pt.
 <intructions/from_edge.png, id=512, 397.485pt x 349.305pt>
 File: intructions/from_edge.png Graphic file (type png)
 <use intructions/from_edge.png>
-Package pdftex.def Info: intructions/from_edge.png  used on input line 885.
+Package pdftex.def Info: intructions/from_edge.png  used on input line 883.
 (pdftex.def)             Requested size: 136.57462pt x 120.01999pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 876--890
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 874--888
 []$[]$ $[]$ 
  []
 
@@ -1807,19 +1806,19 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 876--890
 File: intructions/reflection_probe.png Graphic file (type png)
 <use intructions/reflection_probe.png>
 Package pdftex.def Info: intructions/reflection_probe.png  used on input line 9
-11.
+09.
 (pdftex.def)             Requested size: 182.09486pt x 143.55719pt.
 [28 <./intructions/whole_surface.png> <./intructions/from_edge.png>]
 <intructions/color_alwaysvisible.png, id=560, 118.94438pt x 258.9675pt>
 File: intructions/color_alwaysvisible.png Graphic file (type png)
 <use intructions/color_alwaysvisible.png>
 Package pdftex.def Info: intructions/color_alwaysvisible.png  used on input lin
-e 956.
+e 954.
 (pdftex.def)             Requested size: 18.2067pt x 39.6377pt.
 <intructions/Behind_overlay.png, id=561, 302.63063pt x 245.41687pt>
 File: intructions/Behind_overlay.png Graphic file (type png)
 <use intructions/Behind_overlay.png>
-Package pdftex.def Info: intructions/Behind_overlay.png  used on input line 956
+Package pdftex.def Info: intructions/Behind_overlay.png  used on input line 954
 .
 (pdftex.def)             Requested size: 136.57462pt x 110.75487pt.
  [29 <./intructions/reflection_probe.png> <./intructions/color_alwaysvisible.pn
@@ -1827,12 +1826,12 @@ g>]
 <intructions/key_with.png, id=602, 469.00218pt x 395.97937pt>
 File: intructions/key_with.png Graphic file (type png)
 <use intructions/key_with.png>
-Package pdftex.def Info: intructions/key_with.png  used on input line 990.
+Package pdftex.def Info: intructions/key_with.png  used on input line 988.
 (pdftex.def)             Requested size: 127.46584pt x 107.61674pt.
 <intructions/key_with2.png, id=603, 371.88937pt x 350.05782pt>
 File: intructions/key_with2.png Graphic file (type png)
 <use intructions/key_with2.png>
-Package pdftex.def Info: intructions/key_with2.png  used on input line 995.
+Package pdftex.def Info: intructions/key_with2.png  used on input line 993.
 (pdftex.def)             Requested size: 122.91632pt x 115.70103pt.
 
 [30 <./intructions/Behind_overlay.png> <./intructions/key_with.png> <./intructi
@@ -1840,45 +1839,45 @@ ons/key_with2.png>]
 <intructions/light_react.png, id=657, 292.84406pt x 325.96782pt>
 File: intructions/light_react.png Graphic file (type png)
 <use intructions/light_react.png>
-Package pdftex.def Info: intructions/light_react.png  used on input line 1025.
+Package pdftex.def Info: intructions/light_react.png  used on input line 1023.
 (pdftex.def)             Requested size: 136.57462pt x 152.02608pt.
  [31 <./intructions/light_react.png>]
 <intructions/dizzy.png, id=682, 647.41875pt x 370.38374pt>
 File: intructions/dizzy.png Graphic file (type png)
 <use intructions/dizzy.png>
-Package pdftex.def Info: intructions/dizzy.png  used on input line 1059.
+Package pdftex.def Info: intructions/dizzy.png  used on input line 1057.
 (pdftex.def)             Requested size: 318.66948pt x 182.3091pt.
 <intructions/quality_setting.png, id=683, 392.96812pt x 313.17pt>
 File: intructions/quality_setting.png Graphic file (type png)
 <use intructions/quality_setting.png>
 Package pdftex.def Info: intructions/quality_setting.png  used on input line 10
-73.
+71.
 (pdftex.def)             Requested size: 227.62206pt x 181.40456pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1068--1080
+Underfull \hbox (badness 10000) in paragraph at lines 1066--1078
 
  []
 
 <intructions/3d_film.png, id=684, 583.42969pt x 407.27156pt>
 File: intructions/3d_film.png Graphic file (type png)
 <use intructions/3d_film.png>
-Package pdftex.def Info: intructions/3d_film.png  used on input line 1085.
+Package pdftex.def Info: intructions/3d_film.png  used on input line 1083.
 (pdftex.def)             Requested size: 204.85846pt x 143.00082pt.
 <intructions/Tone_mapper.png, id=685, 440.39531pt x 420.82219pt>
 File: intructions/Tone_mapper.png Graphic file (type png)
 <use intructions/Tone_mapper.png>
-Package pdftex.def Info: intructions/Tone_mapper.png  used on input line 1119.
+Package pdftex.def Info: intructions/Tone_mapper.png  used on input line 1117.
 (pdftex.def)             Requested size: 163.88739pt x 156.60074pt.
 <intructions/Tone_mapper2.png, id=686, 441.90094pt x 414.79968pt>
 File: intructions/Tone_mapper2.png Graphic file (type png)
 <use intructions/Tone_mapper2.png>
-Package pdftex.def Info: intructions/Tone_mapper2.png  used on input line 1119.
+Package pdftex.def Info: intructions/Tone_mapper2.png  used on input line 1117.
 
 (pdftex.def)             Requested size: 163.88739pt x 153.83424pt.
 <intructions/bloom.png, id=687, 383.18156pt x 359.09157pt>
 File: intructions/bloom.png Graphic file (type png)
 <use intructions/bloom.png>
-Package pdftex.def Info: intructions/bloom.png  used on input line 1119.
+Package pdftex.def Info: intructions/bloom.png  used on input line 1117.
 (pdftex.def)             Requested size: 163.88739pt x 153.58446pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1889,32 +1888,32 @@ ctions/3d_film.png> <./intructions/Tone_mapper.png> <./intructions/Tone_mapper2
 <intructions/Take_weapon1.png, id=705, 611.28375pt x 388.45125pt>
 File: intructions/Take_weapon1.png Graphic file (type png)
 <use intructions/Take_weapon1.png>
-Package pdftex.def Info: intructions/Take_weapon1.png  used on input line 1128.
+Package pdftex.def Info: intructions/Take_weapon1.png  used on input line 1126.
 
 (pdftex.def)             Requested size: 227.62206pt x 144.64343pt.
 <intructions/Take_weapon2.png, id=706, 596.2275pt x 382.42876pt>
 File: intructions/Take_weapon2.png Graphic file (type png)
 <use intructions/Take_weapon2.png>
-Package pdftex.def Info: intructions/Take_weapon2.png  used on input line 1134.
+Package pdftex.def Info: intructions/Take_weapon2.png  used on input line 1132.
 
 (pdftex.def)             Requested size: 227.62206pt x 146.00133pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 1126--1139
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 1124--1137
 []$[]$ $[]$ 
  []
 
 <intructions/it_works1.png, id=707, 727.71875pt x 446.66875pt>
 File: intructions/it_works1.png Graphic file (type png)
 <use intructions/it_works1.png>
-Package pdftex.def Info: intructions/it_works1.png  used on input line 1144.
+Package pdftex.def Info: intructions/it_works1.png  used on input line 1142.
 (pdftex.def)             Requested size: 227.62206pt x 139.71313pt.
 <intructions/it_works2.png, id=708, 727.71875pt x 446.66875pt>
 File: intructions/it_works2.png Graphic file (type png)
 <use intructions/it_works2.png>
-Package pdftex.def Info: intructions/it_works2.png  used on input line 1150.
+Package pdftex.def Info: intructions/it_works2.png  used on input line 1148.
 (pdftex.def)             Requested size: 227.62206pt x 139.71313pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 1142--1154
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 1140--1152
 []$[]$ $[]$ 
  []
 
@@ -1923,63 +1922,63 @@ tions/it_works1.png> <./intructions/it_works2.png>]
 <intructions/Brick002.png, id=715, 296.53052pt x 197.43866pt>
 File: intructions/Brick002.png Graphic file (type png)
 <use intructions/Brick002.png>
-Package pdftex.def Info: intructions/Brick002.png  used on input line 1163.
+Package pdftex.def Info: intructions/Brick002.png  used on input line 1161.
 (pdftex.def)             Requested size: 81.9456pt x 54.56241pt.
 <intructions/Brick002_height_invert.png, id=716, 296.53052pt x 197.43866pt>
 File: intructions/Brick002_height_invert.png Graphic file (type png)
 <use intructions/Brick002_height_invert.png>
 Package pdftex.def Info: intructions/Brick002_height_invert.png  used on input 
-line 1169.
+line 1167.
 (pdftex.def)             Requested size: 81.9456pt x 54.56241pt.
 <intructions/Brick002_height.png, id=717, 296.53052pt x 197.43866pt>
 File: intructions/Brick002_height.png Graphic file (type png)
 <use intructions/Brick002_height.png>
 Package pdftex.def Info: intructions/Brick002_height.png  used on input line 11
-75.
+73.
 (pdftex.def)             Requested size: 81.9456pt x 54.56241pt.
 <intructions/Sample003_n_0point5.png, id=718, 513.92pt x 256.96pt>
 File: intructions/Sample003_n_0point5.png Graphic file (type png)
 <use intructions/Sample003_n_0point5.png>
 Package pdftex.def Info: intructions/Sample003_n_0point5.png  used on input lin
-e 1188.
+e 1186.
 (pdftex.def)             Requested size: 113.80771pt x 56.90385pt.
 <intructions/05_looks.png, id=719, 559.33969pt x 398.23781pt>
 File: intructions/05_looks.png Graphic file (type png)
 <use intructions/05_looks.png>
-Package pdftex.def Info: intructions/05_looks.png  used on input line 1188.
+Package pdftex.def Info: intructions/05_looks.png  used on input line 1186.
 (pdftex.def)             Requested size: 113.80336pt x 56.90138pt.
 <intructions/Sample003_n_1.png, id=720, 513.92pt x 256.96pt>
 File: intructions/Sample003_n_1.png Graphic file (type png)
 <use intructions/Sample003_n_1.png>
-Package pdftex.def Info: intructions/Sample003_n_1.png  used on input line 1189
+Package pdftex.def Info: intructions/Sample003_n_1.png  used on input line 1187
 .
 (pdftex.def)             Requested size: 113.80771pt x 56.90385pt.
 <intructions/1_looks.png, id=721, 580.41844pt x 405.01312pt>
 File: intructions/1_looks.png Graphic file (type png)
 <use intructions/1_looks.png>
-Package pdftex.def Info: intructions/1_looks.png  used on input line 1189.
+Package pdftex.def Info: intructions/1_looks.png  used on input line 1187.
 (pdftex.def)             Requested size: 113.80551pt x 56.90538pt.
 <intructions/Sample003_n_1point5.png, id=722, 513.92pt x 256.96pt>
 File: intructions/Sample003_n_1point5.png Graphic file (type png)
 <use intructions/Sample003_n_1point5.png>
 Package pdftex.def Info: intructions/Sample003_n_1point5.png  used on input lin
-e 1190.
+e 1188.
 (pdftex.def)             Requested size: 113.80771pt x 56.90385pt.
 <intructions/15_looks.png, id=723, 540.51938pt x 411.03563pt>
 File: intructions/15_looks.png Graphic file (type png)
 <use intructions/15_looks.png>
-Package pdftex.def Info: intructions/15_looks.png  used on input line 1190.
+Package pdftex.def Info: intructions/15_looks.png  used on input line 1188.
 (pdftex.def)             Requested size: 113.80933pt x 56.90486pt.
 <intructions/Sample003_n_2.png, id=724, 513.92pt x 256.96pt>
 File: intructions/Sample003_n_2.png Graphic file (type png)
 <use intructions/Sample003_n_2.png>
-Package pdftex.def Info: intructions/Sample003_n_2.png  used on input line 1191
+Package pdftex.def Info: intructions/Sample003_n_2.png  used on input line 1189
 .
 (pdftex.def)             Requested size: 113.80771pt x 56.90385pt.
 <intructions/2_looks.png, id=725, 542.77782pt x 426.84468pt>
 File: intructions/2_looks.png Graphic file (type png)
 <use intructions/2_looks.png>
-Package pdftex.def Info: intructions/2_looks.png  used on input line 1191.
+Package pdftex.def Info: intructions/2_looks.png  used on input line 1189.
 (pdftex.def)             Requested size: 113.80449pt x 56.90509pt.
  [35 <./intructions/Brick002.png (PNG copy)> <./intructions/Brick002_height_inv
 ert.png (PNG copy)> <./intructions/Brick002_height.png (PNG copy)> <./intructio
@@ -1994,11 +1993,11 @@ Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 (movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
 
 [37]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1218.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1218.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1216.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1216.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1218.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1218.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1216.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1216.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 0B4C32C6866C337B53B07CF182D5A43F;1790.
@@ -2009,12 +2008,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 544 ({)
+### simple group (level 1) entered at line 543 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  45503 strings out of 492895
  1013463 string characters out of 3136301
- 1553615 words of memory out of 3000000
+ 1553622 words of memory out of 3000000
  48346 multiletter control sequences out of 15000+200000
  594388 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2032,7 +2031,7 @@ ublic/lm/lmr12.pfb><D:/application/MikTeX/fonts/type1/public/lm/lmr7.pfb><D:/ap
 plication/MikTeX/fonts/type1/public/lm/lmsy10.pfb><D:/application/MikTeX/fonts/
 type1/public/lm/lmtk10.pfb><D:/application/MikTeX/fonts/type1/public/lm/lmtt8.p
 fb><D:/application/MikTeX/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (37 pages, 29602389 bytes).
+Output written on main.pdf (37 pages, 29602494 bytes).
 PDF statistics:
  881 PDF objects out of 1000 (max. 8388607)
  374 named destinations out of 1000 (max. 500000)
