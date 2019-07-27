@@ -119,14 +119,14 @@ Finally, I am very grateful to my family members: my parents, my brother Bui Vu 
 \newpage
 \section{\Large Introduction} 
 Nowadays, technology is getting better and better, so human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-based environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphics, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there's still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... . There're 2 types of virtual worlds: Entertainment-based and social Interaction-Based. For entertainment-based, users usually interact with the world through their avatars, virtual worlds represents the majority of virtual worlds in existence today. For social interaction-based, it focuses on user interaction, education and training through simulated worlds. In this internship, I'll mainly focus on entertainment-based virtual world as it's closer to real world we're living,bring a pleasant, especially with 3D environment. \\[0.35cm] To create a virtual world, there're some types of engine that allow you to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] From one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
- In my opinion, first of all, it has tons of online tutorials to be found, the document with clean format, so a good step for beginners. With it's very intuitive design, C\# language make it easier to use or learn, for instance, it is very easy to pass functions into other functions as delegates or lamda expressions. Also, with great community, when you have a problem, they'll help you everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, Unity has asset store with lots of free assets for everyone to use, while the other ones only have few free assets. \\[0.35cm]In this work, I'll focus on creating the virtual world using Unity engine, in particular, it's an RPG game, where you as a player can walk around, interact with other NPC model in the world, or attack some enemy that get in your way. 
+ In my opinion, first of all, it has tons of online tutorials to be found, the document with clean format, so a good step for beginners. With it's very intuitive design, C\# language make it easier to use or learn, for instance, it is very easy to pass functions into other functions as delegates or lamda expressions. Also, with great community, when we have a problem, they'll help us everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, Unity has asset store with lots of free assets for everyone to use, while the other ones only have few free assets. \\[0.35cm]In this work, I'll focus on creating the virtual world using Unity engine, in particular, it's an RPG game, where we as a player can walk around, interact with other NPC model in the world, or attack some enemy that get in your way. 
   
 
  To create a virtual world with Unity, first, we'll need to create the terrain by the tools Unity provides for us. After that, we can create my own model and then just simply drag and drop the model into the scene, if not, there're several websites we can get free 3d model from like turbosquid or free3d. For the Lighting and the shadow, Unity also has build-in tool just like other engines, which can help us create the light and shadow easily, adjust it as we want. Furthermore, to make things look good, we can apply some textures to all the objects, prefabs. We can find the texture on google, choose the suitable one for a specific object, and then just simply drag and drop them on that object, or making our own texture. Finally, in order to move around or interact with the object, a camera and player controller should be added into the scene. For this, Unity already has the FPScontroller prefab which can be found in the standard assets, we can use it directly without doing anything. However, it's still possible to create the character controller from scratch with C\# code.
  \section{\Large Objective} 
  	Since this project is about building an RPG game, which is also a type of virtual world, I'll only focus on how to make the player move around the world, is able to interact with other objects around him. In this game, there may be some enemies that get in the way, the player should eliminate them which hurt the player. 
  \section{\Large Aim} 
- 	The aim is not necessarily to destroy the enemies, but to complete the quest. When finishing a quest, the player should return back to the village, tell the villagers that you have finished. Beside that, the game should also have an online chat tab , which you can chat with other players who are connecting to the same network while playing game, they may help you finishing the quest faster. 
+ 	The aim is not necessarily to destroy the enemies, but to complete the quest. When finishing a quest, the player should return back to the village, tell the villagers that we have finished. Beside that, the game should also have an online chat tab , which we can chat with other players who are connecting to the same network while playing game, they may help us finishing the quest faster. 
 
  
  
@@ -172,7 +172,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  		 \newpage
  		  \subsubsection{Details}
  		  \paragraph{Preparation}
- 		  Unity can be downloaded from the \href{https://store.Unity.com/}{offical website}. I prefer Unity personal version because it's free, aimed for everyone. As I mentioned before, to be able to run Unity, and create a new project, you'll need at least direct x11 for simulate lighting, shadows on the scene. To create a terrain, which is the base of the virtual world, all I have to do is go to game object -> 3D Object -> Terrain. The terrain width and length is only set to 500x500, which I think is big enough for this project.  \begin{figure}[h]
+ 		  Unity can be downloaded from the \href{https://store.Unity.com/}{offical website}. I prefer Unity personal version because it's free, aimed for everyone. As I mentioned before, to be able to run Unity, and create a new project, we'll need at least direct x11 for simulate lighting, shadows on the scene. To create a terrain, which is the base of the virtual world, all I have to do is go to game object -> 3D Object -> Terrain. The terrain width and length is only set to 500x500, which I think is big enough for this project.  \begin{figure}[h]
  		  	\centering
  		  	\begin{minipage}{.4\textwidth}
  		  		\centering
@@ -508,7 +508,7 @@ From the code above, the hit function is to return the information where the lin
 \begin{itemize}
 	\item \bfseries Normal map	 	
 \end{itemize}
-  A normal map is a special kind of texture that allow you to add surface detail such as bumps, grooves, and scratches to a model which catch the light as if they are represented by real geometry, it contains surface normals. 
+  A normal map is a special kind of texture that allow us to add surface detail such as bumps, grooves, and scratches to a model which catch the light as if they are represented by real geometry, it contains surface normals. 
   \begin{figure}[h]
   	\begin{minipage}{.45\textwidth}
   		\centering
@@ -1140,13 +1140,13 @@ From images below, tone mapping is where we decide how our HDR color data would 
 	 	\begin{minipage}{.5\textwidth}
 	 		\centering
 	 		\includegraphics[width=1\linewidth]{intructions/it_works1.png}
-	 		\captionof{figure}{Weapon lied on the box}
+	 		\captionof{figure}{Weapon to take}
 	 		\label{fig:test41}
 	 	\end{minipage}
  		\begin{minipage}{.5\textwidth}
  		\centering
  		\includegraphics[width=1\linewidth]{intructions/it_works2.png}
- 		\captionof{figure}{Weapon lied on the box}
+ 		\captionof{figure}{Weapon won't pop up anymore}
  		\label{fig:test42}
  		\end{minipage}
 	 \end{figure} \\
