@@ -951,7 +951,7 @@ struct appdata
 	ENDCG
 }	
 \end{lstlisting}
-The first pass will return the color depend on which color I choose \includegraphics[width=0.04\linewidth]{intructions/color_alwaysvisible.png}, but the object will not be visible if there's an object in front of it. To do that, I just simply add Ztest always within the pass command, this function will always render the pixel of this object no matter how matter which pixel is closer or further than the camera. And as the result, the yellow color that I choose still be rendered even it's behind the wall:  \includegraphics[width=0.3\linewidth]{intructions/Behind_overlay.png}
+The first pass will return the color depend on which color I choose \includegraphics[width=0.04\linewidth]{intructions/color_alwaysvisible.png}, but the object will not be visible if there's an object in front of it. To do that, I just simply add Ztest always within the pass command, this function will always render the pixel of this object no matter how matter which pixel is closer or further than the camera. And as a result, the yellow color that I choose still be rendered even it's behind the wall:  \includegraphics[width=0.3\linewidth]{intructions/Behind_overlay.png}
 For second pass, I will put the texture into my object:
 \begin{lstlisting}
 	struct appdata
@@ -1048,7 +1048,7 @@ Post processing is a shader that instead of applying to an object, it will be ap
  return col;
  }
  \end{lstlisting} 
- This equation will make the scene looks like it's be curved with the sin wave, on the x position, where I.vertex is the output position to the world space. As the result, the scene will looks like this: 
+ This equation will make the scene looks like it's be curved with the sin wave, on the x position, where I.vertex is the output position to the world space. As a result, the scene will looks like this: 
  \newpage
  ~
  \begin{figure}[h] 
@@ -1119,7 +1119,7 @@ From images below, tone mapping is where we decide how our HDR color data would 
 \newpage
 \section{Result and discussion}
 \subsection{RayCasting} 
-	The distance output of the raycasting may be confused with another object if I didn't specify a layermask for a some specific object. This may make my character sometimes mistake an object with another one. For example, if we want to take the sword which lied on the box (figure 36), then I should make my character go over there to take the word, the distance between the sword and my character should be less than 3. But there's one thing happen, even if I come close to a random terrain or object with the distance also less than 3, when we press E, the sword automically pop up.
+	The distance output of the raycasting may be confused with another object if I didn't specify a layermask for a some specific object. This may make my character sometimes mistake an object with another one. For example, if we want to take the sword which lied on the box (figure 41), then I should make my character go over there to take the sword, the distance between the sword and my character should be less than 3. But there's one thing happen, even if I come close to a random terrain or object with the distance also less than 3, when we press E, the sword automically pop up.
 	\begin{figure}[h]
 		\begin{minipage}{.5\textwidth}
 			\centering
@@ -1135,7 +1135,7 @@ From images below, tone mapping is where we decide how our HDR color data would 
 			\centering
 		\end{minipage}
 	\end{figure} \\
-	And this bug can be fixed by defining int layermask = 1 << "A specific layer to hit" , this will only make a raycast hit a specific layer. As the result, there's no longer a bug here when I press E button when comes close to a random object with distance less than 3. From 2 pictures below, I have defined the sword as "Weapon", assign it to layer 8, then define the layermask in C\# code as 1 << 8. In Unity, the way how it read the layermask it that it read the binary number instead of a normal one, with the maximum digit numbers of 32, corresponding to the maximum number of the layers we can create. 
+	And this bug can be fixed by defining int layermask = 1 << "A specific layer to hit" , this will only make a raycast hit a specific layer. As a result, there's no longer a bug here when I press E button when coming close to a random object with distance less than 3. From 2 pictures below, I have defined the sword as "Weapon", assign it to layer 8, then define the layermask in C\# code as 1 << 8. In Unity, the way how it read the layermask it that it read the binary number instead of a normal one, with the maximum digit numbers of 32, corresponding to the maximum number of the layers we can create. 
 	 \begin{figure}[h!]
 	 	\begin{minipage}{.5\textwidth}
 	 		\centering
