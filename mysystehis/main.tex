@@ -114,7 +114,7 @@ Finally, I am very grateful to my family members: my parents, my brother Bui Vu 
 \newpage
 \section{\Large Abstraction}
  In computer graphics (CG), it has four major disciplines: computer animation, image processing, visualization, and virtual reality. Virtual World has all 4 convergence factors above, show how the latest developments in virtual environments, computer animation. With the advancement in two-dimensional and three-dimensional graphics rendering technologies, in this work, graphical models called avatars, objects are used here for real-time communication, actions, also with real-world rules, as they have become the hallmark of virtual worlds. Today's avatars	are all in three-dimension, with interactive icon that only exist in virtual worlds. \\
- Keyword: CG, mesh, texture, color, pixel, Bump Mapping, vertex, fragment, shader, vector, transform,GI, light.
+ Keyword: CG, mesh, texture, color, pixel, Bump Mapping, vertex, fragment, shader, vector, transform, GI, light.
  
 \newpage
 \section{\Large Introduction} 
@@ -140,12 +140,12 @@ Nowadays, technology is getting better and better, so human life are becoming mo
   \section{\Large Programs, Materials and Methods}
   	\subsection{External programs used}
   		\subsubsection{3DS Max}
- 		 3DS Max, a program developed by Autodesk, previously called 3D Studio Max, is a 3D computer graphics program for making 3D animations, models , images...
+ 		 3DS Max, a program developed by Autodesk, previously called 3D Studio Max, is a 3D computer graphics program for making 3D animations, models, images...
  		 This program was used in this project in order to edit UV mapping of some models, correct the position of the texture. 
  		 \subsubsection{Photoshop}
  		 Photoshop is a photo editing and graphic design software. It is developed by Adobe Systems for MacOS and Windows. It is different from other graphic design or photo editing software in that it can create normal map, height map from a single texture. With this feature, the software will help me with the technique bump mapping, so the game's texture will look more realistic. 
  		 \subsubsection{Visual Studio}
- 		 Visual studio is an IDE (integrated development environment ) from Microsoft. It is used to develop computer programs, as well as websites, supports many programming languages such as : C++, C\#, JavaScript, etc... 
+ 		 Visual studio is an IDE (integrated development environment) from Microsoft. It is used to develop computer programs, as well as websites, supports many programming languages such as: C++, C\#, JavaScript, etc... 
  		 This is the main software of this project, because I am using this one to write scripts in order to make the game works.
  		 When installing Unity 5, normally it's shipped with visual studio community which is free for everyone. Previously, it is shipped with the monodevelop, but now the monodevelop is discontinued, no longer support Unity, replaced with visual studio community as it's more powerful than monodevelop, it support MacOS and windows,has built in support for SCM and works with tools such as git and mercurial, which monodevelop doesn't have.  
  		
@@ -321,7 +321,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
   		\end{minipage}
  	 \end{figure}  
   	\\[0.05cm]
- 	 The camera is specified in term of three parameters: {\bfseries EYE, AT}, and {\bfseries UP}, as show in the left one. EYE is the camera position , AT is the reference point the camera is pointing at, and UP usually is set to the y-axis of the world space. For example, in the right one, AT is set at the position a little bit above the character for not covering the center of the screen which I'm going to explain why later.
+ 	 The camera is specified in term of three parameters: {\bfseries EYE, AT}, and {\bfseries UP}, as show in the left one. EYE is the camera position, AT is the reference point the camera is pointing at, and UP usually is set to the y-axis of the world space. For example, in the right one, AT is set at the position a little bit above the character for not covering the center of the screen which I'm going to explain why later.
  	 After that, the camera needed to be rotated around with a mouse because I'd like to see what is happening around the character. And the same applied to the character controller script, but this time, I use Input.GetAxisRaw function instead of GetAxis is because I don't want the rotating to be smooth immiately as it can cause a short delay as GetAxisRaw will only return 0,-1 or 1 while GetAxis change gradually from 0 to 1 or 0 to -1.  
  	 Moreover, the function Lerp is used here instead of SmoothDamp due to the fact that the smoothdamp function adds the curve which can cause delay, for instance, when I stop moving my mouse, the camera still moving, while Lerp only behaves linear. As now, there's still one more problem, on the mouseY rotation, the camera can be rotated 360 degree which is not I wanted, so I used the function Mathf.Clamp to limit the rotation of the mouseY axis, the minimum, maximum here is -40, 85 degree for the third person camera controller. In the end, to finish my TPS camera controller, I've modified the character controller script a bit by adding cameraT.eulerAngles.y in the targetRotation where cameraT is the MainCamera(the TPS camera), to make sure that the camera will following the player correctly.
  	 
@@ -429,9 +429,9 @@ From the code above, the hit function is to return the information where the lin
 	This camera represents how we see the world in reality, everyday life. The controller script for this one is basically the same as the TPScamera script I've written before, but the only difference is the FoV, it's a bit narrower than the FoV of TPScamera and the clamp angle. The camera position is right at the position of the eye's character, for making the gameplay looks more realistic. Moreover, I've written the script to allow the user to change between the FPS mode and TPS mode by pressing V. One more thing, to be able to synchronized 2 camera, all I do is copy almost all the code lines from TPSCamera script and then paste to the FPS one, so that 2 camera will rotate , move extractly at the same angle, same speed. 
 
 \paragraph{RayCasting}
-  A Raycast is conceptually like a beam that's fired from a point in space along a particular direction. Any object making contact with the beam can be detected and reported. With the ability to get information from the object that the beam hit, this is the main method for this project, as the character is able to interact with other objects in the virtual world. In Unity, raycast support both 2 dimension and 3 dimension, and for my project, I'll use 3d version for working with 3D space. There're two type of raycast that's usually used , Physics.Raycast and Physics.Linecast.
+  A Raycast is conceptually like a beam that's fired from a point in space along a particular direction. Any object making contact with the beam can be detected and reported. With the ability to get information from the object that the beam hit, this is the main method for this project, as the character is able to interact with other objects in the virtual world. In Unity, raycast support both 2 dimension and 3 dimension, and for my project, I'll use 3d version for working with 3D space. There're two type of raycast that's usually used, Physics.Raycast and Physics.Linecast.
   \begin{itemize}
-  	\item \bfseries Physics.Raycast(Vector3 origin,  Vector3 direction ,float maxDistance = Mathf.Infinity, out hit, , layerMask)	 	
+  	\item \bfseries Physics.Raycast(Vector3 origin,  Vector3 direction, float maxDistance = Mathf.Infinity, out hit, layerMask)	 	
   \end{itemize}
  	This type of function casts a ray from the original point, which is Vector3 origin into direction point (Vector3 direction) with the length of maxDistance. Normally, the maxDistance usually set to Mathf.Infinity for casting to the infinite length. This function will return true if the ray intersects with something, otherwise false. The fourth variable, the out usually passed by hit, it provides the info about what it hit, like the distance from the origin to the point or the position where it hit, which is extractly what I need for my character to be able to interact, communicate with other objects in the scene.
  	\begin{figure}[h]
@@ -458,7 +458,7 @@ From the code above, the hit function is to return the information where the lin
  			\end{minipage}
  		\end{figure}
  	\\[0.05cm]
- 	This is because I've declared a float variable , when hit.distance bigger than that variable, the text will not appear until hit.distance is smaller. This is the concept of communicating with objects in the scene. Besides, the out variable can be used to get the object name where the ray hit by using hit.collider.gameObject.name: 	
+ 	This is because I've declared a float variable, when hit.distance bigger than that variable, the text will not appear until hit.distance is smaller. This is the concept of communicating with objects in the scene. Besides, the out variable can be used to get the object name where the ray hit by using hit.collider.gameObject.name: 	
  	\noindent\begin{minipage}{0.3\textwidth}
  		\includegraphics[width=\linewidth]{intructions/objectname.png}
  	\end{minipage}
@@ -631,7 +631,7 @@ From 2 images above, the purple color, with RGB value of (0.5, 0.5, 1) as base c
 It's quite hard to see the difference, but in the right side, at the bottom of the brick, it's darker than the left side as if there is a shadow there.
 
 \paragraph{Lighting}
-Lighting is an essential part of every scene. In Unity, while the mesh, textures define the shape, the look of an object, the lights will define the color, the mood of a 3D environment. Lights can be added into the scene just by going to {\bfseries GameObject -> Light} menu . In the menu, we can choose any form of light. Once the light has been added into the scene, we can adjust the properties of the light to the way we want in the inspector, there are many different options within the Light Component. 
+Lighting is an essential part of every scene. In Unity, while the mesh, textures define the shape, the look of an object, the lights will define the color, the mood of a 3D environment. Lights can be added into the scene just by going to {\bfseries GameObject -> Light} menu. In the menu, we can choose any form of light. Once the light has been added into the scene, we can adjust the properties of the light to the way we want in the inspector, there are many different options within the Light Component. 
 \newpage
 \begin{figure}[h]
 	\centering
@@ -653,7 +653,7 @@ Lighting is an essential part of every scene. In Unity, while the mesh, textures
 	}
 \end{figure}
   \vspace{5.5cm}
-  Just by simply changing the color of a light, this can give a whole different mood to the scene
+  Just by simply changing the color of a light, this can give a whole different mood to the scene.
   \begin{figure}[h]
   	\begin{minipage}{1\textwidth}
   		\centering
@@ -662,7 +662,7 @@ Lighting is an essential part of every scene. In Unity, while the mesh, textures
   		\captionof{figure}{Changing light color}
   		\label{fig:test28}
   	\end{minipage}
-  \end{figure}
+  \end{figure} \\
  However, lighting in Unity also includes realtime GI or global illumination, illumination means lighten up. GI is a general name for a group of methods and algorithms to add more realistic lighting into the scene, like how the like is bounce off surface onto other surfaces, instead of just limited to the light that hit the surface directly. 
  \begin{figure}[h]
  	\begin{minipage}{1\textwidth}
@@ -685,7 +685,7 @@ Lighting is an essential part of every scene. In Unity, while the mesh, textures
  	\end{minipage}
  \end{figure}
 \\[0.05cm]
- In Unity, it provides two techniques for pre computing GI: Baked GI and pre-computed real-time GI. The Baked one is pre-computed and will save a ton of processing power, and this only work if all the objects, light-sources in the scene are static. Whereas real-time is exactly lighting calculated in real-time, per frame, which means light and shadow positions can change over time when an object or light source is moving. Depending on each object and light source, we select the appropriate GI method. For the sunlight (the light that shines the whole scene), I set the mode to real-time because there're still some moving objects like the player, the NPC, etc... and for the light like the room light, I set it to baked mode. A combination of baked and realtime lights can help maintain performance. To enable GI mode, all I have to do is go to window -> rendering -> lighting setting, here's the properties that I set for making the light looks more realistic. The reason I have to enable both realtime and baked GI is because I have both baked and realtime light in the scene.
+ In Unity, it provides two techniques for pre computing GI: Baked GI and pre-computed real-time GI. The Baked one is pre-computed and will save a ton of processing power, and this only work if all the objects, light-sources in the scene are static. Whereas real-time is exactly lighting calculated in real-time, per frame, which means light and shadow positions can change over time when an object or light source is moving. Depending on each object and light source, we select the appropriate GI method. For the sunlight (the light that shines the whole scene), I set the mode to real-time because there are still some moving objects like the player, the NPC, etc... and for the light like the room light, I set it to baked mode. A combination of baked and realtime lights can help maintain performance. To enable GI mode, all I have to do is go to window -> rendering -> lighting setting, here's the properties that I set for making the light looks more realistic. The reason I have to enable both realtime and baked GI is because I have both baked and realtime light in the scene.
  \newpage
  \begin{figure}[h]
  	\raisebox{-50mm}[0pt][0pt]{
@@ -869,7 +869,7 @@ From Unity 2018 version or later, it does comes with shadergraph to be able to m
    \begin{itemize}
   	\item \bfseries Glass shader
   \end{itemize}  
-  	The fresnel effect above can also be used to create a glass shader. First of all, I'm going to define alpha:fade which is going to make the object be able to see inside. When creating a shader, Unity already implement for us the smoothness, metallic value so I just need to increase both of the value to 1 in order to make the object reflective. After that, the object still doesn't look like a glass, in order to get the glass look, this's when the fresnel effect comes to play. Same as before, but this time, instead of multiplying the equation with o.Emission, I'll multiply it with o.Alpha, to get the glass look, as o.Alpha alter the transparent of the object.
+  	The fresnel effect above can also be used to create a glass shader. First of all, I'm going to define alpha:fade which is going to make the object be able to see inside. When creating a shader, Unity already implement for us the smoothness, metallic value so I just need to increase both of the value to 1 in order to make the object reflective. After that, the object still doesn't look like a glass, in order to get the glass look, this is when the fresnel effect comes to play. Same as before, but this time, instead of multiplying the equation with o.Emission, I'll multiply it with o.Alpha, to get the glass look, as o.Alpha alter the transparent of the object.
   	\begin{figure}[h]
   		\begin{minipage}{.5\textwidth}
   			\centering
@@ -994,7 +994,7 @@ For second pass, I will put the texture into my object:
 		\centering
 	\end{minipage}
 \end{figure}
-At this moment, the object doesn't react to the light yet, so , I will combine both the surface and the vertex/fragment shader in order to make the lighting work
+At this moment, the object doesn't react to the light yet, the surface shader is also used here and combined with the vertex/fragment shader in order to make the lighting work.
 
 \begin{lstlisting}
 CGPROGRAM
@@ -1153,7 +1153,7 @@ From images below, tone mapping is where we decide how our HDR color data would 
 	 However, this raycast function does have a limit. It only works with objects that have collider with it. In some situations like when my character's position is higher than the target object, the ray cannot reach the target, therefore it also doesn't work.
 	
 \subsection{Bump map} 	
-	 One of the main texture I used here for bump mapping technique is the normal map. As it's heavily depended on the height map quality that I created from photoshop, also on the quality of the original texture, the output of the normal map might not be absolutely correct, have good looking result. From that, the lights that shine on the surface may not be bounce to the way it should be, because I only generate a normal map from a 2d texture, don't interfere with any 3D mesh. In some situations, the height map's value need to be inverted in order to get the correct light bounce position, like in the pictures below:
+	 One of the main texture I used here for bump mapping technique is the normal map. As it's heavily depended on the height map quality that I created from Photoshop, also on the quality of the original texture, the output of the normal map might not be absolutely correct, have good looking result. From that, the lights that shine on the surface may not be bounce to the way it should be, because I only generate a normal map from a 2d texture, don't interfere with any 3D mesh. In some situations, the height map's value need to be inverted in order to get the correct light bounce position, like in the pictures below:
 	 
 	 \begin{figure}[h]
 	 	\begin{minipage}{.3\textwidth}
