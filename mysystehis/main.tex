@@ -103,13 +103,16 @@ Finally, I am very grateful to my family members: my parents, my brother Bui Vu 
  \renewcommand{\thesubsection}{\arabic{subsection}}
 \section*{\Large List of Abbreviations} 
 \begin{itemize}
-	\item GPU: Graphic processing unit (in graphic card)
+	\item GPU: Graphic processing unit (inside graphic card)
+	\item CPU: Central Processing Unit (inside processor)
 	\item NPC: Non-Playable character
 	\item FPS: First person
 	\item TPS: Third person
 	\item GI: Global illumination	
 	\item RGB: Red, Green and Blue
 	\item API: Application program interface 
+	\item UI: User interface
+	\item FPS: frame per second
 \end{itemize}
 \newpage
 \section{\Large Abstraction}
@@ -119,7 +122,7 @@ Finally, I am very grateful to my family members: my parents, my brother Bui Vu 
 \newpage
 \section{\Large Introduction} 
 Nowadays, technology is getting better and better, so human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-based environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphics, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there is still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... . there are 2 types of virtual worlds: Entertainment-based and social Interaction-Based. For entertainment-based, users usually interact with the world through their avatars, virtual worlds represents the majority of virtual worlds in existence today. For social interaction-based, it focuses on user interaction, education and training through simulated worlds. In this internship, I'll mainly focus on entertainment-based virtual world as it's closer to real world we are living,bring a pleasant, especially with 3D environment. \\[0.35cm] To create a virtual world, there are some types of engine that allow us to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] From one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
- In my opinion, first of all, it has tons of online tutorials to be found, the document with clean format, so a good step for beginners. With it's very intuitive design, C\# language make it easier to use or learn, for instance, it is very easy to pass functions into other functions as delegates or lamda expressions. Also, with great community, when we have a problem, they'll help us everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, Unity has asset store with lots of free assets for everyone to use, while the other ones only have few free assets. \\[0.35cm]In this work, I'll focus on creating the virtual world using Unity engine, in particular, it's an RPG game, where we as a player can walk around, interact with other NPC model in the world, or attack some enemy that get in our way. 
+ In my opinion, first of all, it has tons of online tutorials to be found, the document with clean format, so a good step for beginners. With it's very intuitive design, C\# language make it easier to use or learn, for instance, it is very easy to pass functions into other functions as delegates or lamda expressions. Also, with great community, when we have a problem, they'll help us everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, Unity has asset store with lots of free assets for everyone to use, while the other ones only have few free assets. However, there's still a disadvantage is when unity update its version, we cannot import projects that made with old version to the new one as it can cause bug because of API updating.  \\[0.35cm]In this work, I'll focus on creating the virtual world using Unity engine, in particular, it's an RPG game, where we as a player can walk around, interact with other NPC model in the world, or attack some enemy that get in our way. 
   
 
  To create a virtual world with Unity, first, we'll need to create the terrain by the tools Unity provides for us. After that, we can create my own model and then just simply drag and drop the model into the scene, if not, there are several websites we can get free 3d model from like turbosquid or free3d. For the Lighting and the shadow, Unity also has build-in tool just like other engines, which can help us create the light and shadow easily, adjust it as we want. Furthermore, to make things look good, we can apply some textures to all the objects, prefabs. We can find the texture on google, choose the suitable one for a specific object, and then just simply drag and drop them on that object, or making our own texture. Finally, in order to move around or interact with the object, a camera and player controller should be added into the scene. For this, Unity already has the FPScontroller prefab which can be found in the standard assets, we can use it directly without doing anything. However, it's still possible to create the character controller from scratch with C\# code.
@@ -1074,7 +1077,7 @@ First of all, we'll need to configure some settings by going to {\bfseries Edit 
  		\label{fig:test34}
  	\end{minipage}      	
  \end{figure}
-For the anti-aliasing, I'll only set to 2x , if set too high, it may decrease performance, my computer might not be able to handle this. Anti-aliasing is for getting rid of jagged edges on the screen, the higher the anti aliasing is, more square pixels it can be eliminated, more power the GPU use. \\
+For the anti-aliasing, I'll only set to 2x, even better if it's turned off. When set too high, it may decrease performance, my computer might not be able to handle this. Anti-aliasing is for getting rid of jagged edges on the screen, the higher the anti aliasing is, more square pixels it can be eliminated, more power the GPU use. \\
 
 After that, from the camera, I just need to add Post-Processing Behaviour which already comes with post-processing stack, and then create a profile, change it to the way I want. This is what my scene looks like after the configuration:
 \begin{figure}[h] 
@@ -1192,7 +1195,30 @@ From images below, tone mapping is where we decide how our HDR color data would 
  		\caption{Normal map strength scale}\label{tab1}
  	\end{table} \\
  	It depends on each texture, for me, strength range from 1 to 1.5 for this texture provide the most realistic looking surface, with light bouncing directions. Although this bump mapping technique is relatively an old school technique, but it's still one of the best methods for create realistic graphic. As the height map contain height information, which can fake the depth of the surface, and the normal map can fake the lighting on surface, provide the angle information which direction the light should be bent. 
- 		 
+ 	\subsection{Performance Optimization} 
+ 	When it comes to Unity, we also have to optimize the game, in order to get better performance, and we can optimize by reducing batches. There are several ways to optimize, but one of the best way we use to optimize is to combines multiple meshes into one. Everytime when starting the game, Unity have to render multiple meshes which would slow down the performance, but when we merge meshes together, Unity will only have render once which could greatly improve the performance. \\[0.5cm] The technique we will be using here is from unity document: \\
+ 	\href{https://docs.unity3d.com/ScriptReference/Mesh.CombineMeshes.html}{\color{cyan} https://docs.unity3d.com/ScriptReference/Mesh.CombineMeshes.html} \\
+ 	For instance, in the picture below, the frame-rate is not really good when there are over 7500 batches here (33.1 FPS):
+ 	\begin{figure}[h]
+ 		\begin{minipage}{1\textwidth}
+ 			\centering
+ 			\includegraphics[width=0.4\linewidth]{pre_optimized.png}
+ 			\captionof{figure}{Pre-optimized}
+ 			\label{fig:test46}
+ 		\end{minipage}
+ 	\end{figure}\\
+  	And after using Mesh Combiner C\# script to combine the meshes, the batches has reduced by a certain amount, returning higher frame-rate (62.1 FPS) :
+  	\begin{figure}[h]
+  		\begin{minipage}{1\textwidth}
+  			\centering
+  			\includegraphics[width=0.4\linewidth]{post_optimized.png}
+  			\captionof{figure}{Pre-optimized}
+  			\label{fig:test47}
+  		\end{minipage}
+  	\end{figure} \\
+  Besides, trees and detail grasses can also cause heavy impact on CPU, hence rendering FPS drop, stuttering. However, we can temporarily overcome this problem just by simply detail distance, detail density and tree distance from terrain setting in Unity, which will only make trees be rendered from a certain distance. 
+ 	
+ 	
  	\section{Conclusion}  
  	The main aim of this internship is to help people satisfy the entertaining needs after working hard all days at school or company, developing a virtual world for people who are celibate, have no one nearby to chat, help contributing the entertainment industry. \\ The core methods for developing a 3D virtual world in Unity are RayCasting, bump mapping and Shading. For some stuffs like collider, etc... I don't mention here as Unity already has simple built-in tools, properties which can be easily done just by drag and drop or by adding a component. With raycasting method, the player can easily communicating with other NPCs, object in the scene just by pressing a button. As I mentioned above, bump mapping technique will provide a realistic looking graphic, for better experience while playing the game. Although Unity already has the built-in standard shader, if we want a fancy effect for the object or directly on the screen, this standard shader doesn't have any properties to make one like that, nor behave as post-processing shader, we have to write our own shader like vertex/fragment shader or surface shader. The surface shader is the easiest shader to write as we only have to write surf function, which already contain vertex, fragment information. \\ And finally, thanks to this internship, I have had a good opportunity to learn more about how Unity engines works, understand more about the process of developing a 3D virtual world, and also know more about computer graphics.   
 	\section{Future Development}  

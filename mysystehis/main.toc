@@ -26,6 +26,7 @@
 \contentsline {section}{\numberline {F}Result and discussion}{34}{appendix.F}% 
 \contentsline {subsection}{\numberline {1}RayCasting}{34}{subsection.F.1}% 
 \contentsline {subsection}{\numberline {2}Bump map}{35}{subsection.F.2}% 
-\contentsline {section}{\numberline {G}Conclusion}{36}{appendix.G}% 
-\contentsline {section}{\numberline {H}Future Development}{36}{appendix.H}% 
-\contentsline {section}{\numberline {I}Reference}{37}{appendix.I}% 
+\contentsline {subsection}{\numberline {3}Performance Optimization}{36}{subsection.F.3}% 
+\contentsline {section}{\numberline {G}Conclusion}{37}{appendix.G}% 
+\contentsline {section}{\numberline {H}Future Development}{37}{appendix.H}% 
+\contentsline {section}{\numberline {I}Reference}{38}{appendix.I}% 
