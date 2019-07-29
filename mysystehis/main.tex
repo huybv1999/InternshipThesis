@@ -1196,7 +1196,7 @@ From images below, tone mapping is where we decide how our HDR color data would 
  	\end{table} \\
  	It depends on each texture, for me, strength range from 1 to 1.5 for this texture provide the most realistic looking surface, with light bouncing directions. Although this bump mapping technique is relatively an old school technique, but it's still one of the best methods for create realistic graphic. As the height map contain height information, which can fake the depth of the surface, and the normal map can fake the lighting on surface, provide the angle information which direction the light should be bent. 
  	\subsection{Performance Optimization} 
- 	When it comes to Unity, we also have to optimize the game, in order to get better performance, and we can optimize by reducing batches. There are several ways to optimize, but one of the best way we use to optimize is to combines multiple meshes into one. Everytime when starting the game, Unity have to render multiple meshes which would slow down the performance, but when we merge meshes together, Unity will only have render once which could greatly improve the performance. \\[0.5cm] The technique we will be using here is from unity document: \\
+ 	When it comes to Unity, we also have to optimize the game, in order to get better performance, and we can optimize by reducing batches. There are several ways to optimize, but one of the best way we use to optimize is to combine multiple meshes into one. Everytime when starting the game, Unity has to render multiple meshes which would slow down the performance, but when we merge meshes together, Unity will only have to render once which could greatly improve the performance. \\[0.5cm] The technique we will be using here is from unity document: \\
  	\href{https://docs.unity3d.com/ScriptReference/Mesh.CombineMeshes.html}{\color{cyan} https://docs.unity3d.com/ScriptReference/Mesh.CombineMeshes.html} \\
  	For instance, in the picture below, the frame-rate is not really good when there are over 7500 batches here (33.1 FPS):
  	\begin{figure}[h]
@@ -1207,7 +1207,7 @@ From images below, tone mapping is where we decide how our HDR color data would 
  			\label{fig:test46}
  		\end{minipage}
  	\end{figure}\\
-  	And after using Mesh Combiner C\# script to combine the meshes, the batches has reduced by a certain amount, returning higher frame-rate (62.1 FPS) :
+  	And after using Mesh Combiner C\# script to combine the meshes, the batches has reduced by a certain amount (3300 batches),  returning higher frame-rate (62.1 FPS) :
   	\begin{figure}[h]
   		\begin{minipage}{1\textwidth}
   			\centering
@@ -1216,7 +1216,7 @@ From images below, tone mapping is where we decide how our HDR color data would 
   			\label{fig:test47}
   		\end{minipage}
   	\end{figure} \\
-  Besides, trees and detail grasses can also cause heavy impact on CPU, hence rendering FPS drop, stuttering. However, we can temporarily overcome this problem just by simply detail distance, detail density and tree distance from terrain setting in Unity, which will only make trees be rendered from a certain distance. 
+  Besides, trees and detail grasses can also cause heavy impact on CPU, hence rendering FPS drop, stuttering. However, we can temporarily overcome this problem just by simply reducing detail distance, detail density and tree distance from terrain setting in Unity, which will only make trees be rendered from a certain distance. 
  	
  	
  	\section{Conclusion}  
