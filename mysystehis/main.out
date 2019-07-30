@@ -23,6 +23,6 @@
 \BOOKMARK [1][-]{appendix.F}{Result and discussion}{}% 23
 \BOOKMARK [2][-]{subsection.F.1}{RayCasting}{appendix.F}% 24
 \BOOKMARK [2][-]{subsection.F.2}{Bump map}{appendix.F}% 25
-\BOOKMARK [1][-]{appendix.G}{Conclusion}{}% 26
-\BOOKMARK [1][-]{appendix.H}{Future Development}{}% 27
-\BOOKMARK [1][-]{appendix.I}{Reference}{}% 28
+\BOOKMARK [2][-]{subsection.F.3}{Performance Optimization}{appendix.F}% 26
+\BOOKMARK [1][-]{appendix.G}{Conclusion}{}% 27
+\BOOKMARK [1][-]{appendix.H}{Future Development}{}% 28

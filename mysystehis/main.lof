@@ -1,0 +1,53 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Overview Diagram\relax }}{12}{figure.caption.1}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Create terrain\relax }}{13}{figure.caption.2}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Properties\relax }}{13}{figure.caption.2}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Sections\relax }}{13}{figure.caption.3}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Character example\relax }}{14}{figure.caption.4}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Camera world space [0.01cm] (Image from number \cite {3D} in reference section)\relax }}{16}{figure.caption.5}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Occlusion example\relax }}{16}{figure.caption.6}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Collision example\relax }}{16}{figure.caption.6}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Occlusion\relax }}{17}{figure.caption.7}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Collision\relax }}{17}{figure.caption.8}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Camera overview\relax }}{18}{figure.caption.9}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Occlusion\relax }}{18}{figure.caption.10}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces RayCast example\relax }}{20}{figure.caption.11}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Text popup\relax }}{20}{figure.caption.12}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Original texture\relax }}{21}{figure.caption.13}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Height map\relax }}{21}{figure.caption.13}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces Height map values [0.01cm] (Image from number \cite {3D} in reference section)\relax }}{21}{figure.caption.13}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces Surface normal, across 3 polygons Image from number \cite {Unity} in reference section\relax }}{22}{figure.caption.14}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Normal mapping across three polygons (Image from number \cite {Unity} in reference section)\relax }}{22}{figure.caption.14}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces (Image from number \cite {3D} in reference section)\relax }}{22}{figure.caption.15}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces The normal map that I created\relax }}{23}{figure.caption.16}% 
+\contentsline {figure}{\numberline {22}{\ignorespaces Without normal map\relax }}{23}{figure.caption.16}% 
+\contentsline {figure}{\numberline {23}{\ignorespaces With normal map applied\relax }}{23}{figure.caption.16}% 
+\contentsline {figure}{\numberline {24}{\ignorespaces The normal map\relax }}{24}{figure.caption.17}% 
+\contentsline {figure}{\numberline {25}{\ignorespaces Occlusion map after I created using C\# script\relax }}{24}{figure.caption.17}% 
+\contentsline {figure}{\numberline {26}{\ignorespaces without occlusion\relax }}{24}{figure.caption.18}% 
+\contentsline {figure}{\numberline {27}{\ignorespaces with occlusion being applied\relax }}{24}{figure.caption.18}% 
+\contentsline {figure}{\numberline {28}{\ignorespaces Light section\relax }}{25}{figure.caption.19}% 
+\contentsline {figure}{\numberline {29}{\ignorespaces Light properties\relax }}{25}{figure.caption.19}% 
+\contentsline {figure}{\numberline {30}{\ignorespaces Changing light color\relax }}{25}{figure.caption.20}% 
+\contentsline {figure}{\numberline {31}{\ignorespaces (Image from number \cite {Youtuber}, youtube channel Brackeys)\relax }}{26}{figure.caption.21}% 
+\contentsline {figure}{\numberline {32}{\ignorespaces GI technique\relax }}{26}{figure.caption.23}% 
+\contentsline {figure}{\numberline {33}{\ignorespaces Light setting\relax }}{27}{figure.caption.24}% 
+\contentsline {figure}{\numberline {34}{\ignorespaces Vertex and fragment Shader flow\relax }}{30}{figure.caption.28}% 
+\contentsline {figure}{\numberline {35}{\ignorespaces Without fresnel\relax }}{31}{figure.caption.31}% 
+\contentsline {figure}{\numberline {36}{\ignorespaces With fresnel\relax }}{31}{figure.caption.31}% 
+\contentsline {figure}{\numberline {37}{\ignorespaces with reflection probe\relax }}{32}{figure.caption.32}% 
+\contentsline {figure}{\numberline {38}{\ignorespaces Light react\relax }}{34}{figure.caption.34}% 
+\contentsline {figure}{\numberline {39}{\ignorespaces Dizzy effect\relax }}{35}{figure.caption.36}% 
+\contentsline {figure}{\numberline {40}{\ignorespaces Quality setting\relax }}{35}{figure.caption.37}% 
+\contentsline {figure}{\numberline {41}{\ignorespaces Quality setting\relax }}{36}{figure.caption.38}% 
+\contentsline {figure}{\numberline {42}{\ignorespaces Profile configure\relax }}{36}{figure.caption.39}% 
+\contentsline {figure}{\numberline {43}{\ignorespaces Profile configure\relax }}{36}{figure.caption.39}% 
+\contentsline {figure}{\numberline {44}{\ignorespaces Bloom effect\relax }}{36}{figure.caption.39}% 
+\contentsline {figure}{\numberline {45}{\ignorespaces Weapon lied on the box\relax }}{37}{figure.caption.40}% 
+\contentsline {figure}{\numberline {46}{\ignorespaces Bug, the sword appear right away when get close to ramdom object\relax }}{37}{figure.caption.40}% 
+\contentsline {figure}{\numberline {47}{\ignorespaces Weapon to take\relax }}{37}{figure.caption.41}% 
+\contentsline {figure}{\numberline {48}{\ignorespaces Weapon won't pop up anymore\relax }}{37}{figure.caption.41}% 
+\contentsline {figure}{\numberline {49}{\ignorespaces Source texture\relax }}{38}{figure.caption.42}% 
+\contentsline {figure}{\numberline {50}{\ignorespaces Wrong heightmap\relax }}{38}{figure.caption.42}% 
+\contentsline {figure}{\numberline {51}{\ignorespaces Correct heightmap\relax }}{38}{figure.caption.42}% 
+\contentsline {figure}{\numberline {52}{\ignorespaces Pre-optimized\relax }}{39}{figure.caption.44}% 
+\contentsline {figure}{\numberline {53}{\ignorespaces Post-optimized\relax }}{39}{figure.caption.45}% 

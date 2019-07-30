@@ -1,31 +1,31 @@
-\contentsline {section}{\numberline {A}\relax \fontsize {14.4}{18}\selectfont Abstraction}{5}{appendix.A}% 
-\contentsline {section}{\numberline {B}\relax \fontsize {14.4}{18}\selectfont Introduction}{6}{appendix.B}% 
-\contentsline {section}{\numberline {C}\relax \fontsize {14.4}{18}\selectfont Objective}{7}{appendix.C}% 
-\contentsline {section}{\numberline {D}\relax \fontsize {14.4}{18}\selectfont Aim}{7}{appendix.D}% 
-\contentsline {section}{\numberline {E}\relax \fontsize {14.4}{18}\selectfont Programs, Materials and Methods}{7}{appendix.E}% 
-\contentsline {subsection}{\numberline {1}External programs used}{7}{subsection.E.1}% 
-\contentsline {subsubsection}{\numberline {1.1}3DS Max}{7}{subsubsection.E.1.1}% 
-\contentsline {subsubsection}{\numberline {1.2}Photoshop}{8}{subsubsection.E.1.2}% 
-\contentsline {subsubsection}{\numberline {1.3}Visual Studio}{8}{subsubsection.E.1.3}% 
-\contentsline {subsection}{\numberline {2}Materials}{8}{subsection.E.2}% 
-\contentsline {subsubsection}{\numberline {2.1}DirectX}{8}{subsubsection.E.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2}A dedicated graphic card}{8}{subsubsection.E.2.2}% 
-\contentsline {subsection}{\numberline {3}Method}{8}{subsection.E.3}% 
-\contentsline {subsubsection}{\numberline {3.1}Overview Diagram}{8}{subsubsection.E.3.1}% 
-\contentsline {subsubsection}{\numberline {3.2}Details}{9}{subsubsection.E.3.2}% 
-\contentsline {paragraph}{\numberline {3.2.1}Preparation}{9}{paragraph.E.3.2.1}% 
-\contentsline {paragraph}{\numberline {3.2.2}Player}{10}{paragraph.E.3.2.2}% 
-\contentsline {paragraph}{\numberline {3.2.3}Cameras}{12}{paragraph.E.3.2.3}% 
-\contentsline {paragraph}{\numberline {3.2.4}RayCasting}{16}{paragraph.E.3.2.4}% 
-\contentsline {paragraph}{\numberline {3.2.5}Bump mapping}{18}{paragraph.E.3.2.5}% 
-\contentsline {paragraph}{\numberline {3.2.6}Lighting}{21}{paragraph.E.3.2.6}% 
-\contentsline {paragraph}{\numberline {3.2.7}Shader}{24}{paragraph.E.3.2.7}% 
-\contentsline {subparagraph}{Shader overview}{24}{subparagraph*.25}% 
-\contentsline {subparagraph}{Apply shader on 3D mesh}{27}{subparagraph*.29}% 
-\contentsline {subparagraph}{Post processing}{31}{subparagraph*.35}% 
-\contentsline {section}{\numberline {F}Result and discussion}{34}{appendix.F}% 
-\contentsline {subsection}{\numberline {1}RayCasting}{34}{subsection.F.1}% 
-\contentsline {subsection}{\numberline {2}Bump map}{35}{subsection.F.2}% 
-\contentsline {section}{\numberline {G}Conclusion}{36}{appendix.G}% 
-\contentsline {section}{\numberline {H}Future Development}{36}{appendix.H}% 
-\contentsline {section}{\numberline {I}Reference}{37}{appendix.I}% 
+\contentsline {section}{\numberline {I}\relax \fontsize {14.4}{18}\selectfont Abstraction}{8}{appendix.A}% 
+\contentsline {section}{\numberline {II}\relax \fontsize {14.4}{18}\selectfont Introduction}{9}{appendix.B}% 
+\contentsline {section}{\numberline {III}\relax \fontsize {14.4}{18}\selectfont Objective}{10}{appendix.C}% 
+\contentsline {section}{\numberline {IV}\relax \fontsize {14.4}{18}\selectfont Aim}{10}{appendix.D}% 
+\contentsline {section}{\numberline {V}\relax \fontsize {14.4}{18}\selectfont Programs, Materials and Methods}{10}{appendix.E}% 
+\contentsline {subsection}{\numberline {1}External programs used}{10}{subsection.E.1}% 
+\contentsline {subsubsection}{\numberline {1.1}3DS Max}{10}{subsubsection.E.1.1}% 
+\contentsline {subsubsection}{\numberline {1.2}Photoshop}{11}{subsubsection.E.1.2}% 
+\contentsline {subsubsection}{\numberline {1.3}Visual Studio}{11}{subsubsection.E.1.3}% 
+\contentsline {subsection}{\numberline {2}Materials}{11}{subsection.E.2}% 
+\contentsline {subsubsection}{\numberline {2.1}DirectX}{11}{subsubsection.E.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2}A dedicated graphic card}{11}{subsubsection.E.2.2}% 
+\contentsline {subsection}{\numberline {3}Method}{11}{subsection.E.3}% 
+\contentsline {subsubsection}{\numberline {3.1}Overview Diagram}{11}{subsubsection.E.3.1}% 
+\contentsline {subsubsection}{\numberline {3.2}Details}{12}{subsubsection.E.3.2}% 
+\contentsline {paragraph}{\numberline {3.2.1}Preparation}{12}{paragraph.E.3.2.1}% 
+\contentsline {paragraph}{\numberline {3.2.2}Player}{13}{paragraph.E.3.2.2}% 
+\contentsline {paragraph}{\numberline {3.2.3}Cameras}{15}{paragraph.E.3.2.3}% 
+\contentsline {paragraph}{\numberline {3.2.4}RayCasting}{19}{paragraph.E.3.2.4}% 
+\contentsline {paragraph}{\numberline {3.2.5}Bump mapping}{21}{paragraph.E.3.2.5}% 
+\contentsline {paragraph}{\numberline {3.2.6}Lighting}{24}{paragraph.E.3.2.6}% 
+\contentsline {paragraph}{\numberline {3.2.7}Shader}{27}{paragraph.E.3.2.7}% 
+\contentsline {subparagraph}{Shader overview}{27}{subparagraph*.25}% 
+\contentsline {subparagraph}{Apply shader on 3D mesh}{30}{subparagraph*.29}% 
+\contentsline {subparagraph}{Post processing}{34}{subparagraph*.35}% 
+\contentsline {section}{\numberline {VI}Result and discussion}{37}{appendix.F}% 
+\contentsline {subsection}{\numberline {1}RayCasting}{37}{subsection.F.1}% 
+\contentsline {subsection}{\numberline {2}Bump map}{38}{subsection.F.2}% 
+\contentsline {subsection}{\numberline {3}Performance Optimization}{39}{subsection.F.3}% 
+\contentsline {section}{\numberline {VII}Conclusion}{40}{appendix.G}% 
+\contentsline {section}{\numberline {VIII}Future Development}{40}{appendix.H}% 
