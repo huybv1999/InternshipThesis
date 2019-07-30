@@ -27,6 +27,22 @@
 \usepackage[en-US]{datetime2}
 \usetikzlibrary{arrows}
 \usepackage{etoolbox}
+\usepackage{cite}
+\usepackage{tocloft}
+\usepackage{filecontents}
+\usepackage[tocindentauto]{tocstyle}
+\usepackage{etoolbox}
+
+
+
+%\begin{filecontents*}{test.bib}
+	% @book={ref: Unity,
+	%	Title = {Overweming},
+	%	Year = {2019}
+	%}
+	
+	
+%\end{filecontents*}
 
 \patchcmd{\titlepage}
 {\thispagestyle{empty}}
@@ -82,11 +98,15 @@
 \end{titlepage}
 \newpage
 \setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-\tableofcontents
+\setcounter{tocdepth}{4}  
+\textbf{\tableofcontents}
 \setcounter{page}{2}
 \newpage
-
+\label{listoffigures}
+\listoffigures
+\newpage
+\label{listoftables}
+\listoftables
 \newpage
 \section*{\color{cyan}\Large Acknowledgements}
 
@@ -99,7 +119,7 @@ Finally, I am very grateful to my family members: my parents, my brother Bui Vu 
  
  \newpage
  \appendix
-  \renewcommand{\thesubsection}{\Alph{section}}
+  \renewcommand{\thesection}{\Roman{section}}
  \renewcommand{\thesubsection}{\arabic{subsection}}
 \section*{\Large List of Abbreviations} 
 \begin{itemize}
@@ -113,26 +133,24 @@ Finally, I am very grateful to my family members: my parents, my brother Bui Vu 
 	\item API: Application program interface 
 	\item UI: User interface
 	\item FPS: frame per second
+	\item RPG: Role-playing game
 \end{itemize}
 \newpage
 \section{\Large Abstraction}
  In computer graphics (CG), it has four major disciplines: computer animation, image processing, visualization, and virtual reality. Virtual World has all 4 convergence factors above, show how the latest developments in virtual environments, computer animation. With the advancement in two-dimensional and three-dimensional graphics rendering technologies, in this work, graphical models called avatars, objects are used here for real-time communication, actions, also with real-world rules, as they have become the hallmark of virtual worlds. Today's avatars	are all in three-dimension, with interactive icon that only exist in virtual worlds. \\
- Keyword: CG, mesh, texture, color, pixel, Bump Mapping, vertex, fragment, shader, vector, transform, GI, light.
+ Keyword: CG, raycast, color, mesh, pixel, vertex, fragment, shader, vector, transform, GI, light.
  
 \newpage
 \section{\Large Introduction} 
-Nowadays, technology is getting better and better, so human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-based environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphics, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there is still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... . there are 2 types of virtual worlds: Entertainment-based and social Interaction-Based. For entertainment-based, users usually interact with the world through their avatars, virtual worlds represents the majority of virtual worlds in existence today. For social interaction-based, it focuses on user interaction, education and training through simulated worlds. In this internship, I'll mainly focus on entertainment-based virtual world as it's closer to real world we are living,bring a pleasant, especially with 3D environment. \\[0.35cm] To create a virtual world, there are some types of engine that allow us to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] From one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
- In my opinion, first of all, it has tons of online tutorials to be found, the document with clean format, so a good step for beginners. With it's very intuitive design, C\# language make it easier to use or learn, for instance, it is very easy to pass functions into other functions as delegates or lamda expressions. Also, with great community, when we have a problem, they'll help us everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, Unity has asset store with lots of free assets for everyone to use, while the other ones only have few free assets. However, there's still a disadvantage is when unity update its version, we cannot import projects that made with old version to the new one as it can cause bug because of API updating.  \\[0.35cm]In this work, I'll focus on creating the virtual world using Unity engine, in particular, it's an RPG game, where we as a player can walk around, interact with other NPC model in the world, or attack some enemy that get in our way. 
+Nowadays, technology is getting better and better, so human life are becoming more and more convenient. With that, people's entertainment needs are also increasing. However, to satisfy people's needs, also to keep up with this rapid development of technology, a virtual world is also a type of entertainment that can satisfy people's need. \\[0.35cm]  A virtual world is a computer-based environment that the user can interact with each other in the world. In general, the virtual world usually using 3-dimensional graphics, with 3D models, which can make people feel like they're in the real world. Virtual worlds allow for multi user to communicate, and a 3D video single player game like Elder Scroll: Blade and Skyrim can still be consider as the virtual world. \\[0.35cm] In general term, there is still no generally accepted definition for virtual world, it supports varying degrees of play and gaming. These are some uses of term: MMOGs game: large number of players within a game, and RPG game, etc... . there are 2 types of virtual worlds: Entertainment-based and social Interaction-Based. For entertainment-based, users usually interact with the world through their avatars. Virtual worlds represents the majority of virtual worlds in existence today. For social interaction-based, it focuses on user interaction, education and training through simulated worlds. In this internship, I'll mainly focus on entertainment-based virtual world as it's closer to real world we are living, bring a pleasant for us, especially with 3D environment. \\[0.35cm] To create a virtual world, there are some types of engine that allow us to make like Unity, Unreal Engine, blender, etc... \\[0.35cm] In one of those engines, Unity is the most popular choice for many people, from beginner to expert. \\[0.35cm] Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. \\[0.35cm]
+ In my opinion, first of all, it has tons of online tutorials to be found, documents with clean format, so it is a good step for beginners. With its very intuitive design, C\# language make it easier to use or learn, for instance, it is pretty easy to pass functions into other functions as delegates or lamda expressions. Also, with great community, when we have a problem, they will help us everywhere and every time. Unity has clean API, which is easy to use, understand, implement in C\# code, the application works very well on windows, Linux, android or iOS. Lastly, unlike other engines, Unity has asset store with lots of free assets for everyone to use, while  others ones only have few free assets. However, there's still a disadvantage is when unity update its version, we cannot import projects that made with old version to the new one as it can cause bug because of API updating.  \\[0.35cm]In this work, I'll focus on creating the virtual world using Unity engine, in particular, it's an RPG game, where we as a player can walk around, interact with other NPC model in the world, or attack some enemies that get in our way. 
   
 
- To create a virtual world with Unity, first, we'll need to create the terrain by the tools Unity provides for us. After that, we can create my own model and then just simply drag and drop the model into the scene, if not, there are several websites we can get free 3d model from like turbosquid or free3d. For the Lighting and the shadow, Unity also has build-in tool just like other engines, which can help us create the light and shadow easily, adjust it as we want. Furthermore, to make things look good, we can apply some textures to all the objects, prefabs. We can find the texture on google, choose the suitable one for a specific object, and then just simply drag and drop them on that object, or making our own texture. Finally, in order to move around or interact with the object, a camera and player controller should be added into the scene. For this, Unity already has the FPScontroller prefab which can be found in the standard assets, we can use it directly without doing anything. However, it's still possible to create the character controller from scratch with C\# code.
+ To create a virtual world with Unity, first, we'll need to create the terrain by the tools Unity provides for us. After that, we can create my own model and then just simply drag and drop the model into the scene, if not, there are several websites we can get free 3d model from like turbosquid or free3d. For the Lighting and the shadow, Unity also has build-in tool just like other engines, which can help us create the light and shadow easily, adjust it as we want. Furthermore, to make things look good, we can apply some textures to all the objects, prefabs. We can find textures on google, choose the suitable one for a specific object, and then just simply drag and drop them on that object, or making our own texture. Finally, in order to move around or interact with the object, a camera and player controller should be added into the scene. For this, Unity already has the FPScontroller prefab which can be found in the standard assets, we can use it directly without doing anything. However, it's still possible to create the character controller from scratch with C\# code.
  \section{\Large Objective} 
- 	Since this project is about building an RPG game, which is also a type of virtual world, I will only focus on how to make the player move around the world, is able to interact with other objects around him. In this game, there may be some enemies that get in the way, the player should eliminate them which hurt the player. 
+ 	Since this project is about building an RPG game, which is also a type of virtual world, I will only focus on how to make the player move around the world and able to interact with other objects around him. In this game, there may be some enemies that get in the way, the player should eliminate them which may hurt the player. 
  \section{\Large Aim} 
- 	The aim is not necessarily to destroy the enemies, but to complete the quest. When finishing a quest, the player should return back to the village, tell the villagers that we have finished. Beside that, the game should also have an online chat tab , which we can chat with other players who are connecting to the same network while playing game, they may help us finishing the quest faster. 
-
- 
- 
+ 	The aim is not necessarily to destroy the enemies, but to complete the quest. When finishing a quest, the player should return back to the village, tell the villagers that we have finished. Beside that, the game should also have an online chat tab, which we can chat with other players who are connecting to the same network while playing game, they may help us finishing the quest faster by asking them about something. 
 
  \titleformat{\paragraph}
  {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
@@ -146,7 +164,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  		 3DS Max, a program developed by Autodesk, previously called 3D Studio Max, is a 3D computer graphics program for making 3D animations, models, images...
  		 This program was used in this project in order to edit UV mapping of some models, correct the position of the texture. 
  		 \subsubsection{Photoshop}
- 		 Photoshop is a photo editing and graphic design software. It is developed by Adobe Systems for MacOS and Windows. It is different from other graphic design or photo editing software in that it can create normal map, height map from a single texture. With this feature, the software will help me with the technique bump mapping, so the game's texture will look more realistic. 
+ 		 Photoshop is a photo editing and graphics design software. It is developed by Adobe Systems for MacOS and Windows. It is different from other graphic design or photo editing software in that it can create normal map, height map from a single texture. With this feature, the software will help me with the bump mapping technique, so the game's texture will look more realistic. 
  		 \subsubsection{Visual Studio}
  		 Visual studio is an IDE (integrated development environment) from Microsoft. It is used to develop computer programs, as well as websites, supports many programming languages such as: C++, C\#, JavaScript, etc... 
  		 This is the main software of this project, because I am using this one to write scripts in order to make the game works.
@@ -162,7 +180,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  		 
  		 \subsection{Method}  
  		 \subsubsection{Overview Diagram}
- 		 - In this section, I would like to introduce my overview diagram about the concept of creating a virtual world: \par
+ 		 - In this section, I would like to introduce my overview diagram about the concept of creating a virtual world as illustrated in figure 1: 
  		 
  		 	\begin{figure}[h]
  		 		\centering
@@ -175,7 +193,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  		 \newpage
  		  \subsubsection{Details}
  		  \paragraph{Preparation}
- 		  Unity can be downloaded from the \href{https://store.Unity.com/}{offical website}. I prefer Unity personal version because it's free, aimed for everyone. As I mentioned before, to be able to run Unity, and create a new project, we'll need at least direct x11 for simulate lighting, shadows on the scene. To create a terrain, which is the base of the virtual world, all I have to do is go to game object -> 3D Object -> Terrain. The terrain width and length is only set to 500x500, which I think is big enough for this project.  \begin{figure}[h]
+ 		  Unity can be downloaded from the \href{https://store.Unity.com/}{offical website}. I prefer Unity personal version because it's free, aimed for everyone. As I mentioned before, to be able to run Unity, and create a new project, we'll need at least direct x11 for simulation of lighting, shadows on the scene. To create a terrain, which is the base of the virtual world, all I have to do is going to game object -> 3D Object -> Terrain. The terrain width and length is only set to 500x500, which I think is big enough for this project.  \begin{figure}[h]
  		  	\centering
  		  	\begin{minipage}{.4\textwidth}
  		  		\centering
@@ -204,7 +222,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  		 
  	Besides, in order to make the terrain look better, the user can also raise or lower the terrain to create mountains, river. After finish creating the terrain, all we have to do is drag and drop other objects/prefabs into the scene, put the textures corresponding to each object, while these prefabs/objects can be found on Unity assets store or from free3d website as I mentioned from the introduction. 
  	 \paragraph{Player}
- 	 To be able to interact with the objects, NPCs, a player should be added into the scene. For example, I use this little robot for my player, this model is free to download, use: \href{https://free3d.com/3d-model/bb8-35865.html}{https://free3d.com/3d-model/bb8-35865.html}.
+ 	 To be able to interact with the objects, NPCs, a player should be added into the scene. For example, I use a little robot for my player. This model is free to download: \href{https://free3d.com/3d-model/bb8-35865.html}{https://free3d.com/3d-model/bb8-35865.html}.
  	 
  	 \begin{figure}[h]
  	 	\centering
@@ -218,10 +236,13 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  	  
  	 Initially, the player will not move without any scripts attached to it, so I write a simple C\# script to control the player using visual studio and then attach the script to the player. Although there is a character controller prefab in the Unity's standard asset, which can be used, controlled instantly without doing anything. In this project, we'll not use character controller prefab, so that we can easily customize our character controller script later. \\[0.25cm] By default, when initializing a Unity project, there is already a camera called "Main camera", which is what the user can see from the game view in the hierarchy.  
  	 \\[0.25cm] From now, I am going to explain how can I implement character controller to move my character. Firstly, I have to find the input by go to Edit -> Project Settings -> Input. In the input section, Unity already implements 2 inputs named : "Horizontal" , "Vertical", along with Negative Button and Positive Button, and I can also add my own custom input in project setting. This is where I can move my character left and right, forward and backward. After finding the input, I can get the input by using: 
+ 	 \definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
  	 \lstdefinestyle{customc}{
  	 	belowcaptionskip=1\baselineskip,
- 	 	breaklines=true,
- 	 	frame=L,
+ 	 	breaklines=true,	
+ 	 	keepspaces       = true,
+ 	 	columns          = flexible,
+ 	 	backgroundcolor  = \color{codebackground},
  	 	xleftmargin=\parindent,
  	 	language=C,
  	 	showstringspaces=false,
@@ -237,7 +258,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  	  Vector2 input = new Vector2(Input.GetAxis("Horizontal"), 
  	  Input.GetAxis("Vertical"));
  	 \end{lstlisting}
- 	 Next, I have to normalize the input vector to see which direction the player have to move , face correctly. To be more specify, let's consider two trigonometry circles below:
+ 	 Next, I have to normalize the input vector to see which direction the player has to move , face correctly. To be more specify, let's consider two trigonometry circles below:
  	
  	 		\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
  	 		\definecolor{ffqqqq}{rgb}{1.,0.,0.}
@@ -271,11 +292,13 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  	 		\draw [fill=uuuuuu] (1.77,-3.3) circle (2.0pt);
  	 		\end{scriptsize}
  	 		\end{tikzpicture}
+ 	 		{\\[-1.0cm]
+ 	 		\centering Figure 5.5: Two trigonometry circles}
  	 	\\[0.02cm]
- 	 	From the left one above, suppose that the red line is the input direction, X and Y are vertical and horizontal components. Let's call the rotation of the character  {$\alpha$}. When looking at the two circles, it is clear that r is calculated as: 
+ 	 	From the left one above, suppose that the red line is the input direction, X and Y are vertical and horizontal components. Let's call the rotation angle of the character  {$\alpha$}. When looking at the two circles, it is clear that r is calculated as: 
  	 	\\[-0.5cm]
  	 	\[\alpha = arctan(\frac{Y}{X})\]
- 	 	In Unity, however, if my character is facing forward, then it has the rotation of 0 (as seen from the right one), when facing right it has the rotation of 90 degree and so on. Let's call the rotation of character in Unity is r, when looking at the two circle, it's clearly that r is calculated as: \\[-0.5cm]
+ 	 	In Unity, however, if my character is looking forward, then it has the rotation of 0 (as seen from the right one), when facing right it has the rotation of 90 degree and so on. Let's call the rotation of character in Unity is r, when looking at the two circle, it's clearly that r is calculated as: \\[-0.5cm]
  	 	 \[r = 90 - \alpha; \hspace{0.8cm} or \hspace{1.0cm} r = arctan(\frac{X}{Y})\] 
  	 	By C\# code:
  	 	\begin{lstlisting}
@@ -314,12 +337,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
  	 		\centering
  	 		\includegraphics[width=0.7\linewidth]{intructions/camera_space.png}
  	 			\centering
- 	 		\captionof{figure}{Camera world space}
- 	 		\label{fig:test6}
- 	 	\end{minipage}
-  		\begin{minipage}{.4\textwidth}
-  			\centering
-  			\includegraphics[width=1.2\linewidth]{intructions/my_camera_space.png}
+ 	 		\captionof{figure}{Camera world space \\[0.01cm] (Image from number \cite{3D} in reference section)}
   			\label{fig:test7}
   		\end{minipage}
  	 \end{figure}  
@@ -389,7 +407,7 @@ Nowadays, technology is getting better and better, so human life are becoming mo
   		\label{fig:test12}
   	\end{minipage}
   \end{figure} 
-From the image above, 2 white lines are defines as a view angle. Inside the view angle, there is also a clip plane defined by the green rectangle, which is also the camera view. And at the center of the near clip plane is where the camera is pointing at, and at that point, I've drawn the crosshair, to make sure that this is the camera position. This is the position we the character can interact with the objects, NPCs so as I mention above in the character section, that's why the character cannot be at the middle of the near clip point. The second green rectangle is defined as the far clip plane, which determines how far out into the world the camera view can see. And between the two plane is view frustum, within this shape is what I can see in the game preview.
+From the image above, 2 white lines are defines as a view angle. Inside the view angle, there is also a clip plane defined by the green rectangle, which is also the camera view. And at the center of the near clip plane is where the camera is pointing at, and at that point, I've drawn the crosshair, to make sure that this is the camera position. This is the position where the character can interact with the objects, NPCs so as I mention above in the character section, that's why the character cannot be at the middle of the near clip point. The second green rectangle is defined as the far clip plane, which determines how far out into the world the camera view can see. And between the two plane is view frustum, within this shape is what I can see in the game preview.
 \\[0.05cm] To detect if the camera cannot see the player or the camera is collided with the objects, all I have to do is just a simple raycasting from the character to the camera, and what is raycasting, I'll explain in the next section. 
 \begin{figure}[h]
 	\centering
@@ -486,16 +504,18 @@ From the code above, the hit function is to return the information where the lin
 		 		\captionof{figure}{Original texture}
 		 		\label{fig:test16}
 		 	\end{minipage}
-	 		\begin{minipage}{.3\textwidth}
+	 		\begin{minipage}{.25\textwidth}
 	 			\centering
 	 			\includegraphics[width=0.8\linewidth]{intructions/Brick001_height.png}
 	 			\centering
-	 			\captionof{figure}{Height map after creation}
+	 			\captionof{figure}{Height map}
 	 			\label{fig:test17}
 	 		\end{minipage}
- 		\begin{minipage}{.3\textwidth}
+ 		\begin{minipage}{.25\textwidth}
  			\centering
  			\includegraphics[width=1.4\linewidth]{intructions/height_example.png}
+ 			\centering
+ 			\captionof{figure}{Height map values \\[0.01cm] (Image from number \cite{3D} in reference section)}
  		\end{minipage}
  	\end{figure} 
  \\[0.02cm]
@@ -517,14 +537,14 @@ From the code above, the hit function is to return the information where the lin
   		\centering
   		\includegraphics[width=1\linewidth]{intructions/surface_normal.png}
   		\centering
-  		\captionof{figure}{Surface normal, across 3 polygons}
+  		\captionof{figure}{Surface normal, across 3 polygons \\ Image from number \cite{Unity} in reference section}
   		\label{fig:test18}
   	\end{minipage}
   	\begin{minipage}{.4\textwidth}
   		\centering
   		\includegraphics[width=1.6\linewidth]{intructions/surface_normal_across.png}
   		\centering
-  		\captionof{figure}{Normal mapping across three polygons}
+  		\captionof{figure}{Normal mapping across three polygons \\ (Image from number \cite{Unity} in reference section)}
   		\label{fig:test179}
   	\end{minipage}
   \end{figure}
@@ -533,11 +553,13 @@ From the code above, the hit function is to return the information where the lin
  \begin{figure}[h]
  	\begin{minipage}{1\textwidth}
  		\centering
- 		\includegraphics[width=0.8\linewidth]{intructions/normal_map_calculation.png}
+ 		\includegraphics[width=0.7\linewidth]{intructions/normal_map_calculation.png}
+ 		\captionof{figure}{(Image from number \cite{3D} in reference section)}
+ 		\label{fig:test180}
  		\centering
  	\end{minipage}
  \end{figure} 
-\\[0.01cm]
+\newpage
 In here, the partial derivatives are need for computing the normal: $\frac{\partial h}{\partial x}$ and $\frac{\partial h}{\partial y}$. They are defined by the height store at four neighbors of the pixel coordinate: \{(x + 1,y),(x $- 1$,y),(x,y + 1),(x,y $- 1$)\}. \\[0.01cm]The equation of these partial derivatives are: \begin{minipage}{1\textwidth}
 	\scalebox{1.3} {$\frac{\partial h}{\partial x} = \dfrac{h(x + 1,y) - h(x - 1,y)}{2}$ }
 	\\[0.04cm]
@@ -671,7 +693,9 @@ Lighting is an essential part of every scene. In Unity, while the mesh, textures
  	\begin{minipage}{1\textwidth}
  		\centering
  		\includegraphics[width=0.8\linewidth]{intructions/light_categlories.png}
- 		\centering
+ 		\centering	
+ 		\captionof{figure}{(Image from number \cite{Youtuber}, youtube channel Brackeys)}
+ 		\label{fig:test270}
  		\end{minipage}
  	\end{figure}
  \\[0.05cm]
@@ -685,11 +709,12 @@ Lighting is an essential part of every scene. In Unity, while the mesh, textures
  		\centering
  		\includegraphics[width=0.8\linewidth]{intructions/How_light_works.png}
  		\centering
+ 		\captionof{figure}{GI technique}
+ 		\label{fig:test271}
  	\end{minipage}
  \end{figure}
 \\[0.05cm]
  In Unity, it provides two techniques for pre computing GI: Baked GI and pre-computed real-time GI. The Baked one is pre-computed and will save a ton of processing power, and this only work if all the objects, light-sources in the scene are static. Whereas real-time is exactly lighting calculated in real-time, per frame, which means light and shadow positions can change over time when an object or light source is moving. Depending on each object and light source, we select the appropriate GI method. For the sunlight (the light that shines the whole scene), I set the mode to real-time because there are still some moving objects like the player, the NPC, etc... and for the light like the room light, I set it to baked mode. A combination of baked and realtime lights can help maintain performance. To enable GI mode, all I have to do is go to window -> rendering -> lighting setting, here's the properties that I set for making the light looks more realistic. The reason I have to enable both realtime and baked GI is because I have both baked and realtime light in the scene.
- \newpage
  \begin{figure}[h]
  	\raisebox{-50mm}[0pt][0pt]{
  	\begin{minipage}{1\textwidth}
@@ -709,11 +734,11 @@ Lighting is an essential part of every scene. In Unity, while the mesh, textures
  \begin{figure}[h]
  		\begin{minipage}{1\textwidth}
  			\centering
- 			\includegraphics[width=0.45\linewidth]{intructions/Shader_workflow.png}
+ 			\includegraphics[width=0.4\linewidth]{intructions/Shader_workflow.png}
  			\centering
  		\end{minipage}
  \end{figure}
-\\[0.01cm]
+\newpage
    Model cannot be rendered without a material, and material are wrappers which contain a shader and values for its properties, different material can share the same shader. In Unity, shaders are written in a custom environment called ShaderLab, which can be customized a lot about how the material will use a shader. Normally, Unity does come with a build-in shader called standard shader, which I was used in the whole section above for showing my demo. In a shader file, there are 2 main components: Properties and subshader. In the properties and subshader function, the parts where to define variables are the shaderlab, which is almost like the front-end development, they're all written in CG/HLSL high-level language. \\
    When writing a shader, in the properties tab, we can define any value  so that we can change them in Unity's inspector later. In a subshader, it can have multiple pass command, each pass command is the combination of vertex, fragment function. In some situation like the object needs to have multiple textures or color, multiple pass command will be used here. A shader can also have multiples subshader, especially the game/app for multiple-platform, as the gpu will only find compatible shader, render to the object, because not all the devices function all the same , they also have different hardware configuration, a shader with multiple-shader will take account here. In general, the structure of a shader in Unity will look like this: 
    \begin{lstlisting}
@@ -731,7 +756,7 @@ Lighting is an essential part of every scene. In Unity, while the mesh, textures
   	 }
    }
    \end{lstlisting}
-  The properties of the shader are somehow equivalent to the public fields in a C\# script, they'll appear in the inspector of a material, can be editable. The subshader is the section that use to write the code, a shader script can have multiple sections, one after other, they contain the actual intructions for the GPU. When defining the properties , the material inspector will look like this: 
+  The properties of the shader are somehow equivalent to the public fields in a C\# script, they will appear in the inspector of a material, can be editable. The subshader is the section that use to write the code, a shader script can have multiple sections, one after other, they contain the actual intructions for the GPU. When defining the properties , the material inspector will look like this: 
    \begin{figure}[h]
   	\begin{minipage}{1\textwidth}
   		\centering
@@ -1122,7 +1147,7 @@ From images below, tone mapping is where we decide how our HDR color data would 
 \newpage
 \section{Result and discussion}
 \subsection{RayCasting} 
-	The distance output of the raycasting may be confused with another object if I didn't specify a layermask for a some specific object. This may make my character sometimes mistake an object with another one. For example, if we want to take the sword which lied on the box (figure 41), then I should make my character go over there to take the sword, the distance between the sword and my character should be less than 3. But there is one thing happen, even if I come close to a random terrain or object with the distance also less than 3, when we press E, the sword automically pop up.
+	The distance output of the raycasting may be confused with another object if I didn't specify a layermask for a some specific object. This may make my character sometimes mistake an object with another one. For example, if we want to take the sword which lied on the box (figure 42), then I should make my character go over there to take the sword, the distance between the sword and my character should be less than 3. But there is one thing happen, even if I come close to a random terrain or object with the distance also less than 3, when we press E, the sword automically pop up.
 	\begin{figure}[h]
 		\begin{minipage}{.5\textwidth}
 			\centering
@@ -1212,7 +1237,7 @@ From images below, tone mapping is where we decide how our HDR color data would 
   		\begin{minipage}{1\textwidth}
   			\centering
   			\includegraphics[width=0.4\linewidth]{post_optimized.png}
-  			\captionof{figure}{Pre-optimized}
+  			\captionof{figure}{Post-optimized}
   			\label{fig:test47}
   		\end{minipage}
   	\end{figure} \\
@@ -1229,16 +1254,27 @@ From images below, tone mapping is where we decide how our HDR color data would 
 		\item Improve the UI.
 	\end{itemize}
 	\newpage
-	\section{Reference}
-	\begin{itemize}
-		\item \href{https://docs.unity3d.com/Manual/}{\color{cyan} https://docs.unity3d.com/Manual/}
-		\item "3D graphics for game programming" by Junhyung Jan Korea University, Seoul, South Korea
-		\item \href{https://en.wikibooks.org/wiki/Cg\_Programming/Unity/}{\color{cyan} https://en.wikibooks.org/wiki/Cg\_Programming/Unity}
-		\item I'd like to thanks to these youtubers, credit them for making mini tutorials, proving me some textures to help me during this internship: 
+
+	\begin{thebibliography}{9}
+		\bibitem{Unity} 
+		Unity Manual. 
+		\\\texttt{https://docs.unity3d.com/Manual/}
+		\bibitem{3D} 
+		Junhyung Jan.
+		\textit{3D graphics for game programming}. 
+		Korea University, Seoul, South Korea.
+		
+		\bibitem{CG programming wiki} 
+		CG programming Unity wiki,
+		\\\texttt{https://en.wikibooks.org/wiki/Cg\_Programming/Unity}
+		\bibitem{Youtuber}
+		 I'd like to thanks to these youtubers, credit them for making mini tutorials, proving me some textures to help me during this internship: 
+	\end{thebibliography}
+	\begin{enumerate}
 		\item[--] Brackeys: \href{https://www.youtube.com/user/Brackeys}{\color{cyan} https://www.youtube.com/user/Brackeys}
 		\item[--] Official Unity channel: \href{https://www.youtube.com/user/Unity3D}{\color{cyan} https://www.youtube.com/user/Unity3D}
 		\item[--] Jimmy Vegas: \href{https://www.youtube.com/channel/UCRMXHQ2rJ9\_0CHS7mhL7erg}{\color{cyan}https://www.youtube.com/channel/UCRMXHQ2rJ9\_0CHS7mhL7erg}
-	\end{itemize}
+	\end{enumerate}
  \end{document}
 	
  	 
